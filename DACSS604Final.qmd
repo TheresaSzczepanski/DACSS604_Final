@@ -289,7 +289,8 @@ Growth_Sum_ELA_Plot
 ### ELA Historical Growth
 
 ```{r}
-HistGradeGrowthSum%>%
+
+Hist_Growth_Sum_ELA_Plot<-HistGradeGrowthSum%>%
   filter(Subject == "ELA")%>%
   filter(`Screening Window` == "Fall-Winter")%>%
   ggplot(aes(x=`Grade`,fill = "skyblue", y = `Median SGP`)) +
@@ -305,7 +306,7 @@ HistGradeGrowthSum%>%
     labs(
       y = "Median SGP",
        x= "Grade Level",
-      title = "ELA Student Growth Percentile by Grade Level",
+      title = "Literacy Student Growth Percentile by Grade Level",
       caption = "Source: Renaissance Star Literacy Screening")+
    geom_hline(yintercept = 50, color = "grey")+
   annotate("text", x = 1.55, y = 52, label = "50th Percentile")+
@@ -314,8 +315,15 @@ HistGradeGrowthSum%>%
 ```
 
 ```{r}
-
-
+#| eval: false
+#| fig-cap: "Rising Tide Literacy Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Literacy Screening"
+#| 
+#| fig-alt: >
+#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
+#|    (SGP) in literacy on the y-axis, faceted by school year (ordered, factor).
+#|    Plot illustrates the relationship between the three variables.
+#|    
+Hist_Growth_Sum_ELA_Plot
 ```
 
 ## Math Growth
@@ -328,7 +336,7 @@ Growth_Sum_Math<-star_dem_all_private%>%
   group_by(Grade)%>%
   summarize(median_SGP= median(`SGP (Expectation=50)`))
 
-ggplot(Growth_Sum_Math, aes(x=`Grade`,fill = `Grade`, y = `median_SGP`, fill="skyblue")) +
+Growth_Sum_Math_Plot<-ggplot(Growth_Sum_Math, aes(x=`Grade`,fill = `Grade`, y = `median_SGP`, fill="skyblue")) +
     geom_bar(position="dodge", stat = "identity", fill="skyblue") +
     #facet_wrap(~Grade)+
     geom_text(aes( y = `median_SGP`, label = `median_SGP`,
@@ -341,14 +349,28 @@ ggplot(Growth_Sum_Math, aes(x=`Grade`,fill = `Grade`, y = `median_SGP`, fill="sk
     labs(
       y = "Median SGP",
        x= "Grade Level",
-      title = "Math Fall-Winter Growth by Grade Level",
+      title = "Math Student Growth Percentile by Grade Level",
       caption = "Source: 2024-2025 Renaissance Star Math Screening")+
    geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x = 1.0, y = 53, label = "50th Percentile")
+  annotate("text", x = 1.05, y = 53, label = "50th Percentile")
 ```
 
 ```{r}
-HistGradeGrowthSum%>%
+#| eval: false
+#| fig-cap: "Rising Tide Math Growth by Grade Level, 2024-2025 Renaissance Star Literacy Screening"
+#| fig-alt: >
+#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
+#|    (SGP) in math on the y-axis
+#|    Plot illustrates the relationship between the two variables.
+
+Growth_Sum_Math_Plot
+
+
+```
+
+```{r}
+
+Hist_Growth_Sum_Math_Plot<-HistGradeGrowthSum%>%
   filter(Subject == "Math")%>%
   filter(`Screening Window` == "Fall-Winter")%>%
   ggplot(aes(x=`Grade`,fill = "skyblue", y = `Median SGP`)) +
@@ -364,7 +386,7 @@ HistGradeGrowthSum%>%
     labs(
       y = "Median SGP",
        x= "Grade Level",
-      title = "Math Fall-Winter Growth by Grade Level",
+      title = "Math Student Growth Percentile by Grade Level",
       caption = "Source: Renaissance Star Math Screening")+
    geom_hline(yintercept = 50, color = "grey")+
   annotate("text", x = 5.5, y = 48, label = "50th Percentile")+
@@ -373,14 +395,26 @@ HistGradeGrowthSum%>%
 
 ```
 
+```{r}
+#| eval: false
+#| fig-cap: "Rising Tide Math Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
+#|    (SGP) in math on the y-axis, faceted by school year (ordered, factor).
+#|    Plot illustrates the relationship between the three variables.
+#|    
+Hist_Growth_Sum_Math_Plot
+
+```
+
+
 # RQ2 Grade 5 Math
 
 Is there a relationship between Rising Tide’s Grade 5 Mathematics
 curriculum initiatives and Grade 5 student growth in mathematics?
 
 ```{r}
-
-
 
 Math_IEP_Sum<-star_dem_math%>%
   mutate(IEP = case_when(IEP_Status == 1 ~ "Yes",
@@ -398,16 +432,37 @@ Math_Gen_Sum<-star_dem_math%>%
 
 Math_Gen_Sum
 
+star_dem_math
+Math_Gen_IEP_Sum<-star_dem_math%>%
+ filter(`Grade` == "5")%>%
+  group_by(`School_Year`, Gender, IEP_Status)%>%
+  summarize(`Median SGP` = median(`SGP (Expectation=50)`))
+
+Math_Gen_IEP_Sum
+
+Math_Gen_IEP_Achieve_Sum<-star_dem_math%>%
+ filter(`Grade` == "5")%>%
+  group_by(`School_Year`, Gender, IEP_Status)%>%
+  summarize(`Median Test 1 PR` = median(`Test 1 PR`))
+
+Math_Gen_IEP_Achieve_Sum
+
 ```
 
 ### Math Historical Growth
 
 ```{r}
-HistGradeGrowthSum%>%
+
+ # ggplot(aes(Species, fill=ifelse(Species=="setosa", "A","B"))) + 
+ #    geom_bar(show.legend=FALSE) +
+ #    scale_fill_manual(values=c(A="blue", B="red"))
+
+Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
   filter(Subject == "Math")%>%
   filter(`Screening Window` == "Fall-Winter")%>%
-  ggplot(aes(x=`Grade`,fill = "skyblue", y = `Median SGP`)) +
-    geom_bar(position="dodge", stat = "identity", fill = "skyblue") +
+  ggplot(aes(x=`Grade`,fill = ifelse(Grade == "5", "A", "B"), y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", show.legend=FALSE) +
+    scale_fill_manual(values = c(A= "skyblue", B = "grey"))+
     #facet_wrap(~Grade)+
     geom_text(aes( y = `Median SGP`, label = `Median SGP`,
                    vjust = -.25), position = position_dodge(width = 1))+
@@ -419,14 +474,27 @@ HistGradeGrowthSum%>%
     labs(
       y = "Median SGP",
        x= "Grade Level",
-      title = "Math Fall-Winter Growth by Grade Level",
+      title = "Math Student Growth Percentile by Grade Level",
       caption = "Source: Renaissance Star Math Screening")+
    geom_hline(yintercept = 50, color = "grey")+
   annotate("text", x = 5.5, y = 48, label = "50th Percentile")+
   facet_wrap(~Year)
+```
+```{r}
+#| eval: false
+#| fig-cap: "Rising Tide Math Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
+#|    (SGP) in math on the y-axis, faceted by school year (ordered, factor).
+#|    Plot illustrates the relationship between the three variables.
+#|    
+Hist_Growth_Sum_G5Math_Plot
 
+```
 
-HistGradeGrowthSum%>%
+```{r}
+Hist_Growth_G5Math_Plot<-HistGradeGrowthSum%>%
   filter(Subject == "Math")%>%
   filter(Grade == "5")%>%
   filter(`Screening Window` == "Fall-Winter")%>%
@@ -443,7 +511,7 @@ HistGradeGrowthSum%>%
     labs(
       y = "Median SGP",
        x= "School Year",
-      title = "Changes in Grade 5 Mathematics Growth",
+      title = "Improvement in Grade 5 Student Growth Percentile",
       caption = "Source: Renaissance Star Math Screening")+
    geom_hline(yintercept = 50, color = "grey")+
   annotate("text", x = 1., y = 52, label = "Goal 50th Percentile")#+
@@ -453,12 +521,24 @@ HistGradeGrowthSum%>%
 
 ```
 
+```{r}
+#| eval: false
+#| fig-cap: "Rising Tide Grade 5 Math Growth by school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A bar blot with school year (ordered, factor) on the x-axis and the median G5 student growth  
+#|    percentile (SGP) in math on the y-axis.
+#|    Plot illustrates the relationship between the two variables.
+#|    
+Hist_Growth_G5Math_Plot
+
+```
+
+
 ## IEP
 
 ```{r}
-  
-
-Math_IEP_Sum%>%
+ IEP_Growth_G5Math_Plot<- Math_IEP_Sum%>%
   filter(Grade == "5")%>%
   ggplot(aes(x=`IEP`,fill = `School_Year`, y = `Median SGP`)) +
       geom_bar(position="dodge", stat = "identity") +
@@ -476,12 +556,27 @@ Math_IEP_Sum%>%
         y = "Median SGP",
          x= "IEP Status",
         title = "Improved Growth For All Grade 5 Learners",
-        caption = "Source: Renaissance Star Screening")+
+        caption = "Source: Renaissance Star Math Screening")+
    geom_hline(yintercept = 50, color = "grey")+
   annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
+```
 
+```{r}
+#| eval: false
+#| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A clustered, bar blot with IEP status (ordered, factor) on the x-axis and the 
+#|    median G5 student growthpercentile (SGP) in math on the y-axis.
+#|    Bars are colored by the school year (ordered, factor)
+#|    Plot illustrates the relationship between the three variables.
+#| 
 
-Math_Gen_Sum%>%
+IEP_Growth_G5Math_Plot
+```
+
+```{r}
+Gen_Growth_G5Math_Plot<- Math_Gen_Sum%>%
   filter(Grade == "5")%>%
   ggplot(aes(x=`Gender`,fill = `School_Year`, y = `Median SGP`)) +
       geom_bar(position="dodge", stat = "identity") +
@@ -505,6 +600,22 @@ Math_Gen_Sum%>%
   
   
 ```
+
+
+```{r}
+#| eval: false
+#| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A clustered, bar blot with Gender (ordered, factor) on the x-axis and the 
+#|    median G5 student growthpercentile (SGP) in math on the y-axis.
+#|    Bars are colored by the school year (ordered, factor)
+#|    Plot illustrates the relationship between the three variables.
+#| 
+
+Gen_Growth_G5Math_Plot
+```
+
 
 # RQ 3: ELA State Standards Mastery
 
