@@ -1,0 +1,916 @@
+Year,Screening Window,Grade,Text Type,Reporting Category,Domain,% Beginning,% Developing,% Secure,Median Mastery %,Standard,Description
+2024-2025,Fall,5,,Foundational Skills,Phonics and Word Recognition,13,14,72,91,5.RF.3,Know and apply grade-level phonics and word analysis skills in decoding words
+2024-2025,Fall,5,,Foundational Skills,Phonics and Word Recognition,13,14,72,91,5.RF.3.a,"Use combined knowledge of all letter-sound correspondences, syllabication patterns, and morphology (e.g., roots and affixes) to read accurately unfamiliar multisyllabic words in context and out of context"
+2024-2025,Fall,5,,Foundational Skills,Fluency,13,14,72,91,5.RF.4,Read with sufficient accuracy and fluencty to support comprehension
+2024-2025,Fall,5,,Foundational Skills,Fluency,13,14,72,91,5.RF.4.a,Read grade-level text with purpose and understanding
+2024-2025,Fall,5,,Foundational Skills,Fluency,13,14,72,91,5.RF.4.b,"Read grade-level prose and poetry orally with accuracy, appropriate rate, and expression on successive readings."
+2024-2025,Fall,5,,Foundational Skills,Fluency,13,14,72,90,5.RF.4.c,"Use context to confirm or self-correct word recognition and understanding, rereading as necessary."
+2024-2025,Fall,5,Informational Text,Reading,Key Ideas and Details,17,13,70,88,5.RI.1,Quote or paraphrase a text accurately when explaining whatthe text states explicitly and when drawing inferences from the text.
+2024-2025,Fall,5,Informational Text,Reading,Key Ideas and Details,19,20,61,85,5.RI.2,Determine one or more main ideas ofa text and explain how they are supported by key details; summarize a text.
+2024-2025,Fall,5,Informational Text,Reading,Key Ideas and Details,18,20,62,86,5.RI.3,"Explain the relationships or interactions between two or more individuals, events, ideas, or concepts in a historical, scientific, mathematical, ortechnicaltext based on specific information in the text."
+2024-2025,Fall,5,Informational Text,Reading,Craft and Structure,27,22,51,80,5.RI.4,"Determine the meaning ofgeneral academic and domain-specific words and phrases in a textrelevantto a grade 5 topic or
+subject area."
+2024-2025,Fall,5,Informational Text,Reading,Craft and Structure,26,23,51,80,5.RI.5,"Describe how an author uses one or more structures (e.g., chronology, comparison, cause/effect, problem/solution) of events,to
+present information in a text."
+2024-2025,Fall,5,Informational Text,Reading,Craft and Structure,20,18,62,85,5.RI.6,"Analyze multiple accounts ofthe same event ortopic, noting important similarities and differences among the points of view they represent."
+2024-2025,Fall,5,Informational Text,Reading,Integration of Knowledge and Ideas,19,20,61,84,5.RI.7,"Draw on information from multiple print or digital sources, demonstrating the ability to locate an answerto a question quickly or to solve a problem efficiently."
+2024-2025,Fall,5,Informational Text,Reading,Integration of Knowledge and Ideas,19,19,62,85,5.RI.8,"Explain how an author uses reasons and evidence to support particular point in a text, identifying which reasons and evidence support which point(s)."
+2024-2025,Fall,5,Informational Text,Reading,Integration of Knowledge and Ideas,21,20,59,85,5.RI.9,Integrate information from several texts on the same topic in order to write or speak knowledgeably about the subject.
+2024-2025,Fall,5,Informational Text,Reading,Range of Reading and Level of Text Complexity,13,14,72,91,5.RI.10,"Independently and proficiently read and comprehend informational texts, including history/social studies, science, mathematical, and technical texts, exhibiting complexity appropriate for at least grade 5."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,13,14,72,89,5.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 5 reading and content, chossing flexibly from a range of strategies."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,10,17,73,91,5.L.4.a,"Use context (e.g., casue/effect relationships and comparisions in text) as a clue to the meaning of a word or phrase."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,10,16,74,92,5.L.4.b,"Use common, grade-appropriate Greek and Latin affixes and roots as clues to the meaning of a word (e.g., photograph, photosynthesis)."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,13,14,72,90,5.L.4.c,"Consult reference materials (e.g., dictionaries, glossaries, thesuaruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,17,12,71,89,5.L.4.d,"Recognize and use appropriately abbreviations related to grade-level content or common in everyday life, including abbreviations derived from words or phrases in other langugaes (e.g., lb, oz., etc.)."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,17,12,71,89,5.L.4.e,"Recognize and use appropriately symbols related to grade-level content or common in everyday life, including symbols with multiple meanings (e.g., parentheses in mathematics and in writing, ""to measure angles and temperature)."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,16,14,70,87,5.L.5,"Demonstrate understanding of figurative langugae, word relationships and nuances in word meanings."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,18,22,60,84,5.L.5.a,"Interpret figurative language, including similies and metaphors in context."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,13,14,72,90,5.L.5.b,Recognize and explain the meaning of common idioms and proverbs.
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,13,16,71,88,5.L.5.c,"Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words."
+2024-2025,Fall,5,,Language,Vocabulary Acquisition and Use,19,30,51,82,5.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases, including those that signal contrast, addition, and other logical relationships (e.g., however, although, nevertheless, similarly, moreover, in addition)."
+2024-2025,Fall,5,Literature,Reading,Key Ideas and Details,18,19,63,87,5.RL.1,Quote or paraphrase a text accurately when explaining whatthe text states explicitly and when drawing inferences from the text.
+2024-2025,Fall,5,Literature,Reading,Key Ideas and Details,19,19,62,86,5.RL.2,"Determine a theme of a story, drama, or poem from details in the text, including how characters in a story or drama respond to challenges or how thespeaker in a poem relfects upon a topic; summarize a text."
+2024-2025,Fall,5,Literature,Reading,Key Ideas and Details,17,19,64,87,5.RL.3,"Compare and contrast two or more characters, settings, or events in a story or drama, drawing on specific details in the text (e.g., how characters interact)."
+2024-2025,Fall,5,Literature,Reading,Craft and Structure,14,23,62,84,5.RL.4,Determine the meaning of words and phrases as they are used in a text; identify and explain the effects of figurative language such as metaphors and similies
+2024-2025,Fall,5,Literature,Reading,Craft and Structure,18,18,64,87,5.RL.5,"Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular sotry, drama, or poem."
+2024-2025,Fall,5,Literature,Reading,Craft and Structure,22,21,57,83,5.RL.6,"Describe how a narrator's or speaker's point of view influences how events are described in a story, myth, poem, or drama."
+2024-2025,Fall,5,Literature,Reading,Integration of Knowledge and Ideas,21,17,62,85,5.RL.7,"Analyze how visual and multimedia elements contribute to the meaning, tone, or beauty of a text."
+2024-2025,Fall,5,Literature,Reading,Integration of Knowledge and Ideas,22,19,59,84,5.RL.9,"Compare and contrast stories in the same genre (e.g., mysteries or adventure stories) on their approaches to similar themes and topics."
+2024-2025,Fall,5,Literature,Reading,Range of Reading and Level of Text Complexity,17,17,67,88,5.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate for atleast grade 5."
+2024-2025,Fall,6,Informational Text,Reading,Key Ideas and Details,22,22,57,84,6.RI.1,"Cite textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate"
+2024-2025,Fall,6,Informational Text,Reading,Key Ideas and Details,24,19,57,84,6.RI.2,Determine a text’s central idea(s) and how particular details help convey the idea(s); provide a summary ofa text distinct from personal opinions orjudgments.
+2024-2025,Fall,6,Informational Text,Reading,Key Ideas and Details,23,20,57,84,6.RI.3,"Analyze in detail how a key individual, event, oridea is introduced, illustrated, and elaborated in a text(e.g.,through examples or
+anecdotes)."
+2024-2025,Fall,6,Informational Text,Reading,Craft and Structure,29,24,47,78,6.RI.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; explain how word choice affects meaning and tone."
+2024-2025,Fall,6,Informational Text,Reading,Craft and Structure,49,30,20,60,6.RI.5,"Analyze how a particular sentence, paragraph, chapter, section, ortextfeature (e.g., heading) fits into the overall structure ofa
+text and contributes to the development ofthe ideas."
+2024-2025,Fall,6,Informational Text,Reading,Craft and Structure,18,22,60,86,6.RI.6,Determine an author’s point ofview or purpose in a text and explain how itis conveyed in the text.
+2024-2025,Fall,6,Informational Text,Reading,Integration of Knowledge and Ideas,28,16,56,82,6.RI.7,"Integrate information presented in different media orformats (e.g., in charts, graphs, photographs, videos, maps) as well as
+words to develop a coherent understanding ofa topic or issue."
+2024-2025,Fall,6,Informational Text,Reading,Integration of Knowledge and Ideas,24,19,57,84,6.RI.8,"Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence
+from claims that are not."
+2024-2025,Fall,6,Informational Text,Reading,Integration of Knowledge and Ideas,28,16,56,82,6.RI.9,"Compare and contrast one author’s presentation ofevents with that ofanother(e.g., a memoirwritten by and a biography on
+the same person)."
+2024-2025,Fall,6,Informational Text,Reading,Range of Reading and Level of Text Complexity,40,28,32,70,6.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 6."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,16,16,68,88,6.L.4,"Determine or clarify the meaning ofunknown and multiple-meaning words and phrases based on grade 6 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,12,18,70,88,6.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning ofa word or phrase."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,18,24,58,85,6.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., audience, auditor
+audible)."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,17,15,68,89,6.L.4.c,"Consult reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the pronunciation ofa word
+or determine or clarify its precise meaning orits part of speech."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,12,17,71,89,6.L.4.d,"Verify the preliminary determination ofthe meaning ofa word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,17,14,69,89,6.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,17,13,70,90,6.L.5.a,"Interpretfigures of speech (e.g., personification) in context."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,17,15,68,89,6.L.5.b,"Use the relationship between particularwords (e.g., cause/effect, part/whole, item/category) to better understand each of the
+words."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,17,15,68,88,6.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g., stingy, scrimping,
+economical, unwasteful,thrifty."
+2024-2025,Fall,6,,Language,Vocabulary Acquisition and Use,29,23,57,83,6.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Fall,6,Literature,Reading,Key Ideas and Details,22,20,58,85,6.RL.1,"Cite textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or
+paraphrasing as appropriate."
+2024-2025,Fall,6,Literature,Reading,Key Ideas and Details,25,19,56,83,6.RL.2,"Determine a theme or central idea ofa text and how itis conveyed through particular details; provide a summary ofa text
+distinctfrom personal opinions orjudgments."
+2024-2025,Fall,6,Literature,Reading,Key Ideas and Details,28,24,48,78,6.RL.3,"Describe how the plot ofa particular story, poem, or drama unfolds in a series ofepisodes as well as how the characters respond
+or change as the plot moves toward a resolution."
+2024-2025,Fall,6,Literature,Reading,Craft and Structure,16,16,68,88,6.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices, including those that create repeated sounds and rhythms in poetry, on meaning,tone (i.e.,
+author’s attitude toward subject or audience), or mood (i.e., emotional atmosphere)."
+2024-2025,Fall,6,Literature,Reading,Craft and Structure,25,18,57,84,6.RL.5,"Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure ofa text and contributes to the
+development of the theme, setting, or plot."
+2024-2025,Fall,6,Literature,Reading,Craft and Structure,30,24,46,77,6.RL.6,Explain how an author develops the point ofview ofthe narrator or speakerin a text.
+2024-2025,Fall,6,Literature,Reading,Integration of Knowledge and Ideas,24,18,58,85,6.RL.7,"Compare and contrastt he experience of reading a story, drama, or poem to that ofl istening to or viewing the same text."
+2024-2025,Fall,6,Literature,Reading,Integration of Knowledge and Ideas,28,16,56,82,6.RL.9,"Compare and contrasttexts in differentforms or genres (e.g., stories and poems, historical novels and fantasy stories) in terms of
+their approaches to similarthemes and topics."
+2024-2025,Fall,6,Literature,Reading,Range of Reading and Level of Text Complexity,61,27,12,55,6.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety of genres, cultures, and perspectives
+and exhibiting complexity appropriate for at least grade 6."
+2024-2025,Fall,7,Informational Text,Reading,Key Ideas and Details,31,28,41,74,7.RI.1,"Cite several pieces of textual evidence to support analysis of what a text states explicitly as well as inferences drawn from the text,
+quoting or paraphrasing as appropriate."
+2024-2025,Fall,7,Informational Text,Reading,Key Ideas and Details,11,27,63,87,7.RI.2,"Determine a text’s central idea(s) and analyze its/their development overthe course ofthe text; provide an objective summary of
+a text."
+2024-2025,Fall,7,Informational Text,Reading,Key Ideas and Details,26,30,45,77,7.RI.3,"Analyze the interactions between individuals, events, and ideas in a text(e.g., how ideas influence individuals or events, or how
+individuals influence ideas or events)."
+2024-2025,Fall,7,Informational Text,Reading,Craft and Structure,29,30,41,75,7.RI.4,"Determine the meaning of words and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the impact ofa specific word choice on meaning and tone."
+2024-2025,Fall,7,Informational Text,Reading,Craft and Structure,21,27,52,81,7.RI.5,"Analyze the structure an author uses to organize a text, including how the major sections and textfeatures (e.g., headings)
+contribute to the whole and to the development ofthe ideas."
+2024-2025,Fall,7,Informational Text,Reading,Craft and Structure,20,27,53,82,7.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how the author distinguishes his or her position from that of
+others."
+2024-2025,Fall,7,Informational Text,Reading,Integration of Knowledge and Ideas,20,26,54,83,7.RI.7,"Compare and contrast a written textto an audio, video, or multimedia version, analyzing each medium’s portrayal of the
+subject(e.g., how the delivery ofa speech affects the impact ofthe words"
+2024-2025,Fall,7,Informational Text,Reading,Integration of Knowledge and Ideas,20,29,51,80,7.RI.8,"Trace and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is sound and the evidence is
+relevant and sufficientto support the claims"
+2024-2025,Fall,7,Informational Text,Reading,Integration of Knowledge and Ideas,20,24,55,84,7.RI.9,"Analyze how two or more authors writing aboutthe same topic shape their presentations ofkey information by emphasizing
+different evidence or advancing differentinterpretations of facts"
+2024-2025,Fall,7,Informational Text,Reading,Range of Reading and Level of Text Complexity,44,21,35,67,7.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 7."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,11,30,60,86,7.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,14,30,56,85,7.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,15,28,57,85,7.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., belligerent, bellicos
+rebel)"
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,11,19,70,89,7.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning orits part of speech.or determine or clarify its precise meaning or its part of speech."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,11,30,60,86,7.L.4.d,"Verify the preliminary determination ofthe meaning o fa word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,17,28,55,84,7.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,11,27,63,87,7.L.5.a,"Interpret figures of speech (e.g., literary, biblical, mythological allusions) in context."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,15,29,56,84,7.L.5.b,"Use the relationship between particularwords (e.g., synonym/antonym, analogy) to better understand each of the words."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,37,24,38,70,7.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g.,refined,respectful,
+polite, diplomatic, condescending).economical, unwasteful,thrifty."
+2024-2025,Fall,7,,Language,Vocabulary Acquisition and Use,20,31,49,79,7.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Fall,7,Literature,Reading,Key Ideas and Details,15,30,55,83,7.RL.1,"Cite several pieces oftextual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text,
+quoting or paraphrasing as appropriate."
+2024-2025,Fall,7,Literature,Reading,Key Ideas and Details,12,28,61,87,7.RL.2,"Determine a theme or central idea ofa text and analyze its development overthe course ofthe text; provide an objective
+summary of a text."
+2024-2025,Fall,7,Literature,Reading,Key Ideas and Details,26,28,47,78,7.RL.3,"Analyze how particular elements ofa story, poem, or drama interact(e.g., how setting shapes the characters or plot)."
+2024-2025,Fall,7,Literature,Reading,Craft and Structure,15,30,55,83,7.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices on meaning,tone, or mood, including the impact ofrepeated use of particular images."
+2024-2025,Fall,7,Literature,Reading,Craft and Structure,19,23,57,86,7.RL.5,"Analyze how aspects ofa literary work’s structure contribute to its meaning or style (e.g.,the effect ofrepetition in an epic,
+flashback in a novel, soliloquy in a drama)."
+2024-2025,Fall,7,Literature,Reading,Craft and Structure,14,24,62,87,7.RL.6,Analyze how an author develops and contrasts the points ofview ofdifferent characters or narrators in a text.
+2024-2025,Fall,7,Literature,Reading,Integration of Knowledge and Ideas,20,26,54,83,7.RL.7,"Compare and contrast a written story, drama, or poem to its audio, filmed, staged, or multimedia version."
+2024-2025,Fall,7,Literature,Reading,Integration of Knowledge and Ideas,20,24,55,84,7.RL.9,"Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means
+of understanding how authors offiction use or alter history."
+2024-2025,Fall,7,Literature,Reading,Range of Reading and Level of Text Complexity,12,28,61,87,7.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety of genres, cultures, and perspectives
+and exhibiting complexity appropriate for atleast grade 7."
+2024-2025,Fall,8,Informational Text,Reading,Key Ideas and Details,17,23,60,87,8.RI.1,"Cite the textual evidence that most strongly supports an analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate."
+2024-2025,Fall,8,Informational Text,Reading,Key Ideas and Details,17,25,58,85,8.RI.2,"Determine a text’s central idea(s) and analyze its/their development overthe course ofthe text, including relationships to supporting ideas; provide an objective summary ofa text."
+2024-2025,Fall,8,Informational Text,Reading,Key Ideas and Details,22,23,56,83,8.RI.3,"Analyze how a text makes connections among and distinctions between individuals, ideas, or events (e.g.,through
+comparisons, analogies, or categories)."
+2024-2025,Fall,8,Informational Text,Reading,Craft and Structure,12,22,67,88,8.RI.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the impact of specific word choices on meaning and tone, including analogies or allusions to other texts."
+2024-2025,Fall,8,Informational Text,Reading,Craft and Structure,17,26,57,85,8.RI.5,"Analyze in detailthe structural elements ofa text, including the role of specific sentences, paragraphs, and textfeatures in
+developing and refining a key concept."
+2024-2025,Fall,8,Informational Text,Reading,Craft and Structure,28,29,43,78,8.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how the author acknowledges and responds to conflicting
+evidence or viewpoints."
+2024-2025,Fall,8,Informational Text,Reading,Integration of Knowledge and Ideas,24,23,54,83,8.RI.7,"Evaluate the advantages and disadvantages ofusing different mediums (e.g., print or digitaltext, video, multimedia) to present
+a particular topic or idea."
+2024-2025,Fall,8,Informational Text,Reading,Integration of Knowledge and Ideas,34,33,32,72,8.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is sound and the evidence is relevant and sufficient;recognize when irrelevant evidence is introduced."
+2024-2025,Fall,8,Informational Text,Reading,Integration of Knowledge and Ideas,22,23,56,84,8.RI.9,"Analyze a case in which two or more texts provide conflicting information on the same topic and identify where the texts
+disagree on matters offact orinterpretation."
+2024-2025,Fall,8,Informational Text,Reading,Range of Reading and Level of Text Complexity,44,29,27,67,8.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety of genres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 8."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,11,15,74,91,8.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 8 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,8,11,82,94,8.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,14,29,57,84,8.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., precede, recede
+secede)."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,13,20,67,89,8.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning orits part of speech.or determine or clarify its precise meaning or its part of speech."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,9,13,78,93,8.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,12,24,65,86,8.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,8,10,83,94,8.L.5.a,"Interpretfigures of speech (e.g., verbal irony, puns) in context."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,10,14,76,93,8.L.5.b,Use the relationship between particularwords to better understand each ofthe words.
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,46,33,20,65,8.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g., bullheaded, willful, firm,
+persistent,resolute)."
+2024-2025,Fall,8,,Language,Vocabulary Acquisition and Use,23,27,51,81,8.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Fall,8,Literature,Reading,Key Ideas and Details,28,28,44,78,8.RL.1,"Cite the textual evidence that most strongly supports analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate."
+2024-2025,Fall,8,Literature,Reading,Key Ideas and Details,35,31,33,72,8.RL.2,"Determine a theme or central idea ofa text and analyze its development overthe course ofthe text, including its relationship to
+the characters, setting, and plot; provide an objective summary ofa text."
+2024-2025,Fall,8,Literature,Reading,Key Ideas and Details,25,25,51,80,8.RL.3,"Analyze how particularlines ofdialogue orincidents in a story, poem, or drama propelthe action,reveal aspects ofa character,
+or provoke a decision."
+2024-2025,Fall,8,Literature,Reading,Craft and Structure,27,30,36,75,8.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices on meaning,tone, or mood, including the impact ofallusion and irony."
+2024-2025,Fall,8,Literature,Reading,Craft and Structure,17,23,60,87,8.RL.5,"Compare and contrast the structures oftwo or more texts, analyzing how structure contributes to meaning and style in each text."
+2024-2025,Fall,8,Literature,Reading,Craft and Structure,28,34,38,76,8.RL.6,"Analyze how differences in point of view between characters and audience (e.g., created through the use ofdramatic iron
+create such effects as suspense or humor."
+2024-2025,Fall,8,Literature,Reading,Integration of Knowledge and Ideas,23,23,55,83,8.RL.7,"Analyze the extentto which an audio, filmed, or staged production ofa story, drama, or poem stays faithfulto or departs from
+the originaltext or script, evaluating the choices made by the director or performer(s)."
+2024-2025,Fall,8,Literature,Reading,Integration of Knowledge and Ideas,23,22,56,84,8.RL.9,"Analyze how a modern work offiction draws on themes, patterns ofevents, or charactertypes from myths,traditional stories, or
+religious works such as the Bible, including describing how the material is rendered new."
+2024-2025,Fall,8,Literature,Reading,Range of Reading and Level of Text Complexity,25,25,51,80,8.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate for at least grade 8."
+2024-2025,Fall,9,Informational Text,Reading,Key Ideas and Details,20,10,70,87,9-10.RI.1,Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text.
+2024-2025,Fall,9,Informational Text,Reading,Key Ideas and Details,30,34,36,70,9-10.RI.2,"Determine a central idea ofa text and analyze its development over the course ofthe text, including how it emerges and is
+shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Fall,9,Informational Text,Reading,Key Ideas and Details,21,33,46,78,9-10.RI.3,"Analyze how an author unfolds an analysis or series ofideas or events, including the orderin which the points are made, how
+they are introduced and developed, and the presence or absence ofconnections between them."
+2024-2025,Fall,9,Informational Text,Reading,Craft and Structure,27,37,36,71,9-10.RI.4,"Determine the meaning(s) ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the cumulative or contradictory impact of specific word choices on meaning and tone (e.g., how the
+language ofa court opinion differs from that ofa newspaper; how an author’s word choice varies from one part of a text to
+another)."
+2024-2025,Fall,9,Informational Text,Reading,Craft and Structure,41,27,31,66,9-10.RI.5,"Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, orlarge
+portions ofa text(e.g., a section or chapter)."
+2024-2025,Fall,9,Informational Text,Reading,Craft and Structure,27,34,39,72,9-10.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how an author uses rhetoric to advance that point ofvie
+or purpose."
+2024-2025,Fall,9,Informational Text,Reading,Integration of Knowledge and Ideas,23,29,49,79,9-10.RI.7,"Analyze various accounts ofa subjecttold in different mediums (e.g., a person’s life story in both print and multimedi
+determining which details are emphasized or deemphasized in each account."
+2024-2025,Fall,9,Informational Text,Reading,Integration of Knowledge and Ideas,23,37,40,74,9-10.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is valid and the evidence is
+relevant and sufficient; identify false statements orincomplete truths and fallacious reasoning."
+2024-2025,Fall,9,Informational Text,Reading,Integration of Knowledge and Ideas,23,29,49,79,9-10.RI.9,"Analyze seminal documents ofhistorical and literary significance (e.g.,Washington’s Farewell Address, Lincoln’s Second
+Inaugural and Gettysburg Addresses, Roosevelt’s Four Freedoms speech, King’s “Letterfrom Birmingham Jail”), including h
+they address related themes and concepts."
+2024-2025,Fall,9,Informational Text,Reading,Range of Reading and Level of Text Complexity,41,26,33,65,9-10.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate forthe grade/course."
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,11,11,77,90,9-10.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 9-10 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,9,13,79,94,9-10.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,11,10,79,92,9-10.L.4.b,"Identify and correctly use patterns ofword changes thatindicate different meanings or parts of speech (e.g., analyze, analysis
+analytical; advocate, advocacy)."
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,21,17,61,85,9-10.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning, its part of speech, orits etymology."
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,11,11,77,90,9-10.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,21,30,49,78,9-10.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,11,10,79,93,9-10.L.5.a,"Interpretfigures of speech (e.g., euphemism, oxymoron) in context and analyze theirrole in the text."
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,23,33,44,78,9-10.L.5.b,Analyze nuances in the meaning ofwords with similar denotations.
+2024-2025,Fall,9,,Language,Vocabulary Acquisition and Use,21,34,44,78,9-10.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Fall,9,Literature,Reading,Key Ideas and Details,21,34,44,78,9-10.RL.1,"Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the
+text."
+2024-2025,Fall,9,Literature,Reading,Key Ideas and Details,23,37,40,75,9-10.RL.2,"Determine a theme or central idea ofa text and analyze in detail its development overthe course ofthe text, including how it
+emerges and is shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Fall,9,Literature,Reading,Key Ideas and Details,27,34,39,71,9-10.RL.3,"Analyze how complex characters (e.g.,those with multiple or conflicting motivations) develop overthe course ofa text, interact
+with other characters, and advance the plot or develop the theme."
+2024-2025,Fall,9,Literature,Reading,Craft and Structure,23,37,40,76,9-10.RL.4,"Determine the figurative or connotative meaning(s) ofwords and phrases as they are used in a text; analyze the impact ofwords
+with multiple meanings, as well as symbols or metaphors that extend throughout a text and shape its meaning."
+2024-2025,Fall,9,Literature,Reading,Craft and Structure,21,21,57,82,9-10.RL.5,"Analyze how an author’s choices concerning how to structure a text, order events within it(e.g., parallel plots), and manipulat
+time (e.g., pacing, flashbacks) create such effects as mystery,tension, or surprise."
+2024-2025,Fall,9,Literature,Reading,Craft and Structure,23,34,43,77,9-10.RL.6,"Analyze a case in which a character’s point ofview and actions signal acceptance orrejection ofcultural norms orintellectua
+ideas ofa period or place, drawing on a wide reading ofworld literature."
+2024-2025,Fall,9,Literature,Reading,Integration of Knowledge and Ideas,21,29,50,80,9-10.RL.7,"Analyze a criticalresponse to a work or body ofliterature (e.g., author documentary, book review); provide a summary ofthe
+argument presented and evaluate the strength ofthe evidence supporting it."
+2024-2025,Fall,9,Literature,Reading,Integration of Knowledge and Ideas,21,29,50,80,9-10.RL.9,"Analyze how an author draws on and transforms source material in a specific work (e.g., how Shakespeare treats a theme or
+topic from Ovid orthe Bible or how a later author draws on a play by Shakespeare)."
+2024-2025,Fall,9,Literature,Reading,Range of Reading and Level of Text Complexity,23,29,49,79,9-10.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate forthe grade/course. (See more on qualitative and quantitative dimensions of text
+complexity.)"
+2024-2025,Fall,10,Informational Text,Reading,Key Ideas and Details,28,28,44,76,9-10.RI.1,Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text.
+2024-2025,Fall,10,Informational Text,Reading,Key Ideas and Details,35,26,39,71,9-10.RI.2,"Determine a central idea ofa text and analyze its development over the course ofthe text, including how it emerges and is
+shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Fall,10,Informational Text,Reading,Key Ideas and Details,35,32,33,71,9-10.RI.3,"Analyze how an author unfolds an analysis or series ofideas or events, including the orderin which the points are made, how
+they are introduced and developed, and the presence or absence ofconnections between them."
+2024-2025,Fall,10,Informational Text,Reading,Craft and Structure,25,30,46,79,9-10.RI.4,"Determine the meaning(s) ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the cumulative or contradictory impact of specific word choices on meaning and tone (e.g., how the
+language ofa court opinion differs from that ofa newspaper; how an author’s word choice varies from one part of a text to
+another)."
+2024-2025,Fall,10,Informational Text,Reading,Craft and Structure,35,26,39,71,9-10.RI.5,"Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, orlarge
+portions ofa text(e.g., a section or chapter)."
+2024-2025,Fall,10,Informational Text,Reading,Craft and Structure,30,30,40,74,9-10.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how an author uses rhetoric to advance that point ofvie
+or purpose."
+2024-2025,Fall,10,Informational Text,Reading,Integration of Knowledge and Ideas,19,26,54,83,9-10.RI.7,"Analyze various accounts ofa subjecttold in different mediums (e.g., a person’s life story in both print and multimedi
+determining which details are emphasized or deemphasized in each account."
+2024-2025,Fall,10,Informational Text,Reading,Integration of Knowledge and Ideas,28,28,44,76,9-10.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is valid and the evidence is
+relevant and sufficient; identify false statements orincomplete truths and fallacious reasoning."
+2024-2025,Fall,10,Informational Text,Reading,Integration of Knowledge and Ideas,19,25,56,83,9-10.RI.9,"Analyze seminal documents ofhistorical and literary significance (e.g.,Washington’s Farewell Address, Lincoln’s Second
+Inaugural and Gettysburg Addresses, Roosevelt’s Four Freedoms speech, King’s “Letterfrom Birmingham Jail”), including h
+they address related themes and concepts."
+2024-2025,Fall,10,Informational Text,Reading,Range of Reading and Level of Text Complexity,30,26,44,75,9-10.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate forthe grade/course."
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,14,21,65,87,9-10.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 9-10 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,12,11,77,92,9-10.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,19,28,53,80,9-10.L.4.b,"Identify and correctly use patterns ofword changes thatindicate different meanings or parts of speech (e.g., analyze, analysis
+analytical; advocate, advocacy)."
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,16,19,65,87,9-10.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning, its part of speech, orits etymology."
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,12,14,74,90,9-10.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,12,11,77,92,9-10.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,19,18,63,85,9-10.L.5.a,"Interpretfigures of speech (e.g., euphemism, oxymoron) in context and analyze theirrole in the text."
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,12,11,77,92,9-10.L.5.b,Analyze nuances in the meaning ofwords with similar denotations.
+2024-2025,Fall,10,,Language,Vocabulary Acquisition and Use,16,19,65,85,9-10.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Fall,10,Literature,Reading,Key Ideas and Details,19,16,65,86,9-10.RL.1,"Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the
+text."
+2024-2025,Fall,10,Literature,Reading,Key Ideas and Details,30,28,42,74,9-10.RL.2,"Determine a theme or central idea ofa text and analyze in detail its development overthe course ofthe text, including how it
+emerges and is shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Fall,10,Literature,Reading,Key Ideas and Details,19,26,54,82,9-10.RL.3,"Analyze how complex characters (e.g.,those with multiple or conflicting motivations) develop overthe course ofa text, interact
+with other characters, and advance the plot or develop the theme."
+2024-2025,Fall,10,Literature,Reading,Craft and Structure,19,21,60,84,9-10.RL.4,"Determine the figurative or connotative meaning(s) ofwords and phrases as they are used in a text; analyze the impact ofwords
+with multiple meanings, as well as symbols or metaphors that extend throughout a text and shape its meaning."
+2024-2025,Fall,10,Literature,Reading,Craft and Structure,18,19,63,85,9-10.RL.5,"Analyze how an author’s choices concerning how to structure a text, order events within it(e.g., parallel plots), and manipulat
+time (e.g., pacing, flashbacks) create such effects as mystery,tension, or surprise."
+2024-2025,Fall,10,Literature,Reading,Craft and Structure,28,32,40,74,9-10.RL.6,"Analyze a case in which a character’s point ofview and actions signal acceptance orrejection ofcultural norms orintellectua
+ideas ofa period or place, drawing on a wide reading ofworld literature."
+2024-2025,Fall,10,Literature,Reading,Integration of Knowledge and Ideas,19,18,63,85,9-10.RL.7,"Analyze a criticalresponse to a work or body ofliterature (e.g., author documentary, book review); provide a summary ofthe
+argument presented and evaluate the strength ofthe evidence supporting it."
+2024-2025,Fall,10,Literature,Reading,Integration of Knowledge and Ideas,44,28,28,65,9-10.RL.9,"Analyze how an author draws on and transforms source material in a specific work (e.g., how Shakespeare treats a theme or
+topic from Ovid orthe Bible or how a later author draws on a play by Shakespeare)."
+2024-2025,Fall,10,Literature,Reading,Range of Reading and Level of Text Complexity,16,19,65,87,9-10.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate forthe grade/course. (See more on qualitative and quantitative dimensions of text
+complexity.)"
+2024-2025,Winter,5,,Foundational Skills,Phonics and Word Recognition,4,12,84,94,5.RF.3,Know and apply grade-level phonics and word analysis skills in decoding words
+2024-2025,Winter,5,,Foundational Skills,Phonics and Word Recognition,4,12,84,94,5.RF.3.a,"Use combined knowledge of all letter-sound correspondences, syllabication patterns, and morphology (e.g., roots and affixes) to read accurately unfamiliar multisyllabic words in context and out of context"
+2024-2025,Winter,5,,Foundational Skills,Fluency,4,12,84,94,5.RF.4,Read with sufficient accuracy and fluencty to support comprehension
+2024-2025,Winter,5,,Foundational Skills,Fluency,4,12,84,94,5.RF.4.a,Read grade-level text with purpose and understanding
+2024-2025,Winter,5,,Foundational Skills,Fluency,4,12,84,94,5.RF.4.b,"Read grade-level prose and poetry orally with accuracy, appropriate rate, and expression on successive readings."
+2024-2025,Winter,5,,Foundational Skills,Fluency,4,12,84,93,5.RF.4.c,"Use context to confirm or self-correct word recognition and understanding, rereading as necessary."
+2024-2025,Winter,5,Informational Text,Reading,Key Ideas and Details,4,15,80,92,5.RI.1,Quote or paraphrase a text accurately when explaining whatthe text states explicitly and when drawing inferences from the text.
+2024-2025,Winter,5,Informational Text,Reading,Key Ideas and Details,5,22,73,89,5.RI.2,Determine one or more main ideas ofa text and explain how they are supported by key details; summarize a text.
+2024-2025,Winter,5,Informational Text,Reading,Key Ideas and Details,4,21,75,90,5.RI.3,"Explain the relationships or interactions between two or more individuals, events, ideas, or concepts in a historical, scientific, mathematical, ortechnicaltext based on specific information in the text."
+2024-2025,Winter,5,Informational Text,Reading,Craft and Structure,16,22,62,86,5.RI.4,"Determine the meaning ofgeneral academic and domain-specific words and phrases in a textrelevantto a grade 5 topic or
+subject area."
+2024-2025,Winter,5,Informational Text,Reading,Craft and Structure,16,22,62,85,5.RI.5,"Describe how an author uses one or more structures (e.g., chronology, comparison, cause/effect, problem/solution) of events,to
+present information in a text."
+2024-2025,Winter,5,Informational Text,Reading,Craft and Structure,9,17,74,90,5.RI.6,"Analyze multiple accounts ofthe same event ortopic, noting important similarities and differences among the points of view they represent."
+2024-2025,Winter,5,Informational Text,Reading,Integration of Knowledge and Ideas,5,22,73,89,5.RI.7,"Draw on information from multiple print or digital sources, demonstrating the ability to locate an answerto a question quickly or to solve a problem efficiently."
+2024-2025,Winter,5,Informational Text,Reading,Integration of Knowledge and Ideas,4,22,74,89,5.RI.8,"Explain how an author uses reasons and evidence to support particular point in a text, identifying which reasons and evidence support which point(s)."
+2024-2025,Winter,5,Informational Text,Reading,Integration of Knowledge and Ideas,12,15,73,89,5.RI.9,Integrate information from several texts on the same topic in order to write or speak knowledgeably about the subject.
+2024-2025,Winter,5,Informational Text,Reading,Range of Reading and Level of Text Complexity,4,12,84,94,5.RI.10,"Independently and proficiently read and comprehend informational texts, including history/social studies, science, mathematical, and technical texts, exhibiting complexity appropriate for at least grade 5."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,13,83,93,5.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 5 reading and content, chossing flexibly from a range of strategies."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,3,13,84,93,5.L.4.a,"Use context (e.g., casue/effect relationships and comparisions in text) as a clue to the meaning of a word or phrase."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,12,84,94,5.L.4.b,"Use common, grade-appropriate Greek and Latin affixes and roots as clues to the meaning of a word (e.g., photograph, photosynthesis)."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,13,83,93,5.L.4.c,"Consult reference materials (e.g., dictionaries, glossaries, thesuaruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,15,80,92,5.L.4.d,"Recognize and use appropriately abbreviations related to grade-level content or common in everyday life, including abbreviations derived from words or phrases in other langugaes (e.g., lb, oz., etc.)."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,15,80,92,5.L.4.e,"Recognize and use appropriately symbols related to grade-level content or common in everyday life, including symbols with multiple meanings (e.g., parentheses in mathematics and in writing, ""to measure angles and temperature)."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,15,80,91,5.L.5,"Demonstrate understanding of figurative langugae, word relationships and nuances in word meanings."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,23,73,88,5.L.5.a,"Interpret figurative language, including similies and metaphors in context."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,13,83,93,5.L.5.b,Recognize and explain the meaning of common idioms and proverbs.
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,4,15,80,92,5.L.5.c,"Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words."
+2024-2025,Winter,5,,Language,Vocabulary Acquisition and Use,5,26,68,87,5.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases, including those that signal contrast, addition, and other logical relationships (e.g., however, although, nevertheless, similarly, moreover, in addition)."
+2024-2025,Winter,5,Literature,Reading,Key Ideas and Details,4,18,77,91,5.RL.1,Quote or paraphrase a text accurately when explaining whatthe text states explicitly and when drawing inferences from the text.
+2024-2025,Winter,5,Literature,Reading,Key Ideas and Details,5,20,75,90,5.RL.2,"Determine a theme of a story, drama, or poem from details in the text, including how characters in a story or drama respond to challenges or how thespeaker in a poem relfects upon a topic; summarize a text."
+2024-2025,Winter,5,Literature,Reading,Key Ideas and Details,4,18,77,91,5.RL.3,"Compare and contrast two or more characters, settings, or events in a story or drama, drawing on specific details in the text (e.g., how characters interact)."
+2024-2025,Winter,5,Literature,Reading,Craft and Structure,4,22,74,88,5.RL.4,Determine the meaning of words and phrases as they are used in a text; identify and explain the effects of figurative language such as metaphors and similies
+2024-2025,Winter,5,Literature,Reading,Craft and Structure,4,18,77,91,5.RL.5,"Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular sotry, drama, or poem."
+2024-2025,Winter,5,Literature,Reading,Craft and Structure,12,18,70,88,5.RL.6,"Describe how a narrator's or speaker's point of view influences how events are described in a story, myth, poem, or drama."
+2024-2025,Winter,5,Literature,Reading,Integration of Knowledge and Ideas,11,16,73,89,5.RL.7,"Analyze how visual and multimedia elements contribute to the meaning, tone, or beauty of a text."
+2024-2025,Winter,5,Literature,Reading,Integration of Knowledge and Ideas,12,15,73,89,5.RL.9,"Compare and contrast stories in the same genre (e.g., mysteries or adventure stories) on their approaches to similar themes and topics."
+2024-2025,Winter,5,Literature,Reading,Range of Reading and Level of Text Complexity,4,16,79,91,5.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate for atleast grade 5."
+2024-2025,Winter,6,Informational Text,Reading,Key Ideas and Details,12,21,67,88,6.RI.1,"Cite textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate"
+2024-2025,Winter,6,Informational Text,Reading,Key Ideas and Details,13,21,66,87,6.RI.2,Determine a text’s central idea(s) and how particular details help convey the idea(s); provide a summary ofa text distinct from personal opinions orjudgments.
+2024-2025,Winter,6,Informational Text,Reading,Key Ideas and Details,13,18,69,88,6.RI.3,"Analyze in detail how a key individual, event, oridea is introduced, illustrated, and elaborated in a text(e.g.,through examples or
+anecdotes)."
+2024-2025,Winter,6,Informational Text,Reading,Craft and Structure,18,28,54,83,6.RI.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; explain how word choice affects meaning and tone."
+2024-2025,Winter,6,Informational Text,Reading,Craft and Structure,40,38,21,67,6.RI.5,"Analyze how a particular sentence, paragraph, chapter, section, ortextfeature (e.g., heading) fits into the overall structure ofa
+text and contributes to the development ofthe ideas."
+2024-2025,Winter,6,Informational Text,Reading,Craft and Structure,10,18,72,90,6.RI.6,Determine an author’s point ofview or purpose in a text and explain how itis conveyed in the text.
+2024-2025,Winter,6,Informational Text,Reading,Integration of Knowledge and Ideas,14,24,62,87,6.RI.7,"Integrate information presented in different media orformats (e.g., in charts, graphs, photographs, videos, maps) as well as
+words to develop a coherent understanding ofa topic or issue."
+2024-2025,Winter,6,Informational Text,Reading,Integration of Knowledge and Ideas,13,21,66,87,6.RI.8,"Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence
+from claims that are not."
+2024-2025,Winter,6,Informational Text,Reading,Integration of Knowledge and Ideas,14,23,63,87,6.RI.9,"Compare and contrast one author’s presentation ofevents with that ofanother(e.g., a memoirwritten by and a biography on
+the same person)."
+2024-2025,Winter,6,Informational Text,Reading,Range of Reading and Level of Text Complexity,28,29,44,77,6.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 6."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,6,17,77,91,6.L.4,"Determine or clarify the meaning ofunknown and multiple-meaning words and phrases based on grade 6 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,5,16,79,91,6.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning ofa word or phrase."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,9,20,71,89,6.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., audience, auditor
+audible)."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,7,15,78,92,6.L.4.c,"Consult reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the pronunciation ofa word
+or determine or clarify its precise meaning orits part of speech."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,5,14,81,92,6.L.4.d,"Verify the preliminary determination ofthe meaning ofa word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,6,15,79,92,6.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,6,15,79,92,6.L.5.a,"Interpretfigures of speech (e.g., personification) in context."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,7,16,77,92,6.L.5.b,"Use the relationship between particularwords (e.g., cause/effect, part/whole, item/category) to better understand each of the
+words."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,7,16,77,91,6.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g., stingy, scrimping,
+economical, unwasteful,thrifty."
+2024-2025,Winter,6,,Language,Vocabulary Acquisition and Use,11,23,66,87,6.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Winter,6,Literature,Reading,Key Ideas and Details,12,18,70,89,6.RL.1,"Cite textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or
+paraphrasing as appropriate."
+2024-2025,Winter,6,Literature,Reading,Key Ideas and Details,14,22,64,88,6.RL.2,"Determine a theme or central idea ofa text and how itis conveyed through particular details; provide a summary ofa text
+distinctfrom personal opinions orjudgments."
+2024-2025,Winter,6,Literature,Reading,Key Ideas and Details,17,27,56,83,6.RL.3,"Describe how the plot ofa particular story, poem, or drama unfolds in a series ofepisodes as well as how the characters respond
+or change as the plot moves toward a resolution."
+2024-2025,Winter,6,Literature,Reading,Craft and Structure,6,17,77,91,6.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices, including those that create repeated sounds and rhythms in poetry, on meaning,tone (i.e.,
+author’s attitude toward subject or audience), or mood (i.e., emotional atmosphere)."
+2024-2025,Winter,6,Literature,Reading,Craft and Structure,14,20,66,88,6.RL.5,"Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure ofa text and contributes to the
+development of the theme, setting, or plot."
+2024-2025,Winter,6,Literature,Reading,Craft and Structure,20,26,54,82,6.RL.6,Explain how an author develops the point ofview ofthe narrator or speakerin a text.
+2024-2025,Winter,6,Literature,Reading,Integration of Knowledge and Ideas,13,17,70,89,6.RL.7,"Compare and contrastt he experience of reading a story, drama, or poem to that ofl istening to or viewing the same text."
+2024-2025,Winter,6,Literature,Reading,Integration of Knowledge and Ideas,14,24,62,87,6.RL.9,"Compare and contrasttexts in differentforms or genres (e.g., stories and poems, historical novels and fantasy stories) in terms of
+their approaches to similarthemes and topics."
+2024-2025,Winter,6,Literature,Reading,Range of Reading and Level of Text Complexity,49,38,13,61,6.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety of genres, cultures, and perspectives
+and exhibiting complexity appropriate for at least grade 6."
+2024-2025,Winter,7,Informational Text,Reading,Key Ideas and Details,25,28,46,77,7.RI.1,"Cite several pieces of textual evidence to support analysis of what a text states explicitly as well as inferences drawn from the text,
+quoting or paraphrasing as appropriate."
+2024-2025,Winter,7,Informational Text,Reading,Key Ideas and Details,7,20,73,88,7.RI.2,"Determine a text’s central idea(s) and analyze its/their development overthe course ofthe text; provide an objective summary of
+a text."
+2024-2025,Winter,7,Informational Text,Reading,Key Ideas and Details,18,33,49,79,7.RI.3,"Analyze the interactions between individuals, events, and ideas in a text(e.g., how ideas influence individuals or events, or how
+individuals influence ideas or events)."
+2024-2025,Winter,7,Informational Text,Reading,Craft and Structure,23,27,49,78,7.RI.4,"Determine the meaning of words and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the impact ofa specific word choice on meaning and tone."
+2024-2025,Winter,7,Informational Text,Reading,Craft and Structure,17,29,54,83,7.RI.5,"Analyze the structure an author uses to organize a text, including how the major sections and textfeatures (e.g., headings)
+contribute to the whole and to the development ofthe ideas."
+2024-2025,Winter,7,Informational Text,Reading,Craft and Structure,16,25,59,84,7.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how the author distinguishes his or her position from that of
+others."
+2024-2025,Winter,7,Informational Text,Reading,Integration of Knowledge and Ideas,17,21,62,85,7.RI.7,"Compare and contrast a written textto an audio, video, or multimedia version, analyzing each medium’s portrayal of the
+subject(e.g., how the delivery ofa speech affects the impact ofthe words"
+2024-2025,Winter,7,Informational Text,Reading,Integration of Knowledge and Ideas,17,31,53,82,7.RI.8,"Trace and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is sound and the evidence is
+relevant and sufficientto support the claims"
+2024-2025,Winter,7,Informational Text,Reading,Integration of Knowledge and Ideas,16,22,62,86,7.RI.9,"Analyze how two or more authors writing aboutthe same topic shape their presentations ofkey information by emphasizing
+different evidence or advancing differentinterpretations of facts"
+2024-2025,Winter,7,Informational Text,Reading,Range of Reading and Level of Text Complexity,35,25,40,70,7.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 7."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,7,23,69,88,7.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,9,25,65,86,7.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,9,25,65,87,7.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., belligerent, bellicos
+rebel)"
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,5,19,76,91,7.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning orits part of speech.or determine or clarify its precise meaning or its part of speech."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,7,23,69,88,7.L.4.d,"Verify the preliminary determination ofthe meaning o fa word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,11,25,64,86,7.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,7,20,73,88,7.L.5.a,"Interpret figures of speech (e.g., literary, biblical, mythological allusions) in context."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,9,25,65,86,7.L.5.b,"Use the relationship between particularwords (e.g., synonym/antonym, analogy) to better understand each of the words."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,27,31,42,73,7.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g.,refined,respectful,
+polite, diplomatic, condescending).economical, unwasteful,thrifty."
+2024-2025,Winter,7,,Language,Vocabulary Acquisition and Use,16,34,51,81,7.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Winter,7,Literature,Reading,Key Ideas and Details,9,26,64,85,7.RL.1,"Cite several pieces oftextual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text,
+quoting or paraphrasing as appropriate."
+2024-2025,Winter,7,Literature,Reading,Key Ideas and Details,9,20,71,88,7.RL.2,"Determine a theme or central idea ofa text and analyze its development overthe course ofthe text; provide an objective
+summary of a text."
+2024-2025,Winter,7,Literature,Reading,Key Ideas and Details,18,32,51,81,7.RL.3,"Analyze how particular elements ofa story, poem, or drama interact(e.g., how setting shapes the characters or plot)."
+2024-2025,Winter,7,Literature,Reading,Craft and Structure,9,28,62,85,7.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices on meaning,tone, or mood, including the impact ofrepeated use of particular images."
+2024-2025,Winter,7,Literature,Reading,Craft and Structure,13,22,65,87,7.RL.5,"Analyze how aspects ofa literary work’s structure contribute to its meaning or style (e.g.,the effect ofrepetition in an epic,
+flashback in a novel, soliloquy in a drama)."
+2024-2025,Winter,7,Literature,Reading,Craft and Structure,9,19,72,89,7.RL.6,Analyze how an author develops and contrasts the points ofview ofdifferent characters or narrators in a text.
+2024-2025,Winter,7,Literature,Reading,Integration of Knowledge and Ideas,17,21,62,85,7.RL.7,"Compare and contrast a written story, drama, or poem to its audio, filmed, staged, or multimedia version."
+2024-2025,Winter,7,Literature,Reading,Integration of Knowledge and Ideas,16,22,62,86,7.RL.9,"Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means
+of understanding how authors offiction use or alter history."
+2024-2025,Winter,7,Literature,Reading,Range of Reading and Level of Text Complexity,9,20,71,88,7.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety of genres, cultures, and perspectives
+and exhibiting complexity appropriate for atleast grade 7."
+2024-2025,Winter,8,Informational Text,Reading,Key Ideas and Details,22,16,62,86,8.RI.1,"Cite the textual evidence that most strongly supports an analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate."
+2024-2025,Winter,8,Informational Text,Reading,Key Ideas and Details,23,16,61,85,8.RI.2,"Determine a text’s central idea(s) and analyze its/their development overthe course ofthe text, including relationships to supporting ideas; provide an objective summary ofa text."
+2024-2025,Winter,8,Informational Text,Reading,Key Ideas and Details,26,17,57,83,8.RI.3,"Analyze how a text makes connections among and distinctions between individuals, ideas, or events (e.g.,through
+comparisons, analogies, or categories)."
+2024-2025,Winter,8,Informational Text,Reading,Craft and Structure,16,20,64,88,8.RI.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the impact of specific word choices on meaning and tone, including analogies or allusions to other texts."
+2024-2025,Winter,8,Informational Text,Reading,Craft and Structure,25,14,61,85,8.RI.5,"Analyze in detailthe structural elements ofa text, including the role of specific sentences, paragraphs, and textfeatures in
+developing and refining a key concept."
+2024-2025,Winter,8,Informational Text,Reading,Craft and Structure,31,21,48,77,8.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how the author acknowledges and responds to conflicting
+evidence or viewpoints."
+2024-2025,Winter,8,Informational Text,Reading,Integration of Knowledge and Ideas,28,15,57,82,8.RI.7,"Evaluate the advantages and disadvantages ofusing different mediums (e.g., print or digitaltext, video, multimedia) to present
+a particular topic or idea."
+2024-2025,Winter,8,Informational Text,Reading,Integration of Knowledge and Ideas,37,25,38,71,8.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is sound and the evidence is relevant and sufficient;recognize when irrelevant evidence is introduced."
+2024-2025,Winter,8,Informational Text,Reading,Integration of Knowledge and Ideas,26,16,58,84,8.RI.9,"Analyze a case in which two or more texts provide conflicting information on the same topic and identify where the texts
+disagree on matters offact orinterpretation."
+2024-2025,Winter,8,Informational Text,Reading,Range of Reading and Level of Text Complexity,42,28,29,65,8.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety of genres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 8."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,11,20,69,91,8.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 8 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,8,17,75,93,8.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,19,21,60,84,8.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., precede, recede
+secede)."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,16,20,64,88,8.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning orits part of speech.or determine or clarify its precise meaning or its part of speech."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,8,18,74,93,8.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,16,21,63,86,8.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,8,15,77,94,8.L.5.a,"Interpretfigures of speech (e.g., verbal irony, puns) in context."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,8,20,72,92,8.L.5.b,Use the relationship between particularwords to better understand each ofthe words.
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,43,31,26,64,8.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g., bullheaded, willful, firm,
+persistent,resolute)."
+2024-2025,Winter,8,,Language,Vocabulary Acquisition and Use,28,21,51,80,8.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Winter,8,Literature,Reading,Key Ideas and Details,31,21,48,77,8.RL.1,"Cite the textual evidence that most strongly supports analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate."
+2024-2025,Winter,8,Literature,Reading,Key Ideas and Details,37,24,39,71,8.RL.2,"Determine a theme or central idea ofa text and analyze its development overthe course ofthe text, including its relationship to
+the characters, setting, and plot; provide an objective summary ofa text."
+2024-2025,Winter,8,Literature,Reading,Key Ideas and Details,28,22,49,79,8.RL.3,"Analyze how particularlines ofdialogue orincidents in a story, poem, or drama propelthe action,reveal aspects ofa character,
+or provoke a decision."
+2024-2025,Winter,8,Literature,Reading,Craft and Structure,35,21,44,74,8.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices on meaning,tone, or mood, including the impact ofallusion and irony."
+2024-2025,Winter,8,Literature,Reading,Craft and Structure,22,16,62,86,8.RL.5,"Compare and contrast the structures oftwo or more texts, analyzing how structure contributes to meaning and style in each text."
+2024-2025,Winter,8,Literature,Reading,Craft and Structure,31,26,43,75,8.RL.6,"Analyze how differences in point of view between characters and audience (e.g., created through the use ofdramatic iron
+create such effects as suspense or humor."
+2024-2025,Winter,8,Literature,Reading,Integration of Knowledge and Ideas,28,15,57,83,8.RL.7,"Analyze the extentto which an audio, filmed, or staged production ofa story, drama, or poem stays faithfulto or departs from
+the originaltext or script, evaluating the choices made by the director or performer(s)."
+2024-2025,Winter,8,Literature,Reading,Integration of Knowledge and Ideas,28,15,57,83,8.RL.9,"Analyze how a modern work offiction draws on themes, patterns ofevents, or charactertypes from myths,traditional stories, or
+religious works such as the Bible, including describing how the material is rendered new."
+2024-2025,Winter,8,Literature,Reading,Range of Reading and Level of Text Complexity,28,22,49,79,8.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate for at least grade 8."
+2024-2025,Winter,9,Informational Text,Reading,Key Ideas and Details,8,6,86,90,9-10.RI.1,Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text.
+2024-2025,Winter,9,Informational Text,Reading,Key Ideas and Details,14,46,40,76,9-10.RI.2,"Determine a central idea ofa text and analyze its development over the course ofthe text, including how it emerges and is
+shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Winter,9,Informational Text,Reading,Key Ideas and Details,11,25,63,83,9-10.RI.3,"Analyze how an author unfolds an analysis or series ofideas or events, including the orderin which the points are made, how
+they are introduced and developed, and the presence or absence ofconnections between them."
+2024-2025,Winter,9,Informational Text,Reading,Craft and Structure,14,46,40,76,9-10.RI.4,"Determine the meaning(s) ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the cumulative or contradictory impact of specific word choices on meaning and tone (e.g., how the
+language ofa court opinion differs from that ofa newspaper; how an author’s word choice varies from one part of a text to
+another)."
+2024-2025,Winter,9,Informational Text,Reading,Craft and Structure,24,41,35,71,9-10.RI.5,"Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, orlarge
+portions ofa text(e.g., a section or chapter)."
+2024-2025,Winter,9,Informational Text,Reading,Craft and Structure,13,43,44,77,9-10.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how an author uses rhetoric to advance that point ofvie
+or purpose."
+2024-2025,Winter,9,Informational Text,Reading,Integration of Knowledge and Ideas,11,19,70,84,9-10.RI.7,"Analyze various accounts ofa subjecttold in different mediums (e.g., a person’s life story in both print and multimedi
+determining which details are emphasized or deemphasized in each account."
+2024-2025,Winter,9,Informational Text,Reading,Integration of Knowledge and Ideas,13,38,49,79,9-10.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is valid and the evidence is
+relevant and sufficient; identify false statements orincomplete truths and fallacious reasoning."
+2024-2025,Winter,9,Informational Text,Reading,Integration of Knowledge and Ideas,11,19,70,84,9-10.RI.9,"Analyze seminal documents ofhistorical and literary significance (e.g.,Washington’s Farewell Address, Lincoln’s Second
+Inaugural and Gettysburg Addresses, Roosevelt’s Four Freedoms speech, King’s “Letterfrom Birmingham Jail”), including h
+they address related themes and concepts."
+2024-2025,Winter,9,Informational Text,Reading,Range of Reading and Level of Text Complexity,24,41,35,72,9-10.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate forthe grade/course."
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,2,10,89,92,9-10.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 9-10 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,2,6,92,95,9-10.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,2,8,90,94,9-10.L.4.b,"Identify and correctly use patterns ofword changes thatindicate different meanings or parts of speech (e.g., analyze, analysis
+analytical; advocate, advocacy)."
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,8,13,79,89,9-10.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning, its part of speech, orits etymology."
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,2,11,87,92,9-10.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,11,25,63,83,9-10.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,2,8,90,94,9-10.L.5.a,"Interpretfigures of speech (e.g., euphemism, oxymoron) in context and analyze theirrole in the text."
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,11,30,59,82,9-10.L.5.b,Analyze nuances in the meaning ofwords with similar denotations.
+2024-2025,Winter,9,,Language,Vocabulary Acquisition and Use,11,30,59,82,9-10.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Winter,9,Literature,Reading,Key Ideas and Details,11,25,63,82,9-10.RL.1,"Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the
+text."
+2024-2025,Winter,9,Literature,Reading,Key Ideas and Details,13,38,49,79,9-10.RL.2,"Determine a theme or central idea ofa text and analyze in detail its development overthe course ofthe text, including how it
+emerges and is shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Winter,9,Literature,Reading,Key Ideas and Details,13,44,43,77,9-10.RL.3,"Analyze how complex characters (e.g.,those with multiple or conflicting motivations) develop overthe course ofa text, interact
+with other characters, and advance the plot or develop the theme."
+2024-2025,Winter,9,Literature,Reading,Craft and Structure,13,35,52,81,9-10.RL.4,"Determine the figurative or connotative meaning(s) ofwords and phrases as they are used in a text; analyze the impact ofwords
+with multiple meanings, as well as symbols or metaphors that extend throughout a text and shape its meaning."
+2024-2025,Winter,9,Literature,Reading,Craft and Structure,11,17,71,86,9-10.RL.5,"Analyze how an author’s choices concerning how to structure a text, order events within it(e.g., parallel plots), and manipulat
+time (e.g., pacing, flashbacks) create such effects as mystery,tension, or surprise."
+2024-2025,Winter,9,Literature,Reading,Craft and Structure,13,30,57,82,9-10.RL.6,"Analyze a case in which a character’s point ofview and actions signal acceptance orrejection ofcultural norms orintellectua
+ideas ofa period or place, drawing on a wide reading ofworld literature."
+2024-2025,Winter,9,Literature,Reading,Integration of Knowledge and Ideas,11,19,70,84,9-10.RL.7,"Analyze a criticalresponse to a work or body ofliterature (e.g., author documentary, book review); provide a summary ofthe
+argument presented and evaluate the strength ofthe evidence supporting it."
+2024-2025,Winter,9,Literature,Reading,Integration of Knowledge and Ideas,11,19,70,84,9-10.RL.9,"Analyze how an author draws on and transforms source material in a specific work (e.g., how Shakespeare treats a theme or
+topic from Ovid orthe Bible or how a later author draws on a play by Shakespeare)."
+2024-2025,Winter,9,Literature,Reading,Range of Reading and Level of Text Complexity,11,24,65,83,9-10.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate forthe grade/course. (See more on qualitative and quantitative dimensions of text
+complexity.)"
+2024-2025,Winter,10,Informational Text,Reading,Key Ideas and Details,25,39,36,73,9-10.RI.1,Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text.
+2024-2025,Winter,10,Informational Text,Reading,Key Ideas and Details,29,38,34,68,9-10.RI.2,"Determine a central idea ofa text and analyze its development over the course ofthe text, including how it emerges and is
+shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Winter,10,Informational Text,Reading,Key Ideas and Details,29,39,32,68,9-10.RI.3,"Analyze how an author unfolds an analysis or series ofideas or events, including the orderin which the points are made, how
+they are introduced and developed, and the presence or absence ofconnections between them."
+2024-2025,Winter,10,Informational Text,Reading,Craft and Structure,21,36,43,76,9-10.RI.4,"Determine the meaning(s) ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the cumulative or contradictory impact of specific word choices on meaning and tone (e.g., how the
+language ofa court opinion differs from that ofa newspaper; how an author’s word choice varies from one part of a text to
+another)."
+2024-2025,Winter,10,Informational Text,Reading,Craft and Structure,29,38,34,68,9-10.RI.5,"Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, orlarge
+portions ofa text(e.g., a section or chapter)."
+2024-2025,Winter,10,Informational Text,Reading,Craft and Structure,29,36,36,71,9-10.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how an author uses rhetoric to advance that point ofvie
+or purpose."
+2024-2025,Winter,10,Informational Text,Reading,Integration of Knowledge and Ideas,20,29,52,81,9-10.RI.7,"Analyze various accounts ofa subjecttold in different mediums (e.g., a person’s life story in both print and multimedi
+determining which details are emphasized or deemphasized in each account."
+2024-2025,Winter,10,Informational Text,Reading,Integration of Knowledge and Ideas,25,39,36,74,9-10.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is valid and the evidence is
+relevant and sufficient; identify false statements orincomplete truths and fallacious reasoning."
+2024-2025,Winter,10,Informational Text,Reading,Integration of Knowledge and Ideas,20,27,54,81,9-10.RI.9,"Analyze seminal documents ofhistorical and literary significance (e.g.,Washington’s Farewell Address, Lincoln’s Second
+Inaugural and Gettysburg Addresses, Roosevelt’s Four Freedoms speech, King’s “Letterfrom Birmingham Jail”), including h
+they address related themes and concepts."
+2024-2025,Winter,10,Informational Text,Reading,Range of Reading and Level of Text Complexity,29,36,36,72,9-10.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate forthe grade/course."
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,11,18,71,85,9-10.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 9-10 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,7,13,80,91,9-10.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,20,36,45,78,9-10.L.4.b,"Identify and correctly use patterns ofword changes thatindicate different meanings or parts of speech (e.g., analyze, analysis
+analytical; advocate, advocacy)."
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,13,16,71,85,9-10.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning, its part of speech, orits etymology."
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,7,14,79,89,9-10.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,7,13,80,91,9-10.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,14,20,66,83,9-10.L.5.a,"Interpretfigures of speech (e.g., euphemism, oxymoron) in context and analyze theirrole in the text."
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,7,13,80,90,9-10.L.5.b,Analyze nuances in the meaning ofwords with similar denotations.
+2024-2025,Winter,10,,Language,Vocabulary Acquisition and Use,11,23,66,83,9-10.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Winter,10,Literature,Reading,Key Ideas and Details,14,20,66,84,9-10.RL.1,"Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the
+text."
+2024-2025,Winter,10,Literature,Reading,Key Ideas and Details,29,36,36,72,9-10.RL.2,"Determine a theme or central idea ofa text and analyze in detail its development overthe course ofthe text, including how it
+emerges and is shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Winter,10,Literature,Reading,Key Ideas and Details,20,30,50,80,9-10.RL.3,"Analyze how complex characters (e.g.,those with multiple or conflicting motivations) develop overthe course ofa text, interact
+with other characters, and advance the plot or develop the theme."
+2024-2025,Winter,10,Literature,Reading,Craft and Structure,14,25,61,82,9-10.RL.4,"Determine the figurative or connotative meaning(s) ofwords and phrases as they are used in a text; analyze the impact ofwords
+with multiple meanings, as well as symbols or metaphors that extend throughout a text and shape its meaning."
+2024-2025,Winter,10,Literature,Reading,Craft and Structure,14,20,66,83,9-10.RL.5,"Analyze how an author’s choices concerning how to structure a text, order events within it(e.g., parallel plots), and manipulat
+time (e.g., pacing, flashbacks) create such effects as mystery,tension, or surprise."
+2024-2025,Winter,10,Literature,Reading,Craft and Structure,25,39,36,72,9-10.RL.6,"Analyze a case in which a character’s point ofview and actions signal acceptance orrejection ofcultural norms orintellectua
+ideas ofa period or place, drawing on a wide reading ofworld literature."
+2024-2025,Winter,10,Literature,Reading,Integration of Knowledge and Ideas,18,16,66,83,9-10.RL.7,"Analyze a criticalresponse to a work or body ofliterature (e.g., author documentary, book review); provide a summary ofthe
+argument presented and evaluate the strength ofthe evidence supporting it."
+2024-2025,Winter,10,Literature,Reading,Integration of Knowledge and Ideas,46,21,32,61,9-10.RL.9,"Analyze how an author draws on and transforms source material in a specific work (e.g., how Shakespeare treats a theme or
+topic from Ovid orthe Bible or how a later author draws on a play by Shakespeare)."
+2024-2025,Winter,10,Literature,Reading,Range of Reading and Level of Text Complexity,13,18,70,85,9-10.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate forthe grade/course. (See more on qualitative and quantitative dimensions of text
+complexity.)"
+2024-2025,Spring,5,,Foundational Skills,Phonics and Word Recognition,,,,,5.RF.3,Know and apply grade-level phonics and word analysis skills in decoding words
+2024-2025,Spring,5,,Foundational Skills,Phonics and Word Recognition,,,,,5.RF.3.a,"Use combined knowledge of all letter-sound correspondences, syllabication patterns, and morphology (e.g., roots and affixes) to read accurately unfamiliar multisyllabic words in context and out of context"
+2024-2025,Spring,5,,Foundational Skills,Fluency,,,,,5.RF.4,Read with sufficient accuracy and fluencty to support comprehension
+2024-2025,Spring,5,,Foundational Skills,Fluency,,,,,5.RF.4.a,Read grade-level text with purpose and understanding
+2024-2025,Spring,5,,Foundational Skills,Fluency,,,,,5.RF.4.b,"Read grade-level prose and poetry orally with accuracy, appropriate rate, and expression on successive readings."
+2024-2025,Spring,5,,Foundational Skills,Fluency,,,,,5.RF.4.c,"Use context to confirm or self-correct word recognition and understanding, rereading as necessary."
+2024-2025,Spring,5,Informational Text,Reading,Key Ideas and Details,,,,,5.RI.1,Quote or paraphrase a text accurately when explaining whatthe text states explicitly and when drawing inferences from the text.
+2024-2025,Spring,5,Informational Text,Reading,Key Ideas and Details,,,,,5.RI.2,Determine one or more main ideas ofa text and explain how they are supported by key details; summarize a text.
+2024-2025,Spring,5,Informational Text,Reading,Key Ideas and Details,,,,,5.RI.3,"Explain the relationships or interactions between two or more individuals, events, ideas, or concepts in a historical, scientific, mathematical, ortechnicaltext based on specific information in the text."
+2024-2025,Spring,5,Informational Text,Reading,Craft and Structure,,,,,5.RI.4,"Determine the meaning ofgeneral academic and domain-specific words and phrases in a textrelevantto a grade 5 topic or
+subject area."
+2024-2025,Spring,5,Informational Text,Reading,Craft and Structure,,,,,5.RI.5,"Describe how an author uses one or more structures (e.g., chronology, comparison, cause/effect, problem/solution) of events,to
+present information in a text."
+2024-2025,Spring,5,Informational Text,Reading,Craft and Structure,,,,,5.RI.6,"Analyze multiple accounts ofthe same event ortopic, noting important similarities and differences among the points of view they represent."
+2024-2025,Spring,5,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,5.RI.7,"Draw on information from multiple print or digital sources, demonstrating the ability to locate an answerto a question quickly or to solve a problem efficiently."
+2024-2025,Spring,5,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,5.RI.8,"Explain how an author uses reasons and evidence to support particular point in a text, identifying which reasons and evidence support which point(s)."
+2024-2025,Spring,5,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,5.RI.9,Integrate information from several texts on the same topic in order to write or speak knowledgeably about the subject.
+2024-2025,Spring,5,Informational Text,Reading,Range of Reading and Level of Text Complexity,,,,,5.RI.10,"Independently and proficiently read and comprehend informational texts, including history/social studies, science, mathematical, and technical texts, exhibiting complexity appropriate for at least grade 5."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 5 reading and content, chossing flexibly from a range of strategies."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.4.a,"Use context (e.g., casue/effect relationships and comparisions in text) as a clue to the meaning of a word or phrase."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.4.b,"Use common, grade-appropriate Greek and Latin affixes and roots as clues to the meaning of a word (e.g., photograph, photosynthesis)."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.4.c,"Consult reference materials (e.g., dictionaries, glossaries, thesuaruses), both print and digital, to find the pronunciation and determine or clarify the precise meaning of key words and phrases."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.4.d,"Recognize and use appropriately abbreviations related to grade-level content or common in everyday life, including abbreviations derived from words or phrases in other langugaes (e.g., lb, oz., etc.)."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.4.e,"Recognize and use appropriately symbols related to grade-level content or common in everyday life, including symbols with multiple meanings (e.g., parentheses in mathematics and in writing, ""to measure angles and temperature)."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.5,"Demonstrate understanding of figurative langugae, word relationships and nuances in word meanings."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.5.a,"Interpret figurative language, including similies and metaphors in context."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.5.b,Recognize and explain the meaning of common idioms and proverbs.
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.5.c,"Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words."
+2024-2025,Spring,5,,Language,Vocabulary Acquisition and Use,,,,,5.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases, including those that signal contrast, addition, and other logical relationships (e.g., however, although, nevertheless, similarly, moreover, in addition)."
+2024-2025,Spring,5,Literature,Reading,Key Ideas and Details,,,,,5.RL.1,Quote or paraphrase a text accurately when explaining whatthe text states explicitly and when drawing inferences from the text.
+2024-2025,Spring,5,Literature,Reading,Key Ideas and Details,,,,,5.RL.2,"Determine a theme of a story, drama, or poem from details in the text, including how characters in a story or drama respond to challenges or how thespeaker in a poem relfects upon a topic; summarize a text."
+2024-2025,Spring,5,Literature,Reading,Key Ideas and Details,,,,,5.RL.3,"Compare and contrast two or more characters, settings, or events in a story or drama, drawing on specific details in the text (e.g., how characters interact)."
+2024-2025,Spring,5,Literature,Reading,Craft and Structure,,,,,5.RL.4,Determine the meaning of words and phrases as they are used in a text; identify and explain the effects of figurative language such as metaphors and similies
+2024-2025,Spring,5,Literature,Reading,Craft and Structure,,,,,5.RL.5,"Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular sotry, drama, or poem."
+2024-2025,Spring,5,Literature,Reading,Craft and Structure,,,,,5.RL.6,"Describe how a narrator's or speaker's point of view influences how events are described in a story, myth, poem, or drama."
+2024-2025,Spring,5,Literature,Reading,Integration of Knowledge and Ideas,,,,,5.RL.7,"Analyze how visual and multimedia elements contribute to the meaning, tone, or beauty of a text."
+2024-2025,Spring,5,Literature,Reading,Integration of Knowledge and Ideas,,,,,5.RL.9,"Compare and contrast stories in the same genre (e.g., mysteries or adventure stories) on their approaches to similar themes and topics."
+2024-2025,Spring,5,Literature,Reading,Range of Reading and Level of Text Complexity,,,,,5.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate for atleast grade 5."
+2024-2025,Spring,6,Informational Text,Reading,Key Ideas and Details,,,,,6.RI.1,"Cite textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate"
+2024-2025,Spring,6,Informational Text,Reading,Key Ideas and Details,,,,,6.RI.2,Determine a text’s central idea(s) and how particular details help convey the idea(s); provide a summary ofa text distinct from personal opinions orjudgments.
+2024-2025,Spring,6,Informational Text,Reading,Key Ideas and Details,,,,,6.RI.3,"Analyze in detail how a key individual, event, oridea is introduced, illustrated, and elaborated in a text(e.g.,through examples or
+anecdotes)."
+2024-2025,Spring,6,Informational Text,Reading,Craft and Structure,,,,,6.RI.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; explain how word choice affects meaning and tone."
+2024-2025,Spring,6,Informational Text,Reading,Craft and Structure,,,,,6.RI.5,"Analyze how a particular sentence, paragraph, chapter, section, ortextfeature (e.g., heading) fits into the overall structure ofa
+text and contributes to the development ofthe ideas."
+2024-2025,Spring,6,Informational Text,Reading,Craft and Structure,,,,,6.RI.6,Determine an author’s point ofview or purpose in a text and explain how itis conveyed in the text.
+2024-2025,Spring,6,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,6.RI.7,"Integrate information presented in different media orformats (e.g., in charts, graphs, photographs, videos, maps) as well as
+words to develop a coherent understanding ofa topic or issue."
+2024-2025,Spring,6,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,6.RI.8,"Trace and evaluate the argument and specific claims in a text, distinguishing claims that are supported by reasons and evidence
+from claims that are not."
+2024-2025,Spring,6,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,6.RI.9,"Compare and contrast one author’s presentation ofevents with that ofanother(e.g., a memoirwritten by and a biography on
+the same person)."
+2024-2025,Spring,6,Informational Text,Reading,Range of Reading and Level of Text Complexity,,,,,6.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 6."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.4,"Determine or clarify the meaning ofunknown and multiple-meaning words and phrases based on grade 6 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning ofa word or phrase."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., audience, auditor
+audible)."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.4.c,"Consult reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the pronunciation ofa word
+or determine or clarify its precise meaning orits part of speech."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.4.d,"Verify the preliminary determination ofthe meaning ofa word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.5.a,"Interpretfigures of speech (e.g., personification) in context."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.5.b,"Use the relationship between particularwords (e.g., cause/effect, part/whole, item/category) to better understand each of the
+words."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g., stingy, scrimping,
+economical, unwasteful,thrifty."
+2024-2025,Spring,6,,Language,Vocabulary Acquisition and Use,,,,,6.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Spring,6,Literature,Reading,Key Ideas and Details,,,,,6.RL.1,"Cite textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or
+paraphrasing as appropriate."
+2024-2025,Spring,6,Literature,Reading,Key Ideas and Details,,,,,6.RL.2,"Determine a theme or central idea ofa text and how itis conveyed through particular details; provide a summary ofa text
+distinctfrom personal opinions orjudgments."
+2024-2025,Spring,6,Literature,Reading,Key Ideas and Details,,,,,6.RL.3,"Describe how the plot ofa particular story, poem, or drama unfolds in a series ofepisodes as well as how the characters respond
+or change as the plot moves toward a resolution."
+2024-2025,Spring,6,Literature,Reading,Craft and Structure,,,,,6.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices, including those that create repeated sounds and rhythms in poetry, on meaning,tone (i.e.,
+author’s attitude toward subject or audience), or mood (i.e., emotional atmosphere)."
+2024-2025,Spring,6,Literature,Reading,Craft and Structure,,,,,6.RL.5,"Analyze how a particular sentence, chapter, scene, or stanza fits into the overall structure ofa text and contributes to the
+development of the theme, setting, or plot."
+2024-2025,Spring,6,Literature,Reading,Craft and Structure,,,,,6.RL.6,Explain how an author develops the point ofview ofthe narrator or speakerin a text.
+2024-2025,Spring,6,Literature,Reading,Integration of Knowledge and Ideas,,,,,6.RL.7,"Compare and contrastt he experience of reading a story, drama, or poem to that ofl istening to or viewing the same text."
+2024-2025,Spring,6,Literature,Reading,Integration of Knowledge and Ideas,,,,,6.RL.9,"Compare and contrasttexts in differentforms or genres (e.g., stories and poems, historical novels and fantasy stories) in terms of
+their approaches to similarthemes and topics."
+2024-2025,Spring,6,Literature,Reading,Range of Reading and Level of Text Complexity,,,,,6.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety of genres, cultures, and perspectives
+and exhibiting complexity appropriate for at least grade 6."
+2024-2025,Spring,7,Informational Text,Reading,Key Ideas and Details,,,,,7.RI.1,"Cite several pieces of textual evidence to support analysis of what a text states explicitly as well as inferences drawn from the text,
+quoting or paraphrasing as appropriate."
+2024-2025,Spring,7,Informational Text,Reading,Key Ideas and Details,,,,,7.RI.2,"Determine a text’s central idea(s) and analyze its/their development overthe course ofthe text; provide an objective summary of
+a text."
+2024-2025,Spring,7,Informational Text,Reading,Key Ideas and Details,,,,,7.RI.3,"Analyze the interactions between individuals, events, and ideas in a text(e.g., how ideas influence individuals or events, or how
+individuals influence ideas or events)."
+2024-2025,Spring,7,Informational Text,Reading,Craft and Structure,,,,,7.RI.4,"Determine the meaning of words and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the impact ofa specific word choice on meaning and tone."
+2024-2025,Spring,7,Informational Text,Reading,Craft and Structure,,,,,7.RI.5,"Analyze the structure an author uses to organize a text, including how the major sections and textfeatures (e.g., headings)
+contribute to the whole and to the development ofthe ideas."
+2024-2025,Spring,7,Informational Text,Reading,Craft and Structure,,,,,7.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how the author distinguishes his or her position from that of
+others."
+2024-2025,Spring,7,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,7.RI.7,"Compare and contrast a written textto an audio, video, or multimedia version, analyzing each medium’s portrayal of the
+subject(e.g., how the delivery ofa speech affects the impact ofthe words"
+2024-2025,Spring,7,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,7.RI.8,"Trace and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is sound and the evidence is
+relevant and sufficientto support the claims"
+2024-2025,Spring,7,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,7.RI.9,"Analyze how two or more authors writing aboutthe same topic shape their presentations ofkey information by emphasizing
+different evidence or advancing differentinterpretations of facts"
+2024-2025,Spring,7,Informational Text,Reading,Range of Reading and Level of Text Complexity,,,,,7.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 7."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 7 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., belligerent, bellicos
+rebel)"
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning orits part of speech.or determine or clarify its precise meaning or its part of speech."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.4.d,"Verify the preliminary determination ofthe meaning o fa word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.5.a,"Interpret figures of speech (e.g., literary, biblical, mythological allusions) in context."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.5.b,"Use the relationship between particularwords (e.g., synonym/antonym, analogy) to better understand each of the words."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g.,refined,respectful,
+polite, diplomatic, condescending).economical, unwasteful,thrifty."
+2024-2025,Spring,7,,Language,Vocabulary Acquisition and Use,,,,,7.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Spring,7,Literature,Reading,Key Ideas and Details,,,,,7.RL.1,"Cite several pieces oftextual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text,
+quoting or paraphrasing as appropriate."
+2024-2025,Spring,7,Literature,Reading,Key Ideas and Details,,,,,7.RL.2,"Determine a theme or central idea ofa text and analyze its development overthe course ofthe text; provide an objective
+summary of a text."
+2024-2025,Spring,7,Literature,Reading,Key Ideas and Details,,,,,7.RL.3,"Analyze how particular elements ofa story, poem, or drama interact(e.g., how setting shapes the characters or plot)."
+2024-2025,Spring,7,Literature,Reading,Craft and Structure,,,,,7.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices on meaning,tone, or mood, including the impact ofrepeated use of particular images."
+2024-2025,Spring,7,Literature,Reading,Craft and Structure,,,,,7.RL.5,"Analyze how aspects ofa literary work’s structure contribute to its meaning or style (e.g.,the effect ofrepetition in an epic,
+flashback in a novel, soliloquy in a drama)."
+2024-2025,Spring,7,Literature,Reading,Craft and Structure,,,,,7.RL.6,Analyze how an author develops and contrasts the points ofview ofdifferent characters or narrators in a text.
+2024-2025,Spring,7,Literature,Reading,Integration of Knowledge and Ideas,,,,,7.RL.7,"Compare and contrast a written story, drama, or poem to its audio, filmed, staged, or multimedia version."
+2024-2025,Spring,7,Literature,Reading,Integration of Knowledge and Ideas,,,,,7.RL.9,"Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means
+of understanding how authors offiction use or alter history."
+2024-2025,Spring,7,Literature,Reading,Range of Reading and Level of Text Complexity,,,,,7.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety of genres, cultures, and perspectives
+and exhibiting complexity appropriate for atleast grade 7."
+2024-2025,Spring,8,Informational Text,Reading,Key Ideas and Details,,,,,8.RI.1,"Cite the textual evidence that most strongly supports an analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate."
+2024-2025,Spring,8,Informational Text,Reading,Key Ideas and Details,,,,,8.RI.2,"Determine a text’s central idea(s) and analyze its/their development overthe course ofthe text, including relationships to supporting ideas; provide an objective summary ofa text."
+2024-2025,Spring,8,Informational Text,Reading,Key Ideas and Details,,,,,8.RI.3,"Analyze how a text makes connections among and distinctions between individuals, ideas, or events (e.g.,through
+comparisons, analogies, or categories)."
+2024-2025,Spring,8,Informational Text,Reading,Craft and Structure,,,,,8.RI.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the impact of specific word choices on meaning and tone, including analogies or allusions to other texts."
+2024-2025,Spring,8,Informational Text,Reading,Craft and Structure,,,,,8.RI.5,"Analyze in detailthe structural elements ofa text, including the role of specific sentences, paragraphs, and textfeatures in
+developing and refining a key concept."
+2024-2025,Spring,8,Informational Text,Reading,Craft and Structure,,,,,8.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how the author acknowledges and responds to conflicting
+evidence or viewpoints."
+2024-2025,Spring,8,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,8.RI.7,"Evaluate the advantages and disadvantages ofusing different mediums (e.g., print or digitaltext, video, multimedia) to present
+a particular topic or idea."
+2024-2025,Spring,8,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,8.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is sound and the evidence is relevant and sufficient;recognize when irrelevant evidence is introduced."
+2024-2025,Spring,8,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,8.RI.9,"Analyze a case in which two or more texts provide conflicting information on the same topic and identify where the texts
+disagree on matters offact orinterpretation."
+2024-2025,Spring,8,Informational Text,Reading,Range of Reading and Level of Text Complexity,,,,,8.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety of genres, cultures, and
+perspectives and exhibiting complexity appropriate for atleast grade 8."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 8 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.4.b,"Use common, grade-appropriateGreek or Latin affixes and roots as clues to the meaning ofa word (e.g., precede, recede
+secede)."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning orits part of speech.or determine or clarify its precise meaning or its part of speech."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.5.a,"Interpretfigures of speech (e.g., verbal irony, puns) in context."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.5.b,Use the relationship between particularwords to better understand each ofthe words.
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.5.c,"Distinguish among the connotations (associations) ofwords with similar denotations (definitions) (e.g., bullheaded, willful, firm,
+persistent,resolute)."
+2024-2025,Spring,8,,Language,Vocabulary Acquisition and Use,,,,,8.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Spring,8,Literature,Reading,Key Ideas and Details,,,,,8.RL.1,"Cite the textual evidence that most strongly supports analysis ofwhat a text states explicitly as well as inferences drawn from the text, quoting or paraphrasing as appropriate."
+2024-2025,Spring,8,Literature,Reading,Key Ideas and Details,,,,,8.RL.2,"Determine a theme or central idea ofa text and analyze its development overthe course ofthe text, including its relationship to
+the characters, setting, and plot; provide an objective summary ofa text."
+2024-2025,Spring,8,Literature,Reading,Key Ideas and Details,,,,,8.RL.3,"Analyze how particularlines ofdialogue orincidents in a story, poem, or drama propelthe action,reveal aspects ofa character,
+or provoke a decision."
+2024-2025,Spring,8,Literature,Reading,Craft and Structure,,,,,8.RL.4,"Determine the meaning ofwords and phrases as they are used in a text, including figurative and connotative meanings; analyze
+the impact of specific word choices on meaning,tone, or mood, including the impact ofallusion and irony."
+2024-2025,Spring,8,Literature,Reading,Craft and Structure,,,,,8.RL.5,"Compare and contrast the structures oftwo or more texts, analyzing how structure contributes to meaning and style in each text."
+2024-2025,Spring,8,Literature,Reading,Craft and Structure,,,,,8.RL.6,"Analyze how differences in point of view between characters and audience (e.g., created through the use ofdramatic iron
+create such effects as suspense or humor."
+2024-2025,Spring,8,Literature,Reading,Integration of Knowledge and Ideas,,,,,8.RL.7,"Analyze the extentto which an audio, filmed, or staged production ofa story, drama, or poem stays faithfulto or departs from
+the originaltext or script, evaluating the choices made by the director or performer(s)."
+2024-2025,Spring,8,Literature,Reading,Integration of Knowledge and Ideas,,,,,8.RL.9,"Analyze how a modern work offiction draws on themes, patterns ofevents, or charactertypes from myths,traditional stories, or
+religious works such as the Bible, including describing how the material is rendered new."
+2024-2025,Spring,8,Literature,Reading,Range of Reading and Level of Text Complexity,,,,,8.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate for at least grade 8."
+2024-2025,Spring,9,Informational Text,Reading,Key Ideas and Details,,,,,9-10.RI.1,Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text.
+2024-2025,Spring,9,Informational Text,Reading,Key Ideas and Details,,,,,9-10.RI.2,"Determine a central idea ofa text and analyze its development over the course ofthe text, including how it emerges and is
+shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Spring,9,Informational Text,Reading,Key Ideas and Details,,,,,9-10.RI.3,"Analyze how an author unfolds an analysis or series ofideas or events, including the orderin which the points are made, how
+they are introduced and developed, and the presence or absence ofconnections between them."
+2024-2025,Spring,9,Informational Text,Reading,Craft and Structure,,,,,9-10.RI.4,"Determine the meaning(s) ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the cumulative or contradictory impact of specific word choices on meaning and tone (e.g., how the
+language ofa court opinion differs from that ofa newspaper; how an author’s word choice varies from one part of a text to
+another)."
+2024-2025,Spring,9,Informational Text,Reading,Craft and Structure,,,,,9-10.RI.5,"Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, orlarge
+portions ofa text(e.g., a section or chapter)."
+2024-2025,Spring,9,Informational Text,Reading,Craft and Structure,,,,,9-10.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how an author uses rhetoric to advance that point ofvie
+or purpose."
+2024-2025,Spring,9,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,9-10.RI.7,"Analyze various accounts ofa subjecttold in different mediums (e.g., a person’s life story in both print and multimedi
+determining which details are emphasized or deemphasized in each account."
+2024-2025,Spring,9,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,9-10.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is valid and the evidence is
+relevant and sufficient; identify false statements orincomplete truths and fallacious reasoning."
+2024-2025,Spring,9,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,9-10.RI.9,"Analyze seminal documents ofhistorical and literary significance (e.g.,Washington’s Farewell Address, Lincoln’s Second
+Inaugural and Gettysburg Addresses, Roosevelt’s Four Freedoms speech, King’s “Letterfrom Birmingham Jail”), including h
+they address related themes and concepts."
+2024-2025,Spring,9,Informational Text,Reading,Range of Reading and Level of Text Complexity,,,,,9-10.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate forthe grade/course."
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 9-10 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4.b,"Identify and correctly use patterns ofword changes thatindicate different meanings or parts of speech (e.g., analyze, analysis
+analytical; advocate, advocacy)."
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning, its part of speech, orits etymology."
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.5.a,"Interpretfigures of speech (e.g., euphemism, oxymoron) in context and analyze theirrole in the text."
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.5.b,Analyze nuances in the meaning ofwords with similar denotations.
+2024-2025,Spring,9,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Spring,9,Literature,Reading,Key Ideas and Details,,,,,9-10.RL.1,"Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the
+text."
+2024-2025,Spring,9,Literature,Reading,Key Ideas and Details,,,,,9-10.RL.2,"Determine a theme or central idea ofa text and analyze in detail its development overthe course ofthe text, including how it
+emerges and is shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Spring,9,Literature,Reading,Key Ideas and Details,,,,,9-10.RL.3,"Analyze how complex characters (e.g.,those with multiple or conflicting motivations) develop overthe course ofa text, interact
+with other characters, and advance the plot or develop the theme."
+2024-2025,Spring,9,Literature,Reading,Craft and Structure,,,,,9-10.RL.4,"Determine the figurative or connotative meaning(s) ofwords and phrases as they are used in a text; analyze the impact ofwords
+with multiple meanings, as well as symbols or metaphors that extend throughout a text and shape its meaning."
+2024-2025,Spring,9,Literature,Reading,Craft and Structure,,,,,9-10.RL.5,"Analyze how an author’s choices concerning how to structure a text, order events within it(e.g., parallel plots), and manipulat
+time (e.g., pacing, flashbacks) create such effects as mystery,tension, or surprise."
+2024-2025,Spring,9,Literature,Reading,Craft and Structure,,,,,9-10.RL.6,"Analyze a case in which a character’s point ofview and actions signal acceptance orrejection ofcultural norms orintellectua
+ideas ofa period or place, drawing on a wide reading ofworld literature."
+2024-2025,Spring,9,Literature,Reading,Integration of Knowledge and Ideas,,,,,9-10.RL.7,"Analyze a criticalresponse to a work or body ofliterature (e.g., author documentary, book review); provide a summary ofthe
+argument presented and evaluate the strength ofthe evidence supporting it."
+2024-2025,Spring,9,Literature,Reading,Integration of Knowledge and Ideas,,,,,9-10.RL.9,"Analyze how an author draws on and transforms source material in a specific work (e.g., how Shakespeare treats a theme or
+topic from Ovid orthe Bible or how a later author draws on a play by Shakespeare)."
+2024-2025,Spring,9,Literature,Reading,Range of Reading and Level of Text Complexity,,,,,9-10.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate forthe grade/course. (See more on qualitative and quantitative dimensions of text
+complexity.)"
+2024-2025,Spring,10,Informational Text,Reading,Key Ideas and Details,,,,,9-10.RI.1,Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the text.
+2024-2025,Spring,10,Informational Text,Reading,Key Ideas and Details,,,,,9-10.RI.2,"Determine a central idea ofa text and analyze its development over the course ofthe text, including how it emerges and is
+shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Spring,10,Informational Text,Reading,Key Ideas and Details,,,,,9-10.RI.3,"Analyze how an author unfolds an analysis or series ofideas or events, including the orderin which the points are made, how
+they are introduced and developed, and the presence or absence ofconnections between them."
+2024-2025,Spring,10,Informational Text,Reading,Craft and Structure,,,,,9-10.RI.4,"Determine the meaning(s) ofwords and phrases as they are used in a text, including figurative, connotative, and technical
+meanings; analyze the cumulative or contradictory impact of specific word choices on meaning and tone (e.g., how the
+language ofa court opinion differs from that ofa newspaper; how an author’s word choice varies from one part of a text to
+another)."
+2024-2025,Spring,10,Informational Text,Reading,Craft and Structure,,,,,9-10.RI.5,"Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, orlarge
+portions ofa text(e.g., a section or chapter)."
+2024-2025,Spring,10,Informational Text,Reading,Craft and Structure,,,,,9-10.RI.6,"Determine an author’s point ofview or purpose in a text and analyze how an author uses rhetoric to advance that point ofvie
+or purpose."
+2024-2025,Spring,10,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,9-10.RI.7,"Analyze various accounts ofa subjecttold in different mediums (e.g., a person’s life story in both print and multimedi
+determining which details are emphasized or deemphasized in each account."
+2024-2025,Spring,10,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,9-10.RI.8,"Delineate and evaluate the argument and specific claims in a text, assessing whetherthe reasoning is valid and the evidence is
+relevant and sufficient; identify false statements orincomplete truths and fallacious reasoning."
+2024-2025,Spring,10,Informational Text,Reading,Integration of Knowledge and Ideas,,,,,9-10.RI.9,"Analyze seminal documents ofhistorical and literary significance (e.g.,Washington’s Farewell Address, Lincoln’s Second
+Inaugural and Gettysburg Addresses, Roosevelt’s Four Freedoms speech, King’s “Letterfrom Birmingham Jail”), including h
+they address related themes and concepts."
+2024-2025,Spring,10,Informational Text,Reading,Range of Reading and Level of Text Complexity,,,,,9-10.RI.10,"Independently and proficiently read and comprehend literary nonfiction representing a variety ofgenres, cultures, and
+perspectives and exhibiting complexity appropriate forthe grade/course."
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4,"Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on grade 9-10 reading and content,
+choosing flexibly from a range of strategies."
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4.a,"Use context(e.g.,the overall meaning ofa sentence or paragraph; a word’s position orfunction in a sentence) as a clue to the
+meaning of a word or phrase."
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4.b,"Identify and correctly use patterns ofword changes thatindicate different meanings or parts of speech (e.g., analyze, analysis
+analytical; advocate, advocacy)."
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4.c,"Consult general and specialized reference materials (e.g., dictionaries, glossaries,thesauruses), both print and digital,to find the
+pronunciation ofa word or determine or clarify its precise meaning, its part of speech, orits etymology."
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.4.d,"Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a
+dictionary)."
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.5,"Demonstrate understanding offigurative language, word relationships, and nuances in word meanings."
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.5.a,"Interpretfigures of speech (e.g., euphemism, oxymoron) in context and analyze theirrole in the text."
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.5.b,Analyze nuances in the meaning ofwords with similar denotations.
+2024-2025,Spring,10,,Language,Vocabulary Acquisition and Use,,,,,9-10.L.6,"Acquire and use accurately grade-appropriate general academic and domain-specific words and phrases; independently
+research words and gather vocabulary knowledge."
+2024-2025,Spring,10,Literature,Reading,Key Ideas and Details,,,,,9-10.RL.1,"Cite strong and thorough textual evidence to support analysis ofwhat a text states explicitly as well as inferences drawn from the
+text."
+2024-2025,Spring,10,Literature,Reading,Key Ideas and Details,,,,,9-10.RL.2,"Determine a theme or central idea ofa text and analyze in detail its development overthe course ofthe text, including how it
+emerges and is shaped and refined by specific details; provide an objective summary ofa text."
+2024-2025,Spring,10,Literature,Reading,Key Ideas and Details,,,,,9-10.RL.3,"Analyze how complex characters (e.g.,those with multiple or conflicting motivations) develop overthe course ofa text, interact
+with other characters, and advance the plot or develop the theme."
+2024-2025,Spring,10,Literature,Reading,Craft and Structure,,,,,9-10.RL.4,"Determine the figurative or connotative meaning(s) ofwords and phrases as they are used in a text; analyze the impact ofwords
+with multiple meanings, as well as symbols or metaphors that extend throughout a text and shape its meaning."
+2024-2025,Spring,10,Literature,Reading,Craft and Structure,,,,,9-10.RL.5,"Analyze how an author’s choices concerning how to structure a text, order events within it(e.g., parallel plots), and manipulat
+time (e.g., pacing, flashbacks) create such effects as mystery,tension, or surprise."
+2024-2025,Spring,10,Literature,Reading,Craft and Structure,,,,,9-10.RL.6,"Analyze a case in which a character’s point ofview and actions signal acceptance orrejection ofcultural norms orintellectua
+ideas ofa period or place, drawing on a wide reading ofworld literature."
+2024-2025,Spring,10,Literature,Reading,Integration of Knowledge and Ideas,,,,,9-10.RL.7,"Analyze a criticalresponse to a work or body ofliterature (e.g., author documentary, book review); provide a summary ofthe
+argument presented and evaluate the strength ofthe evidence supporting it."
+2024-2025,Spring,10,Literature,Reading,Integration of Knowledge and Ideas,,,,,9-10.RL.9,"Analyze how an author draws on and transforms source material in a specific work (e.g., how Shakespeare treats a theme or
+topic from Ovid orthe Bible or how a later author draws on a play by Shakespeare)."
+2024-2025,Spring,10,Literature,Reading,Range of Reading and Level of Text Complexity,,,,,9-10.RL.10,"Independently and proficiently read and comprehend literary texts representing a variety ofgenres, cultures, and perspectives
+and exhibiting complexity appropriate forthe grade/course. (See more on qualitative and quantitative dimensions of text
+complexity.)"

@@ -1,0 +1,1142 @@
+---
+title: "DACSS 604 Final Project"
+author: "Theresa Szczepanski"
+format: 
+ html:
+    df-print: paged
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+    embed-resources: true
+    self-contained-math: true
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Load Libraries
+
+```{r}
+#| label: setup
+#| warning: false
+#| message: false
+
+# load the needed libraries
+
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(readxl)
+library(hrbrthemes)
+library(viridis)
+library(ggpubr)
+library(purrr)
+library(plotly)
+library(dplyr)
+library(RColorBrewer)
+library(stargazer)
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+#source('readin_lib.R')
+#source('student_perf_lib.R')
+
+```
+
+# Load the Data
+
+## State Standards Mastery Summary
+
+```{r}
+ELA_Standards<-read_csv("data_604/State_Standards-_Mastery_Star_2425_ELA.csv")%>%
+  mutate(Division = case_when(
+    Grade == 9 | Grade == 10 ~ "HS",
+    Grade == 5 | Grade == 6 | Grade == 7 | Grade == 8 ~ "MS"  
+  ))%>%
+  mutate(Grade = as.factor(Grade))%>%
+  
+  mutate(`Reporting Category` = as.factor(`Reporting Category`))%>%
+  mutate(`Domain` = as.factor(`Domain`))%>%
+  mutate(`Division` = as.factor(`Division`))%>%
+  mutate(`Screening Window` = as.factor(`Screening Window`))%>%
+mutate(`Text Type` = as.factor(`Text Type`))
+  
+
+ELA_Standards
+
+
+```
+
+## Growth/Demographic Summary
+
+```{r}
+star_dem_all_private<-read_csv("data_604/student_star_dem_all_private.csv")%>%
+  mutate(`Grade` = as.factor(`Grade`))%>%
+  mutate(`Grade` = recode_factor(`Grade`,
+                                              "5" = "5",
+                                              "6" = "6",
+                                              "7" = "7",
+                                              "8"= "8",
+                                              "9"= "9",
+                                              "10"= "10",
+                                              .ordered = TRUE))%>%
+  mutate(School_Year = as.factor(School_Year))%>%
+   mutate(School_Year = recode_factor(School_Year,
+                              "2023-2024" = "2023-2024",
+                              "2024-2025" = "2024-2025",
+                              .ordered = TRUE))%>%
+  mutate(`Assignment Type` = as.factor(`Assignment Type`))%>%
+  mutate(`Test 1 Benchmark Category` = recode_factor(`Test 1 Benchmark Category`,
+                                              "At/Above Benchmark" = "At/Above Benchmark",
+                                              "On Watch" = "On Watch",
+                                              "Intervention" = "Intervention",
+                                              "Urgent Intervention"= "Urgent Intervention",
+                                              .ordered = TRUE))%>%
+  mutate(IEP_Status = as.factor(IEP_Status))%>%
+  mutate(`504_Status` = as.factor(`504_Status`))%>%
+  mutate(`Low_Income_Status` = as.factor(Low_Income_Status))%>%
+  mutate(`Gender` = as.factor(Gender) )%>%
+  mutate(`Gender_Status` = case_when(
+    Gender == "Male" ~ 0,
+    Gender == "Female" ~ 1
+  ))
+
+star_dem_all_private
+
+```
+
+
+
+## Historical Summary Data Frames
+
+```{r}
+HistSchoolBenchSum<-read_csv("data_604/StarBenchmarkSummary_School.csv")%>% 
+  mutate(Year = as.factor(Year))%>%
+  mutate(`Screening Window` = as.factor(`Screening Window`))%>%
+  mutate(`Benchmark_Status` = recode_factor(`Benchmark_Status`,
+                                              "At/Above Benchmark" = "At/Above Benchmark",
+                                              "Below Benchmark" = "Below Benchmark",
+                                              .ordered = TRUE))%>%
+  select(Year, `Screening Window`, Subject, `Benchmark_Status`, `% Students`)
+
+HistSchoolBenchSum
+  
+
+HistGradeGrowthSum<-read_csv("data_604/StarBenchmarkSummary_SGP_Sum.csv")%>%
+  mutate(Year = as.factor(Year))%>%
+  mutate(`Screening Window` = as.factor(`Screening Window`))%>%
+  mutate(`Subject` = as.factor(`Subject`))%>%
+  mutate(`Grade` = as.factor(Grade))%>%
+  mutate(`Grade` = recode_factor(`Grade`,
+                                              "Grade 5" = "Grade 5",
+                                              "Grade 6" = "Grade 6",
+                                              "Grade 7" = "Grade 7",
+                                              "Grade 8"= "Grade 8",
+                                              "Grade 9"= "Grade 9",
+                                              "Grade 10"= "Grade 10",
+                                              .ordered = TRUE))%>%
+  select(Year, `Screening Window`, `Grade`, Subject, `Median SGP`)
+
+
+HistGradeGrowthSum
+
+```
+
+## Student Demographic xWalk DataFrame
+
+```{r}
+# student_dem<-read_excel("data/Student_Dem_XWalk_2425.xlsx", sheet = "Demographic", skip = 2)%>%
+#   mutate(SASID = as.character(SASID))%>%
+#   mutate(Grade = as.factor(Grade))%>%
+#   mutate(`Grade` = recode_factor(`Grade`,
+#                                               "5" = "5",
+#                                               "6" = "6",
+#                                               "7" = "7",
+#                                               "8"= "8",
+#                                               "9"= "9",
+#                                               "10"= "10",
+#                                               "11" = "11",
+#                                               "12" = "12",
+#                                               .ordered = TRUE))%>%
+#   mutate(Gender = as.factor(Gender))%>%
+#   mutate(High_Need_Status = case_when(
+#     `High_Need_Status ( Aggregate of IEP,504,Low Income, LEP)` == "High Needs" ~ TRUE,
+#     `High_Need_Status ( Aggregate of IEP,504,Low Income, LEP)` == "Not High Needs" ~ FALSE
+#   ))%>%
+# mutate(Low_Income_Status_Bool = case_when(
+#     str_detect(Low_Income_Status, "00") == TRUE ~ FALSE,
+#     str_detect(Low_Income_Status, "00") == FALSE ~ TRUE,
+#   ))%>%
+#   mutate(School_Year = "2024-2025")%>%
+#   mutate(School_Year = as.factor(School_Year))%>%
+#   select(`SASID`, `Student_Name_Ren`, `Student_Name_SB`, `School_Year`, `Grade`, `Gender`, `IEP_Status`, `504_Status`, `Low_Income_Status_Bool`, High_Need_Status)
+# 
+# student_dem
+# student_star<-read_excel("data/Student_Dem_XWalk_2425.xlsx", sheet = "Star_Achievement_Growth", skip = 2)%>%
+#   mutate(SASID = as.character(SASID))%>%
+#   mutate(`Assignment Type` = as.factor(`Assignment Type`))%>%
+#   mutate(`Test_1_Benchmark_Category` = recode_factor(`Test_1_Benchmark_Category`,
+#                                               "At/Above Benchmark" = "At/Above Benchmark",
+#                                               "On Watch" = "On Watch",
+#                                               "Intervention" = "Intervention",
+#                                               "Urgent Intervention"= "Urgent Intervention",
+#                                               .ordered = TRUE))%>%
+#   mutate(`Test_2_Benchmark_Category` = recode_factor(`Test_2_Benchmark_Category`,
+#                                               "At/Above Benchmark" = "At/Above Benchmark",
+#                                               "On Watch" = "On Watch",
+#                                               "Intervention" = "Intervention",
+#                                               "Urgent Intervention"= "Urgent Intervention",
+#                                               .ordered = TRUE))%>%
+#   mutate(`Test_1_PR` = as.numeric(`Test_1_PR`))%>%
+#   mutate(`Test_2_PR` = as.numeric(`Test_2_PR`))%>%
+#   mutate(`Fall-Winter_SGP` = as.numeric(`Fall-Winter_SGP`))%>%
+# 
+#   select(`SASID`, `Student_Name_Ren`,  `Assignment Type`, `Test_1_PR`, `Test_1_Benchmark_Category`, Test_2_PR, Test_2_Benchmark_Category, `Fall-Winter_SGP`)
+# 
+# AllWinterGrowth<-AllWinterGrowth%>%
+#   mutate(Student_Name_Ren = Student)
+# 
+# AllWinterGrowth
+# 
+# student_dem
+# 
+# student_star_dem<-AllWinterGrowth%>%
+#   select(`Student_Name_Ren`,  `Assignment Type`, `Test 1 PR`, `Test 1 Benchmark Category`,  `SGP (Expectation=50)`)%>%
+#   left_join(student_dem, by = "Student_Name_Ren")
+# 
+# student_star_dem
+# 
+# student_star_dem
+
+```
+
+## Fall Data Frames
+
+```{r}
+# Build Grade Level Summary Data Frames
+
+# G5Fall<-grade_benchmark_sum(FallScreen, "5", "2024-2025")
+# G5Fall
+# G6Fall<-grade_benchmark_sum(FallScreen, "6", "2024-2025")
+# G6Fall
+# 
+# G7Fall<-grade_benchmark_sum(FallScreen, "7", "2024-2025")
+# G7Fall
+# 
+# G8Fall<-grade_benchmark_sum(FallScreen, "8", "2024-2025")
+# G8Fall
+# 
+# G9Fall<-grade_benchmark_sum(FallScreen, "9", "2024-2025")
+# G9Fall
+# 
+# G10Fall<-grade_benchmark_sum(FallScreen, "10", "2024-2025")
+# G10Fall
+# 
+# AllFall<-rbind(G10Fall, G9Fall, G8Fall, G7Fall, G6Fall, G5Fall)
+# 
+# AllFall<-AllFall%>%
+#     mutate(Division = case_when(
+#     Grade == 9 | Grade == 10 ~ "HS",
+#     Grade == 5 | Grade == 6 | Grade == 7 | Grade == 8 ~ "MS"  
+#   ))%>%
+#   mutate(Division = as.factor(Division))
+# 
+# SchoolScreened<-AllFall%>%
+#   group_by(`Subject`)%>%
+#   summarize(school_screened = sum(`Number of Students`))
+# 
+# SchoolScreened
+# 
+# DivisionScreened<-AllFall%>%
+#   group_by(`Subject`, `Division`)%>%
+#   summarize(division_screened = sum(`Number of Students`))
+# 
+# DivisionScreened
+# 
+# AllFallBenchmarkSum<-AllFall%>%
+#   select(`Benchmark Category`, `Number of Students`, `Subject`)%>%
+#   group_by(`Benchmark Category`, `Subject`)%>%
+#   summarize(`Number of Students` = sum(`Number of Students`))
+# 
+# AllFallBenchmarkSum
+# 
+# AllFallBenchmarkSum<-left_join(AllFallBenchmarkSum, SchoolScreened, by = "Subject")%>%
+#   mutate(`% Students` = round(`Number of Students` / `school_screened`*100))%>%
+#   mutate(`Screening Window` = "Fall")
+# 
+# AllFallBenchmarkSum<-left_join(AllFallBenchmarkSum, DivisionScreened, by = "Subject")
+# 
+# AllFallBenchmarkSum
+
+```
+
+## Winter Data Frames
+
+```{r}
+# Build Grade Level Summary Data Frames
+
+# G5Winter<-grade_benchmark_sum(WinterScreen, "5", "2024-2025")
+# #G5Winter
+# G6Winter<-grade_benchmark_sum(WinterScreen, "6", "2024-2025")
+# #G6Winter
+# 
+# G7Winter<-grade_benchmark_sum(WinterScreen, "7", "2024-2025")
+# #G7Winter
+# 
+# G8Winter<-grade_benchmark_sum(WinterScreen, "8", "2024-2025")
+# #G8Winter
+# 
+# G9Winter<-grade_benchmark_sum(WinterScreen, "9", "2024-2025")
+# #G9Winter
+# 
+# G10Winter<-grade_benchmark_sum(WinterScreen, "10", "2024-2025")
+# G10Winter
+# 
+# AllWinter<-rbind(G10Winter, G9Winter, G8Winter, G7Winter, G6Winter, G5Winter)%>%
+#   mutate(Division = case_when(
+#     Grade == 9 | Grade == 10 ~ "HS",
+#     Grade == 5 | Grade == 6 | Grade == 7 | Grade == 8 ~ "MS"  
+#   ))%>%
+#   mutate(Division = as.factor(Division))
+# 
+# AllWinter
+# 
+# SchoolScreened<-AllWinter%>%
+#   group_by(`Subject`)%>%
+#   summarize(school_screened = sum(`Number of Students`))
+# 
+# 
+# #SchoolScreened
+# 
+# AllWinterBenchmarkSum<-AllWinter%>%
+#   select(`Benchmark Category`, `Number of Students`, `Subject`)%>%
+#   group_by(`Benchmark Category`, `Subject`)%>%
+#   summarize(`Number of Students` = sum(`Number of Students`))
+# 
+# 
+# 
+# #AllWinterBenchmarkSum
+# 
+# AllWinterBenchmarkSum<-left_join(AllWinterBenchmarkSum, SchoolScreened, by = "Subject")%>%
+#   mutate(`% Students` = round(`Number of Students` / `school_screened`*100))%>%
+#   mutate(`Screening Window` = "Winter")
+# 
+# 
+# 
+# 
+# 
+# AllWinterBenchmarkSum
+
+```
+
+# 24-25 School Year Data Frame
+
+```{r}
+# AllWinter<-AllWinter%>%
+#   mutate(`Screening Window` = "Winter")
+# AllFall<-AllFall%>%
+#   mutate(`Screening Window` = "Fall")
+# 
+# AllSYScreening<-rbind(AllFall, AllWinter)
+# 
+# AllSYScreening
+
+#AllSYBenchmarkSum<-rbind(AllWinterBenchmarkSum, AllFallBenchmarkSum)%>%
+ # mutate(Subject = as.factor(Subject))
+
+#AllSYBenchmarkSum
+
+```
+
+# RQ1:
+
+Are Rising Tide students making progress toward our achievement
+accountability goal: “80% of Rising Students will test as at or above
+Benchmark in Reading on the Renaissance Star Reading and Star
+Mathematics screening assessments.?
+
+## Historical Benchmark_Status
+
+```{r}
+star_dem_all_private<-star_dem_all_private%>%
+  mutate(Benchmark_Status = 
+           case_when(`Test 1 PR` >= 40 ~ "At/Above Benchmark",
+                     `Test 1 PR` < 40 ~ "Below Benchmark"))%>%
+  mutate(Benchmark_Status = as.factor(Benchmark_Status))
+
+
+
+```
+
+### Statistical Test
+
+#### Acheivement: Math
+
+```{r}
+star_dem_math<- star_dem_all_private%>%
+  filter(`Assignment Type` == "Star Math")
+fit_Math_achieve = lm(`Test 1 PR` ~ School_Year + `IEP_Status`, data = star_dem_math)
+
+summary(fit_Math_achieve)
+
+#star_dem_math
+```
+
+#### Growth: Math
+
+```{r}
+
+fit_Math_growth = lm(`SGP (Expectation=50)` ~ `Test 1 PR` + Gender + `IEP_Status` + Grade, data = star_dem_math)
+
+summary(fit_Math_growth)
+```
+
+#### Acheivement: ELA
+
+```{r}
+star_dem_ELA<- star_dem_all_private%>%
+  filter(`Assignment Type` == "Star Reading")
+fit_ELA_achieve = lm(`Test 1 PR` ~ School_Year + `IEP_Status`, data = star_dem_ELA)
+
+summary(fit_ELA_achieve)
+```
+
+#### Growth: ELA
+
+```{r}
+
+fit_ELA_growth = lm(`SGP (Expectation=50)` ~ `IEP_Status` + School_Year, data = star_dem_ELA)
+
+summary(fit_ELA_growth)
+```
+
+```{r}
+HistSchoolBenchSum%>%
+  filter(`Year` == "2024-2025" & `Screening Window` == "Winter" | `Year` == "2023-2024" & `Screening Window` == "Spring")%>%
+  filter(`Benchmark_Status` == "At/Above Benchmark")%>%
+  ggplot(aes(x=`Benchmark_Status`,fill = `Year`, y = `% Students`)) +
+  geom_bar(position="dodge", stat = "identity") +
+    geom_text(aes( y = `% Students`, label = `% Students`,
+                     vjust = -.25), position = position_dodge(width = 1)) +
+
+          #theme_classic() +
+  theme(axis.title.x=element_blank(),
+       #  axis.text.x = element_text(angle = 45, , hjust = 1),
+          axis.ticks.x=element_blank())+
+    scale_fill_brewer(palette = "Paired")+
+    labs(
+      y = "% Students",
+       x= "Benchmark Category",
+      title = "Rising Tide Benchmark Achievement",
+      caption = "Source: Renaissance Star Literacy and Math Screening")+
+  geom_hline(yintercept = 80, color = "grey")+
+  annotate("text", x = .75, y = 85, label = "80% Goal") +
+  facet_wrap(~Subject)
+  
+
+```
+
+## Division Benchmark Distribution
+
+```{r}
+
+# HistSchoolBenchSum
+# 
+# DivisionScreenedFall<-AllFall%>%
+#   group_by(`Subject`, `Division`)%>%
+#   summarize(division_screened = sum(`Number of Students`))
+# 
+# #DivisionScreenedFall
+# 
+# DivisionFallBenchmarkSum<-AllFall%>%
+#   select(`Benchmark Category`, `Number of Students`, `Subject`, `Division`)%>%
+#   mutate(Benchmark_Status = case_when(
+#     `Benchmark Category` == "At/Above Benchmark" ~ "At/Above Benchmark",
+#                   `Benchmark Category` == "On Watch" ~ "Below Benchmark",
+#     `Benchmark Category` == "Intervention" ~ "Below Benchmark",
+#     `Benchmark Category` == "Urgent Intervention" ~ "Below Benchmark"
+#      ))%>%
+#   group_by(`Benchmark_Status`, `Subject`, `Division`)%>%
+#   summarize(`Number of Students` = sum(`Number of Students`))
+# 
+# #DivisionFallBenchmarkSum
+# 
+# DivisionFallBenchmarkSum<-left_join(DivisionFallBenchmarkSum, DivisionScreenedFall, by = c("Subject", "Division"))%>%
+#  mutate(`% Students` = round(`Number of Students` / `division_screened`*100))%>%
+#   mutate(`Screening Window` = "Fall")
+# 
+# #DivisionFallBenchmarkSum
+# 
+# 
+# DivisionScreenedWinter<-AllWinter%>%
+#   group_by(`Subject`, `Division`)%>%
+#   summarize(division_screened = sum(`Number of Students`))
+# 
+# #DivisionScreenedWinter
+# 
+# DivisionWinterBenchmarkSum<-AllWinter%>%
+#   select(`Benchmark Category`, `Number of Students`, `Subject`, `Division`)%>%
+#   mutate(Benchmark_Status = case_when(
+#     `Benchmark Category` == "At/Above Benchmark" ~ "At/Above Benchmark",
+#                   `Benchmark Category` == "On Watch" ~ "Below Benchmark",
+#     `Benchmark Category` == "Intervention" ~ "Below Benchmark",
+#     `Benchmark Category` == "Urgent Intervention" ~ "Below Benchmark"
+#      ))%>%
+#   group_by(`Benchmark_Status`, `Subject`, `Division`)%>%
+#   summarize(`Number of Students` = sum(`Number of Students`))
+# 
+# #DivisionWinterBenchmarkSum
+# 
+# DivisionWinterBenchmarkSum<-left_join(DivisionWinterBenchmarkSum, DivisionScreenedWinter, by = c("Subject", "Division"))%>%
+#  mutate(`% Students` = round(`Number of Students` / `division_screened`*100))%>%
+#   mutate(`Screening Window` = "Winter")
+# 
+# #DivisionWinterBenchmarkSum
+# 
+# DivisionSYBenchmarkSum<-rbind(DivisionWinterBenchmarkSum, DivisionFallBenchmarkSum)
+
+```
+
+## Division Benchmark Visual
+
+```{r}
+#Math
+# DivisionSYBenchmarkSum%>%
+#   filter(Subject == "Math")%>%
+#   filter(Benchmark_Status == "At/Above Benchmark")%>%
+#    ggplot(aes(x=`Benchmark_Status`,fill = `Screening Window`, y = `% Students`)) +
+#   geom_bar(position="dodge", stat = "identity") +
+#     geom_text(aes( y = `% Students`, label = `% Students`,
+#                      vjust = -.25), position = position_dodge(width = 1)) +
+#     
+#           #theme_classic() +
+#   theme(axis.title.x=element_blank(),
+#          axis.text.x = element_text(angle = 45, hjust = 1),
+#           axis.ticks.x=element_blank())+
+#     scale_fill_brewer(palette = "Paired")+
+#     labs(
+#       y = "% Students",
+#        x= "Benchmark Category",
+#       title = "Math Fall-Winter Benchmark Distribution",
+#       caption = "SY2024-2025")+
+#   geom_hline(yintercept = 80, color = "grey")+
+#   annotate("text", x = 1.5, y = 85, label = "80% Goal") +
+#   facet_wrap(~Division)
+# 
+# 
+# DivisionSYBenchmarkSum%>%
+#   filter(Subject == "ELA")%>%
+#   filter(Benchmark_Status == "At/Above Benchmark")%>%
+#    ggplot(aes(x=`Benchmark_Status`,fill = `Screening Window`, y = `% Students`)) +
+#   geom_bar(position="dodge", stat = "identity") +
+#     geom_text(aes( y = `% Students`, label = `% Students`,
+#                      vjust = -.25), position = position_dodge(width = 1)) +
+#     
+#           #theme_classic() +
+#   theme(axis.title.x=element_blank(),
+#          #axis.text.x = element_text(angle = 45, hjust = 1),
+#           axis.ticks.x=element_blank())+
+#     scale_fill_brewer(palette = "Paired")+
+#     labs(
+#       y = "% Students",
+#        x= "Benchmark Status",
+#       title = "ELA Fall-Winter Benchmark Distribution",
+#       caption = "SY2024-2025")+
+#   geom_hline(yintercept = 80, color = "grey")+
+#   annotate("text", x = 1.1, y = 85, label = "80%") +
+#   facet_wrap(~Division)
+
+```
+
+# Subject Level Fall Winter Growth Comparison
+
+## ELA Growth
+
+```{r}
+
+Growth_Sum_ELA<-star_dem_all_private%>%
+  filter(`School_Year` == "2024-2025")%>%
+  filter(`Assignment Type` == "Star Reading")%>%
+  group_by(Grade)%>%
+  summarize(median_SGP= median(`SGP (Expectation=50)`))
+
+ggplot(Growth_Sum_ELA, aes(x=`Grade`, y = `median_SGP`,fill="skyblue")) +
+    geom_bar(position="dodge", stat = "identity", fill="skyblue") +
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `median_SGP`, label = `median_SGP`,
+                   vjust = -.25))+
+  theme_classic()+
+    #scale_color_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "Grade Level",
+      title = "ELA Fall-Winter Growth by Grade Level",
+      caption = "Source: 2024-2025 Renaissance Star Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 1., y = 52, label = "50th Percentile")
+```
+
+### ELA Historical Growth
+
+```{r}
+HistGradeGrowthSum%>%
+  filter(Subject == "ELA")%>%
+  filter(`Screening Window` == "Fall-Winter")%>%
+  ggplot(aes(x=`Grade`,fill = "skyblue", y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", fill = "skyblue") +
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median SGP`, label = `Median SGP`,
+                   vjust = -.25), position = position_dodge(width = 1))+
+  #theme_classic()+
+    #scale_fill_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "Grade Level",
+      title = "ELA Fall-Winter Growth by Grade Level",
+      caption = "Source: Renaissance Star Literacy Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 1.65, y = 52, label = "50th Percentile")+
+  facet_wrap(~Year)
+
+```
+
+## Math Growth
+
+```{r}
+
+Growth_Sum_Math<-star_dem_all_private%>%
+  filter(`Assignment Type` == "Star Math")%>%
+  filter(`School_Year` == "2024-2025")%>%
+  group_by(Grade)%>%
+  summarize(median_SGP= median(`SGP (Expectation=50)`))
+
+ggplot(Growth_Sum_Math, aes(x=`Grade`,fill = `Grade`, y = `median_SGP`, fill="skyblue")) +
+    geom_bar(position="dodge", stat = "identity", fill="skyblue") +
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `median_SGP`, label = `median_SGP`,
+                   vjust = -.25))+
+  theme_classic()+
+    scale_fill_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+           axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "Grade Level",
+      title = "Math Fall-Winter Growth by Grade Level",
+      caption = "Source: 2024-2025 Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 1.0, y = 53, label = "50th Percentile")
+```
+
+```{r}
+HistGradeGrowthSum%>%
+  filter(Subject == "Math")%>%
+  filter(`Screening Window` == "Fall-Winter")%>%
+  ggplot(aes(x=`Grade`,fill = "skyblue", y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", fill = "skyblue") +
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median SGP`, label = `Median SGP`,
+                   vjust = -.25), position = position_dodge(width = 1))+
+  #theme_classic()+
+    #scale_fill_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "Grade Level",
+      title = "Math Fall-Winter Growth by Grade Level",
+      caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 5.5, y = 48, label = "50th Percentile")+
+  facet_wrap(~Year)
+
+
+```
+
+# RQ2 Grade 5 Math
+
+Is there a relationship between Rising Tide’s Grade 5 Mathematics
+curriculum initiatives and Grade 5 student growth in mathematics?
+
+```{r}
+
+
+
+Math_IEP_Sum<-star_dem_math%>%
+  mutate(IEP = case_when(IEP_Status == 1 ~ "Yes",
+                         IEP_Status == 0 ~ "No"))%>%
+  filter(`Assignment Type` == "Star Math")%>%
+  group_by(Grade, `School_Year`, IEP)%>%
+  summarize(`Median SGP` = median(`SGP (Expectation=50)`))
+
+Math_IEP_Sum
+
+Math_Gen_Sum<-star_dem_math%>%
+  filter(`Assignment Type` == "Star Math")%>%
+  group_by(Grade, `School_Year`, Gender)%>%
+  summarize(`Median SGP` = median(`SGP (Expectation=50)`))
+
+Math_Gen_Sum
+
+```
+
+### Math Historical Growth
+
+```{r}
+HistGradeGrowthSum%>%
+  filter(Subject == "Math")%>%
+  filter(`Screening Window` == "Fall-Winter")%>%
+  ggplot(aes(x=`Grade`,fill = "skyblue", y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", fill = "skyblue") +
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median SGP`, label = `Median SGP`,
+                   vjust = -.25), position = position_dodge(width = 1))+
+  #theme_classic()+
+    #scale_fill_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "Grade Level",
+      title = "Math Fall-Winter Growth by Grade Level",
+      caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 5.5, y = 48, label = "50th Percentile")+
+  facet_wrap(~Year)
+
+
+HistGradeGrowthSum%>%
+  filter(Subject == "Math")%>%
+  filter(Grade == "5")%>%
+  filter(`Screening Window` == "Fall-Winter")%>%
+  ggplot(aes(x=`Year`,fill = "skyblue", y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", fill = "skyblue") +
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median SGP`, label = `Median SGP`, 
+                   vjust = -.25), position = position_dodge(width = 1))+
+  theme_classic()+
+    scale_fill_brewer(palette = "Paired")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "School Year",
+      title = "Changes in Grade 5 Mathematics Growth",
+      caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 1., y = 52, label = "Goal 50th Percentile")#+
+  #theme_classic()
+  #facet_wrap(~Year)
+
+
+```
+
+## IEP
+
+```{r}
+  
+
+Math_IEP_Sum%>%
+  filter(Grade == "5")%>%
+  ggplot(aes(x=`IEP`,fill = `School_Year`, y = `Median SGP`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Median SGP`, x = `IEP`, label = `Median SGP`), position = position_dodge(width=.9),
+                   vjust = 1)+
+  theme_classic()+
+      theme(#axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+           # axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+ # facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Median SGP",
+         x= "IEP Status",
+        title = "Improved Growth For All Grade 5 Learners",
+        caption = "Source: Renaissance Star Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
+
+
+Math_Gen_Sum%>%
+  filter(Grade == "5")%>%
+  ggplot(aes(x=`Gender`,fill = `School_Year`, y = `Median SGP`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Median SGP`, x = `Gender`, label = `Median SGP`), position = position_dodge(width=.9),
+                   vjust = 1)+
+  theme_classic()+
+      theme(axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+           # axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+ # facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Median SGP",
+         x= "Gender",
+        title = "Improved Growth For All Grade 5 Learners",
+        caption = "Source: Renaissance Star Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
+  
+  
+```
+
+# RQ 3: ELA State Standards Mastery
+
+Is there a relationship between the text type of a literacy standard
+(informational vs. literature) and Rising Tide High School students’
+mastery of the standard?
+
+## School Informational Text by Domain
+
+```{r}
+
+ELA_Standards
+
+ELA_Text_Summary<-ELA_Standards%>%
+  filter(`Reporting Category` == "Reading")%>%
+   group_by(`Text Type`, `Screening Window`)%>%
+  summarize(`Mean % Secure` = round(mean(`% Secure`)),
+            `Median % Secure` = round(median(`% Secure`)))
+
+ELA_Text_Summary
+
+ELA_Text_Summary%>%
+  filter(`Screening Window` != "Spring")%>%
+  ggplot(aes(x=`Text Type`,fill = `Text Type`, y = `Mean % Secure`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Mean % Secure`, x = `Text Type`, label = `Mean % Secure`), position = position_dodge(width=.9),
+                   vjust = 1)+
+      theme(axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+            axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+  facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Mean % Secure",
+         x= "Domainl",
+        title = "School State Standard Mastery by Text Type ELA",
+        caption = "2024-2025 Star Reading Screening")
+
+
+ELA_Text_Domain_Summary<-ELA_Standards%>%
+  filter(`Reporting Category` == "Reading")%>%
+   group_by(`Text Type`, `Domain`, `Screening Window`)%>%
+  summarize(`Mean % Secure` = round(mean(`% Secure`)),
+            `Median % Secure` = round(median(`% Secure`)))
+
+ELA_Text_Domain_Summary
+
+ELA_Text_Div_Summary<-ELA_Standards%>%
+  filter(`Reporting Category` == "Reading")%>%
+   group_by(`Text Type`, `Division`, `Screening Window`)%>%
+  summarize(`Mean % Secure` = round(mean(`% Secure`)),
+            `Median % Secure` = round(median(`% Secure`)))
+
+ELA_Text_Div_Summary
+
+ELA_Text_Div_Summary%>%
+  filter(`Screening Window` != "Spring")%>%
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Mean % Secure`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Mean % Secure`, x = `Text Type`, label = `Mean % Secure`), position = position_dodge(width=.9),
+                   vjust = 1)+
+      theme(axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+            axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+  facet_wrap(~`Division`)+
+      labs(
+        y = "Mean % Secure",
+         x= "Domainl",
+        title = "School State Standard Mastery by Text Type ELA",
+        caption = "2024-2025 Star Reading Screening")
+
+ELA_Text_Domain_Summary%>%
+  filter(`Screening Window` != "Spring")%>%
+  ggplot(aes(x=`Domain`,fill = `Text Type`, y = `Mean % Secure`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Mean % Secure`, x = `Domain`, label = `Mean % Secure`), position = position_dodge(width=.9),
+                   vjust = 1)+
+      theme(axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+            axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+  facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Mean % Secure",
+         x= "Domainl",
+        title = "School State Standard Mastery by Text Type ELA",
+        caption = "2024-2025 Star Reading Screening")
+
+```
+
+## HS Informational Text Comparison
+
+```{r}
+ELA_Standards
+ELA_TextType_Sum_HS<-ELA_Standards%>%
+  filter(`Division` == "HS")%>%
+  filter (`Screening Window` != "Spring")%>%
+  filter(`Reporting Category` == "Reading")%>%
+  group_by(`Screening Window`, Grade, `Text Type`)%>%
+  summarize(`Median % Secure` = round(median(`% Secure`)))
+
+
+ ELA_TextType_Sum_HS%>%
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Median % Secure`)) +
+  geom_bar(position="dodge", stat = "identity") +
+  #scale_x_reverse()+
+    geom_text(aes( y = `Median % Secure`, label = `Median % Secure`,
+                     vjust = -.25), position = position_dodge(width = 1)) +
+
+          #theme_classic() +
+  theme(axis.title.x=element_blank(),
+         # axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    scale_fill_brewer(palette = "Paired")+
+    labs(
+      y = "Median % Secure",
+       x= "Text Type",
+      title = "HS Reading Standards Mastery by Text Type",
+      caption = paste("Fall-Winter Screening", "2024-2025"))+
+   facet_wrap(~Grade)
+
+
+
+
+```
+
+## MS Informational Text Data Frames
+
+```{r}
+ELA_TextType_Sum_MS<-ELA_Standards%>%
+  filter(`Division` == "MS")%>%
+  filter (`Screening Window` != "Spring")%>%
+  filter(`Reporting Category` == "Reading")%>%
+  group_by(`Screening Window`, Grade, `Text Type`)%>%
+  summarize(`Median % Secure` = round(median(`% Secure`)))
+
+
+ ELA_TextType_Sum_MS%>%
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Median % Secure`)) +
+  geom_bar(position="dodge", stat = "identity") +
+  #scale_x_reverse()+
+    geom_text(aes( y = `Median % Secure`, label = `Median % Secure`,
+                     vjust = -.25), position = position_dodge(width = 1)) +
+
+          #theme_classic() +
+  theme(axis.title.x=element_blank(),
+         # axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    scale_fill_brewer(palette = "Paired")+
+    labs(
+      y = "Median % Secure",
+       x= "Text Type",
+      title = "MS Reading Standards Mastery by Text Type",
+      caption = paste("Fall-Winter Screening", "2024-2025"))+
+   facet_wrap(~Grade)
+
+
+```
+
+# Statistical Tests
+
+## G5 Growth Distribution
+
+```{r}
+MathHistGrowth<- star_dem_math
+
+G5MathHistGrowth<-star_dem_math%>%
+  filter(Grade == "5")
+
+G5_Hist_Year <- G5MathHistGrowth %>%
+  ggplot( aes(x=`SGP (Expectation=50)`, fill=School_Year)) +
+    geom_histogram( color="#e9ecef", alpha=0.6,binwidth=10, position = 'identity') +
+    scale_fill_manual(values=c("#69b3a2", "#404080")) +
+    theme_classic() +
+    labs(fill="")#+
+ # facet_wrap(~Year)
+
+G5_Hist_Year
+
+G5_Hist_Year_Facet <- G5MathHistGrowth %>%
+  ggplot( aes(x=`SGP (Expectation=50)`, fill=School_Year)) +
+    geom_histogram( color="#e9ecef", alpha=0.6,binwidth=15, position = 'identity') +
+    scale_fill_manual(values=c("#69b3a2", "#404080")) +
+    theme_classic() +
+    labs(fill="")+
+  labs( y = "",
+            title = "Grade 5 Student Growth Distribution",
+            x = "Student Growth Percentile (SGP)",
+            caption = "Star Math Assessments")+
+  facet_wrap(~School_Year)
+
+G5_Hist_Year_Facet
+
+Growth_Hist<-MathHistGrowth%>%
+  ggplot( aes(x= `SGP (Expectation=50)`)) +
+    #geom_histogram(alpha=0.6, binwidth = 15) +
+  
+  #ggplot(aes()+
+           geom_histogram(alpha = .9, binwidth = 15)+
+    #scale_fill_viridis(discrete=TRUE) +
+    #scale_color_viridis(discrete=TRUE) +
+  theme_classic()
+
+Growth_Hist
+           
+
+```
+
+## Growth Summary
+
+```{r}
+
+#summary(MathHistGrowth)
+
+
+G5MathHistGrowth
+fit_G5Math_growth = lm(`SGP (Expectation=50)` ~ School_Year + `Test 1 PR`, data = G5MathHistGrowth)
+#summary(fit_G5Math_growth)
+AIC(fit_G5Math_growth)
+BIC(fit_G5Math_growth)
+
+
+
+fit_Math_growth = lm(`SGP (Expectation=50)` ~ Grade + School_Year + `Test 1 PR` + Grade*School_Year, data = MathHistGrowth)
+#summary(fit_Math_growth)
+
+#summary(MathHistGrowth)
+
+MathHistGrowth%>%
+  summarize(`Mean SGP` = mean(`SGP (Expectation=50)`),
+            `SD SGP` = sd(`SGP (Expectation=50)`))
+
+
+MathHistGrowth%>%
+  group_by(Grade)%>%
+  summarize(`Mean SGP` = mean(`SGP (Expectation=50)`),
+            `SD SGP` = sd(`SGP (Expectation=50)`))
+
+summary(fit_G5Math_growth)
+
+```
+
+```{r}
+stargazer(fit_G5Math_growth, type = "text") 
+
+
+```
+
+### Diagnosing Model Fit
+
+```{r}
+plot(fit_G5Math_growth, which = 1:6)
+cooks= 4/179
+cooks #.0223
+
+```
+
+### Remove Outliers
+
+```{r}
+G5MathHistGrowth
+
+```
+
+### Scaled Math Model
+
+```{r}
+G5MathHistGrowth_Scaled<-G5MathHistGrowth%>%
+  mutate(across(where(is.numeric), scale))
+
+G5MathHistGrowth_Scaled
+
+```
+
+```{r}
+fit_G5Math_growth_scaled = lm(`SGP (Expectation=50)` ~ School_Year + `Test 1 PR`, data = G5MathHistGrowth_Scaled)
+summary(fit_G5Math_growth_scaled)
+AIC(fit_G5Math_growth_scaled)
+BIC(fit_G5Math_growth_scaled)
+
+```
+
+```{r}
+stargazer(fit_G5Math_growth_scaled, type = "text") 
+
+```
+
+##ELA Standards
+
+```{r}
+ELA_Standards
+
+HS_ELA_Standards<-ELA_Standards%>%
+  filter(Grade == 9|Grade == 10)%>%
+  filter(`Text Type` == "Informational Text" | `Text Type` == "Literature")
+HS_ELA_Standards
+
+fit_ELA_text = lm(`% Secure` ~ ( `Text Type`), data = HS_ELA_Standards)
+summary(fit_ELA_text)
+
+fit_ELA_text_domain = lm(`% Secure` ~ ( `Text Type` + `Screening Window` + `Domain`), data = HS_ELA_Standards)
+summary(fit_ELA_text_domain)
+
+HS_ELA_Text_Facet <- HS_ELA_Standards %>%
+  ggplot( aes(x=`% Secure`, fill=`Text Type`)) +
+    geom_histogram( color="#e9ecef", alpha=0.6,binwidth=15, position = 'identity') +
+    scale_fill_manual(values=c("#69b3a2", "#404080")) +
+    theme_classic() +
+   
+  labs( y = "",
+            title = "High School State Standard Mastery Distribution",
+            x = "% Students Secure",
+            caption = "Star Reading: State Standards Mastery")+
+  facet_wrap(~`Text Type`)
+
+HS_ELA_Text_Facet
+
+
+
+```
+
+# Scaling?
+
+```{r}
+
+stargazer(fit_ELA_text_domain, type = "text")
+# 
+# variable_labels <- c(
+#   "% Secure", # For the dependent variable
+#   "Text Type: Informational",        # For the reference category
+#   "Text Type: Literature",         # For the first other category
+#   "Screening Window: Fall",         # For the second other category
+#   "Screening Window: Winter",
+#   "Domain: Craft and Structure",
+#   "Domain: Integration of Knolwedge and Ideas",
+#   "Domain: Key Ideas and Details",
+#   "Domain: Range of Reading and Level of Text Complexity"
+# )
+# stargazer(fit_ELA_text_domain, covariate.labels = variable_labels, type = "text")
+
+```
