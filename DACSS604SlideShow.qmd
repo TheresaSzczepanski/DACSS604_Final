@@ -1,0 +1,58 @@
+
+---
+title: "DACSS 604 Final Project"
+author: "Theresa Szczepanski"
+format: revealjs
+---
+
+## Slide 1
+
+- Turn off alarm
+- Get out of bed
+
+## Slide 2
+
+- Get in bed
+- Count sheep
+
+
+## Slide 3
+
+- Get in bed
+- Count sheep
+
+
+## Slide 4
+
+- Get in bed
+- Count sheep
+
+## Slide 5
+
+- Get in bed
+- Count sheep
+
+## Slide 6
+
+- Get in bed
+- Count sheep
+
+## Slide 7
+
+- Get in bed
+- Count sheep
+
+## Slide 8
+
+- Get in bed
+- Count sheep
+
+## Slide 9
+
+- Get in bed
+- Count sheep
+
+## Slide 10
+
+- Get in bed
+- Count sheep

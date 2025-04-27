@@ -104,8 +104,6 @@ star_dem_all_private
 
 ```
 
-
-
 ## Historical Summary Data Frames
 
 ```{r}

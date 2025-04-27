@@ -5,8 +5,10 @@ website:
   title: "DACSS604_Final"
   navbar:
     left:
-      - href: DACSS604_Final.qmd
+      - href: DACSS604Final.qmd
         text: Home
+      - href: DACSS604SlideShow.qmd
+        text: Presentation Slides
       - about.qmd
 
 format:
