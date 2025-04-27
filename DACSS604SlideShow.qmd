@@ -1,58 +1,202 @@
-
 ---
 title: "DACSS 604 Final Project"
 author: "Theresa Szczepanski"
-format: revealjs
+format: 
+  revealjs:
+    theme: sky
+    logo: heron.jpg
+    footer: "DACSS 604 Spring 2025"
 ---
+
+
+
+
+
+
+
 
 ## Slide 1
 
-- Turn off alarm
-- Get out of bed
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#| label: setup
+#| warning: false
+#| message: false
 
-## Slide 2
+# load the needed libraries
 
-- Get in bed
-- Count sheep
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(readxl)
+library(hrbrthemes)
+library(viridis)
+library(ggpubr)
+library(purrr)
+library(plotly)
+library(dplyr)
+library(RColorBrewer)
+library(stargazer)
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+#source('readin_lib.R')
+#source('student_perf_lib.R')
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Read in Data Sets
+
+star_dem_all_private<-read_csv("data_604/student_star_dem_all_private.csv")%>%
+  mutate(`Grade` = as.factor(`Grade`))%>%
+  mutate(`Grade` = recode_factor(`Grade`,
+                                              "5" = "5",
+                                              "6" = "6",
+                                              "7" = "7",
+                                              "8"= "8",
+                                              "9"= "9",
+                                              "10"= "10",
+                                              .ordered = TRUE))%>%
+  mutate(School_Year = as.factor(School_Year))%>%
+   mutate(School_Year = recode_factor(School_Year,
+                              "2023-2024" = "2023-2024",
+                              "2024-2025" = "2024-2025",
+                              .ordered = TRUE))%>%
+  mutate(`Assignment Type` = as.factor(`Assignment Type`))%>%
+  mutate(`Test 1 Benchmark Category` = recode_factor(`Test 1 Benchmark Category`,
+                                              "At/Above Benchmark" = "At/Above Benchmark",
+                                              "On Watch" = "On Watch",
+                                              "Intervention" = "Intervention",
+                                              "Urgent Intervention"= "Urgent Intervention",
+                                              .ordered = TRUE))%>%
+  mutate(IEP_Status = as.factor(IEP_Status))%>%
+  mutate(`504_Status` = as.factor(`504_Status`))%>%
+  mutate(`Low_Income_Status` = as.factor(Low_Income_Status))%>%
+  mutate(`Gender` = as.factor(Gender) )%>%
+  mutate(`Gender_Status` = case_when(
+    Gender == "Male" ~ 0,
+    Gender == "Female" ~ 1
+  ))
+
+#star_dem_all_private
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Historic Achievement Growth Summary
+HistSchoolBenchSum<-read_csv("data_604/StarBenchmarkSummary_School.csv")%>% 
+  mutate(Year = as.factor(Year))%>%
+  mutate(`Screening Window` = as.factor(`Screening Window`))%>%
+  mutate(`Benchmark_Status` = recode_factor(`Benchmark_Status`,
+                                              "At/Above Benchmark" = "At/Above Benchmark",
+                                              "Below Benchmark" = "Below Benchmark",
+                                              .ordered = TRUE))%>%
+  select(Year, `Screening Window`, Subject, `Benchmark_Status`, `% Students`)
+
+#HistSchoolBenchSum
+  
+
+HistGradeGrowthSum<-read_csv("data_604/StarBenchmarkSummary_SGP_Sum.csv")%>%
+  mutate(Year = as.factor(Year))%>%
+  mutate(`Screening Window` = as.factor(`Screening Window`))%>%
+  mutate(`Subject` = as.factor(`Subject`))%>%
+  mutate(`Grade` = as.factor(Grade))%>%
+  mutate(`Grade` = recode_factor(`Grade`,
+                                              "Grade 5" = "Grade 5",
+                                              "Grade 6" = "Grade 6",
+                                              "Grade 7" = "Grade 7",
+                                              "Grade 8"= "Grade 8",
+                                              "Grade 9"= "Grade 9",
+                                              "Grade 10"= "Grade 10",
+                                              .ordered = TRUE))%>%
+  select(Year, `Screening Window`, `Grade`, Subject, `Median SGP`)
 
 
-## Slide 3
+#HistGradeGrowthSum
 
-- Get in bed
-- Count sheep
+star_dem_all_private<-star_dem_all_private%>%
+  mutate(Benchmark_Status = 
+           case_when(`Test 1 PR` >= 40 ~ "At/Above Benchmark",
+                     `Test 1 PR` < 40 ~ "Below Benchmark"))%>%
+  mutate(Benchmark_Status = as.factor(Benchmark_Status))
 
+```
+-   What are the [Renaissance Star Screening Assessments](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)
+-   Get out of bed
 
+## Research Question 1
+
+-   Get in bed
+-   Count sheep
+
+## Are we meeting our Accountability Goal?
+- Will this plot work?
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+Bench_Sum_Plot<-HistSchoolBenchSum%>%
+  filter(`Year` == "2024-2025" & `Screening Window` == "Winter" | `Year` == "2023-2024" & `Screening Window` == "Spring")%>%
+  filter(`Benchmark_Status` == "At/Above Benchmark")%>%
+  ggplot(aes(x=`Benchmark_Status`,fill = `Year`, y = `% Students`)) +
+  geom_bar(position="dodge", stat = "identity") +
+    geom_text(aes( y = `% Students`, label = `% Students`,
+                     vjust = -.25), position = position_dodge(width = 1)) +
+
+          #theme_classic() +
+  theme(axis.title.x=element_blank(),
+       #  axis.text.x = element_text(angle = 45, , hjust = 1),
+          axis.ticks.x=element_blank())+
+    scale_fill_brewer(palette = "Paired")+
+    labs(
+      y = "% Students",
+       x= "Benchmark Category",
+      title = "Rising Tide Benchmark Achievement by School Year",
+      caption = "Source: Renaissance Star Literacy and Math Screening")+
+  geom_hline(yintercept = 80, color = "grey")+
+  annotate("text", x = .75, y = 85, label = "80% Goal") +
+  facet_wrap(~Subject)
+```
+
+```{r, echo = FALSE}
+
+#| eval: false
+#| fig-cap: "Rising Tide Benchmark Achievement by School Year, Renaissance Star Literacy and Math"
+#| fig-alt: >
+#|    A bar blot with school year (ordered, factor) on the x-axis and the percentage of students
+#|    classified as At/Above benchmark on the y-axis, faceted by subject (English Language Arts or Math)
+#|    Plot illustrates the relationship between the three variables.
+
+Bench_Sum_Plot
+
+```
 ## Slide 4
 
-- Get in bed
-- Count sheep
+-   Get in bed
+-   Count sheep
 
 ## Slide 5
 
-- Get in bed
-- Count sheep
+-   Get in bed
+-   Count sheep
 
 ## Slide 6
 
-- Get in bed
-- Count sheep
+-   Get in bed
+-   Count sheep
 
 ## Slide 7
 
-- Get in bed
-- Count sheep
+-   Get in bed
+-   Count sheep
 
 ## Slide 8
 
-- Get in bed
-- Count sheep
+-   Get in bed
+-   Count sheep
 
 ## Slide 9
 
-- Get in bed
-- Count sheep
+-   Get in bed
+-   Count sheep
 
 ## Slide 10
 
-- Get in bed
-- Count sheep
+-   Get in bed
+-   Count sheep

@@ -340,24 +340,24 @@ Theresa Szczepanski
 <section id="slide-1" class="slide level2">
 <h2>Slide 1</h2>
 <ul>
-<li>Turn off alarm</li>
+<li>What are the <a href="https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&amp;u=zceria">Renaissance Star Screening Assessments</a></li>
 <li>Get out of bed</li>
 </ul>
 </section>
-<section id="slide-2" class="slide level2">
-<h2>Slide 2</h2>
+<section id="research-question-1" class="slide level2">
+<h2>Research Question 1</h2>
 <ul>
 <li>Get in bed</li>
 <li>Count sheep</li>
 </ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>Slide 3</h2>
+<section id="are-we-meeting-our-accountability-goal" class="slide level2">
+<h2>Are we meeting our Accountability Goal?</h2>
 <ul>
-<li>Get in bed</li>
-<li>Count sheep</li>
+<li>Will this plot work?</li>
 </ul>
-</section>
+
+<img data-src="DACSS604SlideShow_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section id="slide-4" class="slide level2">
 <h2>Slide 4</h2>
 <ul>
@@ -408,8 +408,9 @@ Theresa Szczepanski
 </ul>
 
 <div class="quarto-auto-generated-content">
+<p><img src="heron.jpg" class="slide-logo"></p>
 <div class="footer footer-default">
-
+<p>DACSS 604 Spring 2025</p>
 </div>
 </div>
 </section>
@@ -623,6 +624,44 @@ Theresa Szczepanski
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
