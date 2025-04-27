@@ -139,211 +139,9 @@ HistGradeGrowthSum
 
 ```
 
-## Student Demographic xWalk DataFrame
 
-```{r}
-# student_dem<-read_excel("data/Student_Dem_XWalk_2425.xlsx", sheet = "Demographic", skip = 2)%>%
-#   mutate(SASID = as.character(SASID))%>%
-#   mutate(Grade = as.factor(Grade))%>%
-#   mutate(`Grade` = recode_factor(`Grade`,
-#                                               "5" = "5",
-#                                               "6" = "6",
-#                                               "7" = "7",
-#                                               "8"= "8",
-#                                               "9"= "9",
-#                                               "10"= "10",
-#                                               "11" = "11",
-#                                               "12" = "12",
-#                                               .ordered = TRUE))%>%
-#   mutate(Gender = as.factor(Gender))%>%
-#   mutate(High_Need_Status = case_when(
-#     `High_Need_Status ( Aggregate of IEP,504,Low Income, LEP)` == "High Needs" ~ TRUE,
-#     `High_Need_Status ( Aggregate of IEP,504,Low Income, LEP)` == "Not High Needs" ~ FALSE
-#   ))%>%
-# mutate(Low_Income_Status_Bool = case_when(
-#     str_detect(Low_Income_Status, "00") == TRUE ~ FALSE,
-#     str_detect(Low_Income_Status, "00") == FALSE ~ TRUE,
-#   ))%>%
-#   mutate(School_Year = "2024-2025")%>%
-#   mutate(School_Year = as.factor(School_Year))%>%
-#   select(`SASID`, `Student_Name_Ren`, `Student_Name_SB`, `School_Year`, `Grade`, `Gender`, `IEP_Status`, `504_Status`, `Low_Income_Status_Bool`, High_Need_Status)
-# 
-# student_dem
-# student_star<-read_excel("data/Student_Dem_XWalk_2425.xlsx", sheet = "Star_Achievement_Growth", skip = 2)%>%
-#   mutate(SASID = as.character(SASID))%>%
-#   mutate(`Assignment Type` = as.factor(`Assignment Type`))%>%
-#   mutate(`Test_1_Benchmark_Category` = recode_factor(`Test_1_Benchmark_Category`,
-#                                               "At/Above Benchmark" = "At/Above Benchmark",
-#                                               "On Watch" = "On Watch",
-#                                               "Intervention" = "Intervention",
-#                                               "Urgent Intervention"= "Urgent Intervention",
-#                                               .ordered = TRUE))%>%
-#   mutate(`Test_2_Benchmark_Category` = recode_factor(`Test_2_Benchmark_Category`,
-#                                               "At/Above Benchmark" = "At/Above Benchmark",
-#                                               "On Watch" = "On Watch",
-#                                               "Intervention" = "Intervention",
-#                                               "Urgent Intervention"= "Urgent Intervention",
-#                                               .ordered = TRUE))%>%
-#   mutate(`Test_1_PR` = as.numeric(`Test_1_PR`))%>%
-#   mutate(`Test_2_PR` = as.numeric(`Test_2_PR`))%>%
-#   mutate(`Fall-Winter_SGP` = as.numeric(`Fall-Winter_SGP`))%>%
-# 
-#   select(`SASID`, `Student_Name_Ren`,  `Assignment Type`, `Test_1_PR`, `Test_1_Benchmark_Category`, Test_2_PR, Test_2_Benchmark_Category, `Fall-Winter_SGP`)
-# 
-# AllWinterGrowth<-AllWinterGrowth%>%
-#   mutate(Student_Name_Ren = Student)
-# 
-# AllWinterGrowth
-# 
-# student_dem
-# 
-# student_star_dem<-AllWinterGrowth%>%
-#   select(`Student_Name_Ren`,  `Assignment Type`, `Test 1 PR`, `Test 1 Benchmark Category`,  `SGP (Expectation=50)`)%>%
-#   left_join(student_dem, by = "Student_Name_Ren")
-# 
-# student_star_dem
-# 
-# student_star_dem
 
-```
 
-## Fall Data Frames
-
-```{r}
-# Build Grade Level Summary Data Frames
-
-# G5Fall<-grade_benchmark_sum(FallScreen, "5", "2024-2025")
-# G5Fall
-# G6Fall<-grade_benchmark_sum(FallScreen, "6", "2024-2025")
-# G6Fall
-# 
-# G7Fall<-grade_benchmark_sum(FallScreen, "7", "2024-2025")
-# G7Fall
-# 
-# G8Fall<-grade_benchmark_sum(FallScreen, "8", "2024-2025")
-# G8Fall
-# 
-# G9Fall<-grade_benchmark_sum(FallScreen, "9", "2024-2025")
-# G9Fall
-# 
-# G10Fall<-grade_benchmark_sum(FallScreen, "10", "2024-2025")
-# G10Fall
-# 
-# AllFall<-rbind(G10Fall, G9Fall, G8Fall, G7Fall, G6Fall, G5Fall)
-# 
-# AllFall<-AllFall%>%
-#     mutate(Division = case_when(
-#     Grade == 9 | Grade == 10 ~ "HS",
-#     Grade == 5 | Grade == 6 | Grade == 7 | Grade == 8 ~ "MS"  
-#   ))%>%
-#   mutate(Division = as.factor(Division))
-# 
-# SchoolScreened<-AllFall%>%
-#   group_by(`Subject`)%>%
-#   summarize(school_screened = sum(`Number of Students`))
-# 
-# SchoolScreened
-# 
-# DivisionScreened<-AllFall%>%
-#   group_by(`Subject`, `Division`)%>%
-#   summarize(division_screened = sum(`Number of Students`))
-# 
-# DivisionScreened
-# 
-# AllFallBenchmarkSum<-AllFall%>%
-#   select(`Benchmark Category`, `Number of Students`, `Subject`)%>%
-#   group_by(`Benchmark Category`, `Subject`)%>%
-#   summarize(`Number of Students` = sum(`Number of Students`))
-# 
-# AllFallBenchmarkSum
-# 
-# AllFallBenchmarkSum<-left_join(AllFallBenchmarkSum, SchoolScreened, by = "Subject")%>%
-#   mutate(`% Students` = round(`Number of Students` / `school_screened`*100))%>%
-#   mutate(`Screening Window` = "Fall")
-# 
-# AllFallBenchmarkSum<-left_join(AllFallBenchmarkSum, DivisionScreened, by = "Subject")
-# 
-# AllFallBenchmarkSum
-
-```
-
-## Winter Data Frames
-
-```{r}
-# Build Grade Level Summary Data Frames
-
-# G5Winter<-grade_benchmark_sum(WinterScreen, "5", "2024-2025")
-# #G5Winter
-# G6Winter<-grade_benchmark_sum(WinterScreen, "6", "2024-2025")
-# #G6Winter
-# 
-# G7Winter<-grade_benchmark_sum(WinterScreen, "7", "2024-2025")
-# #G7Winter
-# 
-# G8Winter<-grade_benchmark_sum(WinterScreen, "8", "2024-2025")
-# #G8Winter
-# 
-# G9Winter<-grade_benchmark_sum(WinterScreen, "9", "2024-2025")
-# #G9Winter
-# 
-# G10Winter<-grade_benchmark_sum(WinterScreen, "10", "2024-2025")
-# G10Winter
-# 
-# AllWinter<-rbind(G10Winter, G9Winter, G8Winter, G7Winter, G6Winter, G5Winter)%>%
-#   mutate(Division = case_when(
-#     Grade == 9 | Grade == 10 ~ "HS",
-#     Grade == 5 | Grade == 6 | Grade == 7 | Grade == 8 ~ "MS"  
-#   ))%>%
-#   mutate(Division = as.factor(Division))
-# 
-# AllWinter
-# 
-# SchoolScreened<-AllWinter%>%
-#   group_by(`Subject`)%>%
-#   summarize(school_screened = sum(`Number of Students`))
-# 
-# 
-# #SchoolScreened
-# 
-# AllWinterBenchmarkSum<-AllWinter%>%
-#   select(`Benchmark Category`, `Number of Students`, `Subject`)%>%
-#   group_by(`Benchmark Category`, `Subject`)%>%
-#   summarize(`Number of Students` = sum(`Number of Students`))
-# 
-# 
-# 
-# #AllWinterBenchmarkSum
-# 
-# AllWinterBenchmarkSum<-left_join(AllWinterBenchmarkSum, SchoolScreened, by = "Subject")%>%
-#   mutate(`% Students` = round(`Number of Students` / `school_screened`*100))%>%
-#   mutate(`Screening Window` = "Winter")
-# 
-# 
-# 
-# 
-# 
-# AllWinterBenchmarkSum
-
-```
-
-# 24-25 School Year Data Frame
-
-```{r}
-# AllWinter<-AllWinter%>%
-#   mutate(`Screening Window` = "Winter")
-# AllFall<-AllFall%>%
-#   mutate(`Screening Window` = "Fall")
-# 
-# AllSYScreening<-rbind(AllFall, AllWinter)
-# 
-# AllSYScreening
-
-#AllSYBenchmarkSum<-rbind(AllWinterBenchmarkSum, AllFallBenchmarkSum)%>%
- # mutate(Subject = as.factor(Subject))
-
-#AllSYBenchmarkSum
-
-```
 
 # RQ1:
 
@@ -402,13 +200,13 @@ summary(fit_ELA_achieve)
 
 ```{r}
 
-fit_ELA_growth = lm(`SGP (Expectation=50)` ~ `IEP_Status` + School_Year, data = star_dem_ELA)
+fit_ELA_growth = lm(`SGP (Expectation=50)` ~ `IEP_Status` + School_Year + Grade, data = star_dem_ELA)
 
 summary(fit_ELA_growth)
 ```
 
 ```{r}
-HistSchoolBenchSum%>%
+Bench_Sum_Plot<-HistSchoolBenchSum%>%
   filter(`Year` == "2024-2025" & `Screening Window` == "Winter" | `Year` == "2023-2024" & `Screening Window` == "Spring")%>%
   filter(`Benchmark_Status` == "At/Above Benchmark")%>%
   ggplot(aes(x=`Benchmark_Status`,fill = `Year`, y = `% Students`)) +
@@ -424,126 +222,27 @@ HistSchoolBenchSum%>%
     labs(
       y = "% Students",
        x= "Benchmark Category",
-      title = "Rising Tide Benchmark Achievement",
+      title = "Rising Tide Benchmark Achievement by School Year",
       caption = "Source: Renaissance Star Literacy and Math Screening")+
   geom_hline(yintercept = 80, color = "grey")+
   annotate("text", x = .75, y = 85, label = "80% Goal") +
   facet_wrap(~Subject)
-  
-
 ```
-
-## Division Benchmark Distribution
 
 ```{r}
 
-# HistSchoolBenchSum
-# 
-# DivisionScreenedFall<-AllFall%>%
-#   group_by(`Subject`, `Division`)%>%
-#   summarize(division_screened = sum(`Number of Students`))
-# 
-# #DivisionScreenedFall
-# 
-# DivisionFallBenchmarkSum<-AllFall%>%
-#   select(`Benchmark Category`, `Number of Students`, `Subject`, `Division`)%>%
-#   mutate(Benchmark_Status = case_when(
-#     `Benchmark Category` == "At/Above Benchmark" ~ "At/Above Benchmark",
-#                   `Benchmark Category` == "On Watch" ~ "Below Benchmark",
-#     `Benchmark Category` == "Intervention" ~ "Below Benchmark",
-#     `Benchmark Category` == "Urgent Intervention" ~ "Below Benchmark"
-#      ))%>%
-#   group_by(`Benchmark_Status`, `Subject`, `Division`)%>%
-#   summarize(`Number of Students` = sum(`Number of Students`))
-# 
-# #DivisionFallBenchmarkSum
-# 
-# DivisionFallBenchmarkSum<-left_join(DivisionFallBenchmarkSum, DivisionScreenedFall, by = c("Subject", "Division"))%>%
-#  mutate(`% Students` = round(`Number of Students` / `division_screened`*100))%>%
-#   mutate(`Screening Window` = "Fall")
-# 
-# #DivisionFallBenchmarkSum
-# 
-# 
-# DivisionScreenedWinter<-AllWinter%>%
-#   group_by(`Subject`, `Division`)%>%
-#   summarize(division_screened = sum(`Number of Students`))
-# 
-# #DivisionScreenedWinter
-# 
-# DivisionWinterBenchmarkSum<-AllWinter%>%
-#   select(`Benchmark Category`, `Number of Students`, `Subject`, `Division`)%>%
-#   mutate(Benchmark_Status = case_when(
-#     `Benchmark Category` == "At/Above Benchmark" ~ "At/Above Benchmark",
-#                   `Benchmark Category` == "On Watch" ~ "Below Benchmark",
-#     `Benchmark Category` == "Intervention" ~ "Below Benchmark",
-#     `Benchmark Category` == "Urgent Intervention" ~ "Below Benchmark"
-#      ))%>%
-#   group_by(`Benchmark_Status`, `Subject`, `Division`)%>%
-#   summarize(`Number of Students` = sum(`Number of Students`))
-# 
-# #DivisionWinterBenchmarkSum
-# 
-# DivisionWinterBenchmarkSum<-left_join(DivisionWinterBenchmarkSum, DivisionScreenedWinter, by = c("Subject", "Division"))%>%
-#  mutate(`% Students` = round(`Number of Students` / `division_screened`*100))%>%
-#   mutate(`Screening Window` = "Winter")
-# 
-# #DivisionWinterBenchmarkSum
-# 
-# DivisionSYBenchmarkSum<-rbind(DivisionWinterBenchmarkSum, DivisionFallBenchmarkSum)
+#| eval: false
+#| fig-cap: "Rising Tide Benchmark Achievement by School Year, Renaissance Star Literacy and Math"
+#| fig-alt: >
+#|    A bar blot with school year (ordered, factor) on the x-axis and the percentage of students
+#|    classified as At/Above benchmark on the y-axis, faceted by subject (English Language Arts or Math)
+#|    Plot illustrates the relationship between the three variables.
+
+Bench_Sum_Plot
 
 ```
 
-## Division Benchmark Visual
 
-```{r}
-#Math
-# DivisionSYBenchmarkSum%>%
-#   filter(Subject == "Math")%>%
-#   filter(Benchmark_Status == "At/Above Benchmark")%>%
-#    ggplot(aes(x=`Benchmark_Status`,fill = `Screening Window`, y = `% Students`)) +
-#   geom_bar(position="dodge", stat = "identity") +
-#     geom_text(aes( y = `% Students`, label = `% Students`,
-#                      vjust = -.25), position = position_dodge(width = 1)) +
-#     
-#           #theme_classic() +
-#   theme(axis.title.x=element_blank(),
-#          axis.text.x = element_text(angle = 45, hjust = 1),
-#           axis.ticks.x=element_blank())+
-#     scale_fill_brewer(palette = "Paired")+
-#     labs(
-#       y = "% Students",
-#        x= "Benchmark Category",
-#       title = "Math Fall-Winter Benchmark Distribution",
-#       caption = "SY2024-2025")+
-#   geom_hline(yintercept = 80, color = "grey")+
-#   annotate("text", x = 1.5, y = 85, label = "80% Goal") +
-#   facet_wrap(~Division)
-# 
-# 
-# DivisionSYBenchmarkSum%>%
-#   filter(Subject == "ELA")%>%
-#   filter(Benchmark_Status == "At/Above Benchmark")%>%
-#    ggplot(aes(x=`Benchmark_Status`,fill = `Screening Window`, y = `% Students`)) +
-#   geom_bar(position="dodge", stat = "identity") +
-#     geom_text(aes( y = `% Students`, label = `% Students`,
-#                      vjust = -.25), position = position_dodge(width = 1)) +
-#     
-#           #theme_classic() +
-#   theme(axis.title.x=element_blank(),
-#          #axis.text.x = element_text(angle = 45, hjust = 1),
-#           axis.ticks.x=element_blank())+
-#     scale_fill_brewer(palette = "Paired")+
-#     labs(
-#       y = "% Students",
-#        x= "Benchmark Status",
-#       title = "ELA Fall-Winter Benchmark Distribution",
-#       caption = "SY2024-2025")+
-#   geom_hline(yintercept = 80, color = "grey")+
-#   annotate("text", x = 1.1, y = 85, label = "80%") +
-#   facet_wrap(~Division)
-
-```
 
 # Subject Level Fall Winter Growth Comparison
 
@@ -557,7 +256,7 @@ Growth_Sum_ELA<-star_dem_all_private%>%
   group_by(Grade)%>%
   summarize(median_SGP= median(`SGP (Expectation=50)`))
 
-ggplot(Growth_Sum_ELA, aes(x=`Grade`, y = `median_SGP`,fill="skyblue")) +
+Growth_Sum_ELA_Plot<-ggplot(Growth_Sum_ELA, aes(x=`Grade`, y = `median_SGP`,fill="skyblue")) +
     geom_bar(position="dodge", stat = "identity", fill="skyblue") +
     #facet_wrap(~Grade)+
     geom_text(aes( y = `median_SGP`, label = `median_SGP`,
@@ -570,12 +269,23 @@ ggplot(Growth_Sum_ELA, aes(x=`Grade`, y = `median_SGP`,fill="skyblue")) +
     labs(
       y = "Median SGP",
        x= "Grade Level",
-      title = "ELA Fall-Winter Growth by Grade Level",
+      title = "Literacy Student Growth Percentile by Grade Level",
       caption = "Source: 2024-2025 Renaissance Star Screening")+
    geom_hline(yintercept = 50, color = "grey")+
   annotate("text", x = 1., y = 52, label = "50th Percentile")
 ```
 
+```{r}
+#| eval: false
+#| fig-cap: "Rising Tide Literacy Growth by Grade Level, 2024-2025 Renaissance Star Literacy Screening"
+#| fig-alt: >
+#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
+#|    (SGP) in literacy on the y-axis
+#|    Plot illustrates the relationship between the two variables.
+
+Growth_Sum_ELA_Plot
+
+```
 ### ELA Historical Growth
 
 ```{r}
@@ -595,11 +305,16 @@ HistGradeGrowthSum%>%
     labs(
       y = "Median SGP",
        x= "Grade Level",
-      title = "ELA Fall-Winter Growth by Grade Level",
+      title = "ELA Student Growth Percentile by Grade Level",
       caption = "Source: Renaissance Star Literacy Screening")+
    geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x = 1.65, y = 52, label = "50th Percentile")+
+  annotate("text", x = 1.55, y = 52, label = "50th Percentile")+
   facet_wrap(~Year)
+
+```
+
+```{r}
+
 
 ```
 
