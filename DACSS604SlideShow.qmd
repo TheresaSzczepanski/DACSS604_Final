@@ -1,6 +1,6 @@
 ---
-title: "DACSS 604 Final Project"
-subtitle: "In Patterns to Problems lies hope for Solutions" 
+title: "2024-2025 Grade 5 Mathematics Initiative"
+subtitle: "Ensuring every child has access to grade appropriate assignments and teachers who hold high expectations" 
 author: "Theresa Szczepanski"
 format: 
   revealjs:
@@ -16,8 +16,7 @@ format:
 - ***Who***: Stakeholders at Rising Tide Charter Public School
     - Head of School, Principal, Assistant Principals, Department Chairs, and Board of Trustees
     - Make decisions on allocation of resources and evaluation of teaching staff
-    - Write schoolwide and department wide goals for each school year
-    - ***Very Limited Time***: School leaders are notoriously stretched thin with time
+    - Write school wide and department wide goals for each school year
     
 ## My Audience (cont.)
 
@@ -68,18 +67,24 @@ format:
 
 :::
 
+## What questions will we examine?
 
-   
+- Is there a relationship between Rising Tide’s 2024-2025 Grade 5 Mathematics
+programming initiatives and Grade 5 student growth in mathematics?
+
+
+- ***Why?***
+    - In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students' average growth percentiles were ***considerably*** below the state average of 50; ***75%*** of students were ***below*** the ***25th*** percentile for growth in 2023^[[Source: Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830000&orgtypecode=5&&fycode=2022)]
     
+    
+## What Changes did we Make?
+
+- Is there a relationship between Rising Tide’s 2024-2025 Grade 5 Mathematics
+programming initiatives and Grade 5 student growth in mathematics?
 
 
-- Growth
-
-
-
-
-
-
+- ***Why?***
+    - In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students' average growth percentiles were ***considerably*** below the state average of 50; ***75%*** of students were ***below*** the ***25th*** percentile for growth in 2023^[[Source: Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830000&orgtypecode=5&&fycode=2022)]
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -190,7 +195,6 @@ star_dem_all_private<-star_dem_all_private%>%
 -   Get in bed
 -   Count sheep
 
-## Are we meeting our Accountability Goal?
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -231,7 +235,7 @@ Bench_Sum_Plot
 ```
 
 
-## Slide 4
+## Grade 5 Math Story
 
 -   Get in bed
 -   Count sheep
