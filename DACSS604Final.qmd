@@ -453,9 +453,6 @@ Math_Gen_IEP_Achieve_Sum
 
 ```{r}
 
- # ggplot(aes(Species, fill=ifelse(Species=="setosa", "A","B"))) + 
- #    geom_bar(show.legend=FALSE) +
- #    scale_fill_manual(values=c(A="blue", B="red"))
 
 Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
   filter(Subject == "Math")%>%

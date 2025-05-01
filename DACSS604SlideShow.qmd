@@ -207,61 +207,139 @@ star_dem_all_private<-star_dem_all_private%>%
 
 ```
 
-## Research Question 1
-
--   Get in bed
--   Count sheep
 
 
+## Considerable Growth in Grade 5 Math
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-Bench_Sum_Plot<-HistSchoolBenchSum%>%
-  filter(`Year` == "2024-2025" & `Screening Window` == "Winter" | `Year` == "2023-2024" & `Screening Window` == "Spring")%>%
-  filter(`Benchmark_Status` == "At/Above Benchmark")%>%
-  ggplot(aes(x=`Benchmark_Status`,fill = `Year`, y = `% Students`)) +
-  geom_bar(position="dodge", stat = "identity") +
-    geom_text(aes( y = `% Students`, label = `% Students`,
-                     vjust = -.25), position = position_dodge(width = 1)) +
 
-          #theme_classic() +
-  theme(axis.title.x=element_blank(),
-       #  axis.text.x = element_text(angle = 45, , hjust = 1),
+star_dem_math<- star_dem_all_private%>%
+  filter(`Assignment Type` == "Star Math")
+
+Math_IEP_Sum<-star_dem_math%>%
+  mutate(IEP = case_when(IEP_Status == 1 ~ "Yes",
+                         IEP_Status == 0 ~ "No"))%>%
+  filter(`Assignment Type` == "Star Math")%>%
+  group_by(Grade, `School_Year`, IEP)%>%
+  summarize(`Median SGP` = median(`SGP (Expectation=50)`))
+
+#Math_IEP_Sum
+
+Math_Gen_Sum<-star_dem_math%>%
+  filter(`Assignment Type` == "Star Math")%>%
+  group_by(Grade, `School_Year`, Gender)%>%
+  summarize(`Median SGP` = median(`SGP (Expectation=50)`))
+
+#Math_Gen_Sum
+
+#star_dem_math
+
+Math_Gen_IEP_Sum<-star_dem_math%>%
+ filter(`Grade` == "5")%>%
+  group_by(`School_Year`, Gender, IEP_Status)%>%
+  summarize(`Median SGP` = median(`SGP (Expectation=50)`))
+
+#Math_Gen_IEP_Sum
+
+Math_Gen_IEP_Achieve_Sum<-star_dem_math%>%
+ filter(`Grade` == "5")%>%
+  group_by(`School_Year`, Gender, IEP_Status)%>%
+  summarize(`Median Test 1 PR` = median(`Test 1 PR`))
+
+#Math_Gen_IEP_Achieve_Sum
+
+```
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
+  filter(Subject == "Math")%>%
+  filter(`Screening Window` == "Fall-Winter")%>%
+  filter(`Grade` != "9")%>%
+  filter(`Grade` != "10")%>%
+  ggplot(aes(x=`Grade`,fill = ifelse(Grade == "5", "A", "B"), y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", show.legend=FALSE) +
+    scale_fill_manual(values = c(A= "skyblue", B = "grey"))+
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median SGP`, label = `Median SGP`,
+                   vjust = -.25), position = position_dodge(width = 1))+
+  #theme_classic()+
+    #scale_fill_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
           axis.ticks.x=element_blank())+
-    scale_fill_brewer(palette = "Paired")+
     labs(
-      y = "% Students",
-       x= "Benchmark Category",
-      title = "Rising Tide Benchmark Achievement by School Year",
-      caption = "Source: Renaissance Star Literacy and Math Screening")+
-  geom_hline(yintercept = 80, color = "grey")+
-  annotate("text", x = .75, y = 85, label = "80% Goal") +
-  facet_wrap(~Subject)
+      y = "Median SGP",
+       x= "Grade Level",
+      title = "Math Student Growth Percentile by Grade Level",
+      caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 3.85, y = 48, label = "50th Percentile")+
+  facet_wrap(~Year)
 ```
 
 ```{r, echo = FALSE}
 
 #| eval: false
-#| fig-cap: "Rising Tide Benchmark Achievement by School Year, Renaissance Star Literacy and Math"
+#| fig-cap: "Rising Tide Math Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Math Screening"
+#| 
 #| fig-alt: >
-#|    A bar blot with school year (ordered, factor) on the x-axis and the percentage of students
-#|    classified as At/Above benchmark on the y-axis, faceted by subject (English Language Arts or Math)
+#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
+#|    (SGP) in math on the y-axis, faceted by school year (ordered, factor).
 #|    Plot illustrates the relationship between the three variables.
-
-Bench_Sum_Plot
+#|    
+Hist_Growth_Sum_G5Math_Plot
 
 ```
+## G5 Growth
+
+- Students in G5 were predicted to grow....
+
+## Considerable improvement regardless of Disability Status
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+ IEP_Growth_G5Math_Plot<- Math_IEP_Sum%>%
+  filter(Grade == "5")%>%
+  ggplot(aes(x=`IEP`,fill = `School_Year`, y = `Median SGP`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Median SGP`, x = `IEP`, label = `Median SGP`), position = position_dodge(width=.9),
+                   vjust = 1)+
+  theme_classic()+
+      theme(#axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+           # axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+ # facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Median SGP",
+         x= "IEP Status",
+        title = "Improved Growth For All Grade 5 Learners",
+        caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
+```
+
+```{r, echo = FALSE}
+#| eval: false
+#| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and School Year, Renaissance Star MathScreening"
+#| 
+#| fig-alt: >
+#|    A clustered, bar blot with IEP status (ordered, factor) on the x-axis and the 
+#|    median G5 student growthpercentile (SGP) in math on the y-axis.
+#|    Bars are colored by the school year (ordered, factor)
+#|    Plot illustrates the relationship between the three variables.
 
 
-## Grade 5 Math Story
+IEP_Growth_G5Math_Plot
 
--   Get in bed
--   Count sheep
+```
+```{r}
+IEP_Growth_G5Math_Plot
 
-## Slide 5
-
--   Get in bed
--   Count sheep
-
+```
 ## Slide 6
 
 -   Get in bed
@@ -272,10 +350,51 @@ Bench_Sum_Plot
 -   Get in bed
 -   Count sheep
 
-## Slide 8
+## Future Questions
 
--   Get in bed
--   Count sheep
+-   Gender Gap
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+Gen_Growth_G5Math_Plot<- Math_Gen_Sum%>%
+  filter(Grade == "5")%>%
+  ggplot(aes(x=`Gender`,fill = `School_Year`, y = `Median SGP`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Median SGP`, x = `Gender`, label = `Median SGP`), position = position_dodge(width=.9),
+                   vjust = 1)+
+  theme_classic()+
+      theme(axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+           # axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+ # facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Median SGP",
+         x= "Gender",
+        title = "Improved Growth For All Grade 5 Learners",
+        caption = "Source: Renaissance Star Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
+  
+  
+```
+
+```{r, echo = FALSE}
+
+#| eval: false
+#| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A clustered, bar blot with Gender (ordered, factor) on the x-axis and the 
+#|    median G5 student growthpercentile (SGP) in math on the y-axis.
+#|    Bars are colored by the school year (ordered, factor)
+#|    Plot illustrates the relationship between the three variables.
+#| 
+
+Gen_Growth_G5Math_Plot
+
+```
 
 ## Slide 9
 
