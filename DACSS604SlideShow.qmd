@@ -1,13 +1,79 @@
 ---
 title: "DACSS 604 Final Project"
+subtitle: "In Patterns to Problems lies hope for Solutions" 
 author: "Theresa Szczepanski"
 format: 
   revealjs:
-    theme: sky
+    incremental: true
+    #theme: sky
     logo: heron.jpg
+    institute: "Rising Tide Charter Public School"
     footer: "DACSS 604 Spring 2025"
 ---
 
+## My Audience
+
+- ***Who***: Stakeholders at Rising Tide Charter Public School
+    - Head of School, Principal, Assistant Principals, Department Chairs, and Board of Trustees
+    - Make decisions on allocation of resources and evaluation of teaching staff
+    - Write schoolwide and department wide goals for each school year
+    - ***Very Limited Time***: School leaders are notoriously stretched thin with time
+    
+## My Audience (cont.)
+
+- ***Technical Skill***
+  - Some may have some statistical training but most do not
+  - Assume general, college-educated audience level of understanding
+  - Can assume familiarity with the concept of assessment and accountability testing in the K-12 public school sector.
+
+
+
+## What are the [Star Screening Assessments](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)?
+
+- Computerized adaptive tests
+- tested on national samples with cross-validation
+- found to be ***reliable*** and ***valid predictors*** of students’ academic ***growth*** in ***literacy*** and ***mathematics*** with “convincing evidence”^[Source: [National Center for Intensive Interventions](https://charts.intensiveintervention.org/ascreening)]  
+
+
+
+
+## How were they administered?
+
+- ***Who***: Students in Grades 5-10
+
+- ***What***: Star Literacy and Star Math
+
+- ***When***: Three screenings (Fall, Winter, Spring) beginning in SY2023-2024
+
+
+## What Metrics Do they Provide?
+
+::: {.panel-tabset}
+
+### Achievement
+
+- Achievement Percentile (***PR***) 
+  
+    - Continuous, with minimum value of 1 and maximum value of 99
+    - A student with a ***PR*** of 54 scored ***better*** than ***54%*** of students in their grade level.
+
+    - A student is classified as ***At/Above Benchmark*** if their achievement percentile is ***at least 40***.
+        
+### Growth
+
+- Student Growth Percentile (***SGP***) 
+    - Measure of a student's improvement given their ***achievement*** in their first test.
+    - Continuous with minimum value of 1 and maximum value of 99
+    - A student with an ***SGP*** of 54 ***improved more*** than ***54%*** of students in their grade level who ***had similar achievement*** on their first screening test.
+
+:::
+
+
+   
+    
+
+
+- Growth
 
 
 
@@ -15,7 +81,6 @@ format:
 
 
 
-## Slide 1
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #| label: setup
@@ -119,8 +184,6 @@ star_dem_all_private<-star_dem_all_private%>%
   mutate(Benchmark_Status = as.factor(Benchmark_Status))
 
 ```
--   What are the [Renaissance Star Screening Assessments](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)
--   Get out of bed
 
 ## Research Question 1
 
@@ -128,7 +191,7 @@ star_dem_all_private<-star_dem_all_private%>%
 -   Count sheep
 
 ## Are we meeting our Accountability Goal?
-- Will this plot work?
+
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 Bench_Sum_Plot<-HistSchoolBenchSum%>%
@@ -166,6 +229,8 @@ Bench_Sum_Plot<-HistSchoolBenchSum%>%
 Bench_Sum_Plot
 
 ```
+
+
 ## Slide 4
 
 -   Get in bed
