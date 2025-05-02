@@ -13,11 +13,15 @@ format:
 
 ## My Audience
 
+
 - ***Who***: Stakeholders at Rising Tide Charter Public School
+
     - Head of School, Principal, Assistant Principals, Department Chairs, and Board of Trustees
-    - Make decisions on allocation of resources and evaluation of teaching staff
-    - Write school wide and department wide goals for each school year
     
+- ***What*** is the purpose?
+    - Inform decisions on allocation of resources and evaluation of teaching staff and academic program
+    - Plan school wide and department wide goals for upcoming school year
+
 ## My Audience (cont.)
 
 - ***Technical Skill***
@@ -45,27 +49,30 @@ format:
 - ***When***: Three screenings (Fall, Winter, Spring) beginning in SY2023-2024
 
 
+    
 ## What Metrics Do they Provide?
 
-::: {.panel-tabset}
+- Test ***Achievement*** Percentile
 
-### Achievement
+- Student ***Growth*** Percentile
 
-- Achievement Percentile (***PR***) 
+## Test Achievement Percentile: ***PR***
+
   
-    - Continuous, with minimum value of 1 and maximum value of 99
-    - A student with a ***PR*** of 54 scored ***better*** than ***54%*** of students in their grade level.
+- Continuous, with minimum value of 1 and maximum value of 99
+- A student with a ***PR*** of 54 scored ***better*** than ***54%*** of students in their grade level.
 
-    - A student is classified as ***At/Above Benchmark*** if their achievement percentile is ***at least 40***.
+- A student is classified as ***At/Above Benchmark*** if their achievement percentile is ***at least 40***.
         
-### Growth
+## Student Growth Percentile: ***SGP***
 
-- Student Growth Percentile (***SGP***) 
-    - Measure of a student's improvement given their ***achievement*** on their first test.
-    - Continuous with minimum value of 1 and maximum value of 99
-    - A student with an ***SGP*** of 54 ***improved more*** than ***54%*** of students in their grade level who ***had similar achievement*** on their first screening test.
+- Measure of a student's ***improvement*** given their ***achievement*** on their first test.
 
-:::
+- Continuous with minimum value of 1 and maximum value of 99
+
+- A student with an ***SGP*** of 54 ***improved more*** than ***54%*** of students in their grade level who ***had similar achievement*** on their first screening test.
+
+
 
 ## What question will we examine?
 
@@ -77,11 +84,11 @@ programming initiatives and Grade 5 student growth in mathematics?
     - In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students' average growth percentiles on the MCAS were ***considerably*** below the state average of 50; ***75%*** of students were ***below*** the ***25th*** percentile for growth in 2023^[[Source: Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830000&orgtypecode=5&&fycode=2022)]
 
 
-## What Changes did we Make?
+## What Changes did we Make in SY2024-2025?
 
 - ***Schedule***: Increase instructional hours dedicated to math in Grade 5
 
-- ***Instruction***: Train teachers on 
+- ***Instruction***: Train teachers on the use of the G5 Math curricular materials
 
 
 
@@ -101,13 +108,14 @@ programming initiatives and Grade 5 student growth in mathematics?
 
 <p style="font-size: 0.7em;">
 
-    - Provide Department level training on the use of the G5 Math curricular materials
-        - Provide template for the use of time in a 55 minute block
-        - Set clear expectations on frequency of assessment and use of team-written assessments
-        - Provide bank of ***High Quality, supplemental resources*** for numeracy
+      
+  - Provide template for the use of time in a 55 minute block
   
+  - Set clear expectations on frequency of assessment and use of team-written assessments
   
-    - Provide District-level, standards aligned assessments, 2 weeks after each unit, for analysis
+  - Provide bank of ***High Quality, supplemental resources*** for numeracy
+  
+  - Provide District-level, standards-aligned assessments, 1 month after each unit for analysis
 </p>   
 
 
