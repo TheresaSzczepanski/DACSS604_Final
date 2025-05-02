@@ -27,7 +27,7 @@ format:
 
 
 
-## What are the [Star Screening Assessments](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)?
+## What are the [Star Screening Tests](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)?
 
 - Computerized adaptive tests
 - tested on national samples with cross-validation
@@ -61,36 +61,45 @@ format:
 ### Growth
 
 - Student Growth Percentile (***SGP***) 
-    - Measure of a student's improvement given their ***achievement*** in their first test.
+    - Measure of a student's improvement given their ***achievement*** on their first test.
     - Continuous with minimum value of 1 and maximum value of 99
     - A student with an ***SGP*** of 54 ***improved more*** than ***54%*** of students in their grade level who ***had similar achievement*** on their first screening test.
 
 :::
 
-## What questions will we examine?
+## What question will we examine?
 
 - Is there a relationship between Rising Tide’s 2024-2025 Grade 5 Mathematics
 programming initiatives and Grade 5 student growth in mathematics?
 
 
 - ***Why?***
-    - In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students' average growth percentiles were ***considerably*** below the state average of 50; ***75%*** of students were ***below*** the ***25th*** percentile for growth in 2023^[[Source: Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830000&orgtypecode=5&&fycode=2022)]
-    
-    
+    - In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students' average growth percentiles on the MCAS were ***considerably*** below the state average of 50; ***75%*** of students were ***below*** the ***25th*** percentile for growth in 2023^[[Source: Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830000&orgtypecode=5&&fycode=2022)]
+
+
 ## What Changes did we Make?
 
-:::: {.columns}
+- ***Schedule***: Increase instructional hours dedicated to math in Grade 5
 
-::: {.column width="35%"}
-- Schedule
+- ***Instruction***: Train teachers on 
 
-  - Provide a year-long course calendar mapping of lessons
+
+
+## Schedule
+
+<p style="font-size: 0.8em;">
+
+  - Provide a year-long course calendar mapping of lessons to weekly school schedule
   
   - Move 4 units from the G5 Math course to the G5 STEM course
-:::
 
-::: {.column width="65%"}
-- Alignment
+</p>
+
+## Alignment
+
+
+
+<p style="font-size: 0.7em;">
 
     - Provide Department level training on the use of the G5 Math curricular materials
         - Provide template for the use of time in a 55 minute block
@@ -99,9 +108,12 @@ programming initiatives and Grade 5 student growth in mathematics?
   
   
     - Provide District-level, standards aligned assessments, 2 weeks after each unit, for analysis
-:::
+</p>   
 
-::::
+
+  
+    
+
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -209,7 +221,11 @@ star_dem_all_private<-star_dem_all_private%>%
 
 
 
-## Considerable Growth in Grade 5 Math
+## What did we observe?
+
+<p style="font-size: 0.7em;">
+Grade 5 students with the same disability status, Test 1 achievement percentile, income status, and gender are predicted to have an ***SGP 10 percentiles higher*** in SY2024-2025 than in SY2023-2024.
+</p>
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -291,19 +307,21 @@ Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
 Hist_Growth_Sum_G5Math_Plot
 
 ```
-## G5 Growth
 
-- Students in G5 were predicted to grow....
 
-## Considerable improvement regardless of Disability Status
+## What about our students on IEPs?
+
+<p style="font-size: 0.7em;">
+Grade 5 students on IEPs have a considerably lower median ***SGP*** than their non-disabled peers; however the difference between the median SGP of students on IEPs and their non-disabled peers was ***reduced*** by more than ***200%*** in SY2024-2025.
+</p>
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
  IEP_Growth_G5Math_Plot<- Math_IEP_Sum%>%
   filter(Grade == "5")%>%
-  ggplot(aes(x=`IEP`,fill = `School_Year`, y = `Median SGP`)) +
+  ggplot(aes(x=`School_Year`,fill = `IEP`, y = `Median SGP`)) +
       geom_bar(position="dodge", stat = "identity") +
-      geom_text(aes( y = `Median SGP`, x = `IEP`, label = `Median SGP`), position = position_dodge(width=.9),
+      geom_text(aes( y = `Median SGP`, x = `School_Year`, label = `Median SGP`), position = position_dodge(width=.9),
                    vjust = 1)+
   theme_classic()+
       theme(#axis.title.x=element_blank(),
@@ -316,39 +334,27 @@ Hist_Growth_Sum_G5Math_Plot
       labs(
         y = "Median SGP",
          x= "IEP Status",
-        title = "Improved Growth For All Grade 5 Learners",
+        title = "G5 Student Growth Percentile by Year and IEP Status",
         caption = "Source: Renaissance Star Math Screening")+
    geom_hline(yintercept = 50, color = "grey")+
   annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
 ```
 
+
 ```{r, echo = FALSE}
+
 #| eval: false
 #| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and School Year, Renaissance Star MathScreening"
 #| 
 #| fig-alt: >
-#|    A clustered, bar blot with IEP status (ordered, factor) on the x-axis and the 
+#|    A clustered, bar blot with School Year status (ordered, factor) on the x-axis and the 
 #|    median G5 student growthpercentile (SGP) in math on the y-axis.
-#|    Bars are colored by the school year (ordered, factor)
+#|    Bars are colored by IEP_Status (ordered, factor)
 #|    Plot illustrates the relationship between the three variables.
-
-
+#|    
 IEP_Growth_G5Math_Plot
 
 ```
-```{r}
-IEP_Growth_G5Math_Plot
-
-```
-## Slide 6
-
--   Get in bed
--   Count sheep
-
-## Slide 7
-
--   Get in bed
--   Count sheep
 
 ## Future Questions
 
@@ -396,12 +402,4 @@ Gen_Growth_G5Math_Plot
 
 ```
 
-## Slide 9
 
--   Get in bed
--   Count sheep
-
-## Slide 10
-
--   Get in bed
--   Count sheep

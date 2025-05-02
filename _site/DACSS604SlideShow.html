@@ -29,71 +29,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -428,8 +363,8 @@ Theresa Szczepanski
 </ul></li>
 </ul>
 </section>
-<section id="what-are-the-star-screening-assessments" class="slide level2">
-<h2>What are the <a href="https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&amp;u=zceria">Star Screening Assessments</a>?</h2>
+<section id="what-are-the-star-screening-tests" class="slide level2">
+<h2>What are the <a href="https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&amp;u=zceria">Star Screening Tests</a>?</h2>
 <ul>
 <li class="fragment">Computerized adaptive tests</li>
 <li class="fragment">tested on national samples with cross-validation</li>
@@ -463,7 +398,7 @@ Theresa Szczepanski
 <ul>
 <li class="fragment">Student Growth Percentile (<strong><em>SGP</em></strong>)
 <ul>
-<li class="fragment">Measure of a student’s improvement given their <strong><em>achievement</em></strong> in their first test.</li>
+<li class="fragment">Measure of a student’s improvement given their <strong><em>achievement</em></strong> on their first test.</li>
 <li class="fragment">Continuous with minimum value of 1 and maximum value of 99</li>
 <li class="fragment">A student with an <strong><em>SGP</em></strong> of 54 <strong><em>improved more</em></strong> than <strong><em>54%</em></strong> of students in their grade level who <strong><em>had similar achievement</em></strong> on their first screening test.</li>
 </ul></li>
@@ -472,94 +407,72 @@ Theresa Szczepanski
 </div>
 </div>
 </section>
-<section id="what-questions-will-we-examine" class="slide level2">
-<h2>What questions will we examine?</h2>
+<section id="what-question-will-we-examine" class="slide level2">
+<h2>What question will we examine?</h2>
 <ul>
 <li class="fragment"><p>Is there a relationship between Rising Tide’s 2024-2025 Grade 5 Mathematics programming initiatives and Grade 5 student growth in mathematics?</p></li>
 <li class="fragment"><p><strong><em>Why?</em></strong></p>
 <ul>
-<li class="fragment">In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students’ average growth percentiles were <strong><em>considerably</em></strong> below the state average of 50; <strong><em>75%</em></strong> of students were <strong><em>below</em></strong> the <strong><em>25th</em></strong> percentile for growth in 2023<sup>1</sup></li>
+<li class="fragment">In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students’ average growth percentiles on the MCAS were <strong><em>considerably</em></strong> below the state average of 50; <strong><em>75%</em></strong> of students were <strong><em>below</em></strong> the <strong><em>25th</em></strong> percentile for growth in 2023<sup>1</sup></li>
 </ul></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn2"><p><a href="https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&amp;orgcode=04830000&amp;orgtypecode=5&amp;&amp;fycode=2022">Source: Rising Tide 2023 Accountability Report</a></p></li></ol></aside></section>
 <section id="what-changes-did-we-make" class="slide level2">
 <h2>What Changes did we Make?</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
 <ul>
-<li class="fragment"><p>Schedule</p>
-<ul>
-<li class="fragment"><p>Provide a year-long course calendar mapping of lessons</p></li>
-<li class="fragment"><p>Move 4 units from the G5 Math course to the G5 STEM course</p></li>
-</ul></li>
+<li class="fragment"><p><strong><em>Schedule</em></strong>: Increase instructional hours dedicated to math in Grade 5</p></li>
+<li class="fragment"><p><strong><em>Instruction</em></strong>: Train teachers on</p></li>
 </ul>
-</div><div class="column" style="width:65%;">
-<ul>
-<li class="fragment"><p>Alignment</p>
-<ul>
-<li class="fragment">Provide Department level training on the use of the G5 Math curricular materials
-<ul>
-<li class="fragment">Provide template for the use of time in a 55 minute block</li>
-<li class="fragment">Set clear expectations on frequency of assessment and use of team-written assessments</li>
-<li class="fragment">Provide bank of <strong><em>High Quality, supplemental resources</em></strong> for numeracy</li>
-</ul></li>
-<li class="fragment">Provide District-level, standards aligned assessments, 2 weeks after each unit, for analysis</li>
-</ul></li>
-</ul>
-</div>
-</div>
 </section>
-<section id="considerable-growth-in-grade-5-math" class="slide level2">
-<h2>Considerable Growth in Grade 5 Math</h2>
+<section id="schedule" class="slide level2">
+<h2>Schedule</h2>
+<p style="font-size: 0.8em;">
+</p><ul>
+<li class="fragment"><p>Provide a year-long course calendar mapping of lessons to weekly school schedule</p></li>
+<li class="fragment"><p>Move 4 units from the G5 Math course to the G5 STEM course</p></li>
+</ul>
+<p></p>
+</section>
+<section id="alignment" class="slide level2">
+<h2>Alignment</h2>
+<p style="font-size: 0.7em;">
+</p><pre><code>- Provide Department level training on the use of the G5 Math curricular materials
+    - Provide template for the use of time in a 55 minute block
+    - Set clear expectations on frequency of assessment and use of team-written assessments
+    - Provide bank of ***High Quality, supplemental resources*** for numeracy
+
+
+- Provide District-level, standards aligned assessments, 2 weeks after each unit, for analysis</code></pre>
+<p></p>
+</section>
+<section id="what-did-we-observe" class="slide level2">
+<h2>What did we observe?</h2>
+<p style="font-size: 0.7em;">
+Grade 5 students with the same disability status, Test 1 achievement percentile, income status, and gender are predicted to have an <strong><em>SGP 10 percentiles higher</em></strong> in SY2024-2025 than in SY2023-2024.
+</p>
 
 <img data-src="DACSS604SlideShow_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
-<section id="g5-growth" class="slide level2">
-<h2>G5 Growth</h2>
-<ul>
-<li class="fragment">Students in G5 were predicted to grow….</li>
-</ul>
-</section>
-<section id="considerable-improvement-regardless-of-disability-status" class="slide level2">
-<h2>Considerable improvement regardless of Disability Status</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>IEP_Growth_G5Math_Plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="what-about-our-students-on-ieps" class="slide level2">
+<h2>What about our students on IEPs?</h2>
+<p style="font-size: 0.7em;">
+Grade 5 students on IEPs have a considerably lower median <strong><em>SGP</em></strong> than their non-disabled peers; however the difference between the median SGP of students on IEPs and their non-disabled peers was <strong><em>reduced</em></strong> by more than <strong><em>200%</em></strong> in SY2024-2025.
+</p>
 
-</div>
-<img data-src="DACSS604SlideShow_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
-<section id="slide-6" class="slide level2">
-<h2>Slide 6</h2>
-<ul>
-<li class="fragment">Get in bed</li>
-<li class="fragment">Count sheep</li>
-</ul>
-</section>
-<section id="slide-7" class="slide level2">
-<h2>Slide 7</h2>
-<ul>
-<li class="fragment">Get in bed</li>
-<li class="fragment">Count sheep</li>
-</ul>
-</section>
+<img data-src="DACSS604SlideShow_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="future-questions" class="slide level2">
 <h2>Future Questions</h2>
 <ul>
 <li class="fragment">Gender Gap</li>
 </ul>
-
-<img data-src="DACSS604SlideShow_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
-<section id="slide-9" class="slide level2">
-<h2>Slide 9</h2>
-<ul>
-<li class="fragment">Get in bed</li>
-<li class="fragment">Count sheep</li>
-</ul>
-</section>
-<section id="slide-10" class="slide level2">
-<h2>Slide 10</h2>
-<ul>
-<li class="fragment">Get in bed</li>
-<li class="fragment">Count sheep</li>
-</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="DACSS604SlideShow_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="heron.jpg" class="slide-logo"></p>
