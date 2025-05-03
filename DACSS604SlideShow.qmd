@@ -75,9 +75,27 @@ format:
 
 ## [What changed in SY2024-2025?]{style="color:navy;"}
 
--   ***Schedule***: Increase instructional hours dedicated to math in Grade 5
+:::: {.columns}
 
--   ***Instruction***: Train teachers on the use of the G5 Math curricular materials
+::: {.column width="40%"}
+:::
+
+::: {.column width="60%"}
+- Increase instructional hours dedicated to math in Grade 5
+
+- Train teachers on the use of the G5 Math curricular materials
+:::
+
+::::
+
+![](schedule.png){.absolute top="170" left="30" width="250" height="250"}
+
+   
+![](instruction.jpeg){.absolute top="370" right="150" width="400" height="300"}
+
+
+
+    
 
 ## [Schedule]{style="color:navy;"}
 
@@ -86,6 +104,10 @@ format:
 -   Provide a year-long course calendar mapping of lessons to weekly school schedule
 
 -   Move 4 units from the G5 Math course to the G5 STE[**M**]{style="color:blue;"} course
+
+![](G5_lineplot.png){.absolute top="370" right="50" width="250" height="200"}
+![](G5_coordplane.png){.absolute top="350" right="400" width="300" height="300"}
+![](G5_volume.jpg){.absolute top="350" left="40" width="250" height="300"}
 
 </p>
 
