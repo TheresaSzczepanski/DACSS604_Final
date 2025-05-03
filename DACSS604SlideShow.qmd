@@ -1,6 +1,6 @@
 ---
-title: "2024-2025 Grade 5 Mathematics Initiative"
-subtitle: "Ensuring every child has access to grade appropriate assignments and teachers who hold high expectations" 
+title: "[A Rising Tide Lifts all Boats?]{style='color:navy'}"
+subtitle: "Analysis of SY2024-2025 Grade 5 Math Initiative" 
 author: "Theresa Szczepanski"
 format: 
   revealjs:
@@ -9,9 +9,10 @@ format:
     logo: heron.jpg
     institute: "Rising Tide Charter Public School"
     footer: "DACSS 604 Spring 2025"
+  
 ---
 
-## My Audience
+## [My Audience]{style="color:navy;"}
 
 
 - ***Who***: Stakeholders at Rising Tide Charter Public School
@@ -20,27 +21,27 @@ format:
     
 - ***What*** is the purpose?
     - Inform decisions on allocation of resources and evaluation of teaching staff and academic program
-    - Plan school wide and department wide goals for upcoming school year
+  
 
-## My Audience (cont.)
+## [My Audience (cont.)]{style="color:navy;"}
 
 - ***Technical Skill***
-  - Some may have some statistical training but most do not
-  - Assume general, college-educated audience level of understanding
-  - Can assume familiarity with the concept of assessment and accountability testing in the K-12 public school sector.
+  - some may have some statistical training but most do not
+  - assume general, college-educated audience level of understanding
+  - can assume familiarity with the concept of assessment and accountability testing in the K-12 public school sector
 
 
 
-## What are the [Star Screening Tests](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)?
+## [What are the [Star Screening Tests](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)?]{style="color:navy;"}
 
-- Computerized adaptive tests
+- computerized, adaptive tests
 - tested on national samples with cross-validation
 - found to be ***reliable*** and ***valid predictors*** of students’ academic ***growth*** in ***literacy*** and ***mathematics*** with “convincing evidence”^[Source: [National Center for Intensive Interventions](https://charts.intensiveintervention.org/ascreening)]  
 
 
 
 
-## How were they administered?
+## [How were they administered?]{style="color:navy;"}
 
 - ***Who***: Students in Grades 5-10
 
@@ -50,41 +51,41 @@ format:
 
 
     
-## What Metrics Do they Provide?
+## [What Metrics Do they Provide?]{style="color:navy;"}
 
 - Test ***Achievement*** Percentile
 
 - Student ***Growth*** Percentile
 
-## Test Achievement Percentile: ***PR***
+## [Test Achievement Percentile: ***PR***]{style="color:navy;"}
 
   
-- Continuous, with minimum value of 1 and maximum value of 99
-- A student with a ***PR*** of 54 scored ***better*** than ***54%*** of students in their grade level.
+- Minimum value of 1 and maximum value of 99
+- A student with a ***PR*** of 54 scored ***higher*** than ***54%*** of students in their grade level.
 
-- A student is classified as ***At/Above Benchmark*** if their achievement percentile is ***at least 40***.
+- A student is classified as ***At/Above Benchmark*** for their grade level if their achievement percentile is ***at least 40***.
         
-## Student Growth Percentile: ***SGP***
+## [Student Growth Percentile: ***SGP***]{style="color:navy;"}
 
 - Measure of a student's ***improvement*** given their ***achievement*** on their first test.
 
-- Continuous with minimum value of 1 and maximum value of 99
+- Minimum value of 1 and maximum value of 99
 
 - A student with an ***SGP*** of 54 ***improved more*** than ***54%*** of students in their grade level who ***had similar achievement*** on their first screening test.
 
 
 
-## What question will we examine?
+## [What question will we examine?]{style="color:navy;"}
 
 - Is there a relationship between Rising Tide’s 2024-2025 Grade 5 Mathematics
 programming initiatives and Grade 5 student growth in mathematics?
 
 
 - ***Why?***
-    - In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students' average growth percentiles on the MCAS were ***considerably*** below the state average of 50; ***75%*** of students were ***below*** the ***25th*** percentile for growth in 2023^[[Source: Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830000&orgtypecode=5&&fycode=2022)]
+    - In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students' average growth percentiles on the MCAS were ***considerably*** below the state average of 50; ***75%*** of students were ***below*** the ***25th*** percentile for growth in 2023.^[[Source: Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830000&orgtypecode=5&&fycode=2022)]
 
 
-## What Changes did we Make in SY2024-2025?
+## [What changed in SY2024-2025?]{style="color:navy;"}
 
 - ***Schedule***: Increase instructional hours dedicated to math in Grade 5
 
@@ -92,31 +93,32 @@ programming initiatives and Grade 5 student growth in mathematics?
 
 
 
-## Schedule
+## [Schedule]{style="color:navy;"}
 
 <p style="font-size: 0.8em;">
 
   - Provide a year-long course calendar mapping of lessons to weekly school schedule
   
-  - Move 4 units from the G5 Math course to the G5 STEM course
+  - Move 4 units from the G5 Math course to the G5 STE[**M**]{style="color:blue;"}  course
 
 </p>
 
-## Alignment
+## [Instruction]{style="color:navy;"}
 
 
 
-<p style="font-size: 0.7em;">
-
-      
+  
   - Provide template for the use of time in a 55 minute block
+  
+      
   
   - Set clear expectations on frequency of assessment and use of team-written assessments
   
-  - Provide bank of ***High Quality, supplemental resources*** for numeracy
   
-  - Provide District-level, standards-aligned assessments, 1 month after each unit for analysis
-</p>   
+  - Provide bank of ***high quality, supplemental resources*** for numeracy
+  
+  - Provide district-level, standards-aligned assessments one month after each unit for analysis
+  
 
 
   
@@ -128,9 +130,7 @@ programming initiatives and Grade 5 student growth in mathematics?
 #| label: setup
 #| warning: false
 #| message: false
-
 # load the needed libraries
-
 library(tidyverse)
 library(ggplot2)
 library(lubridate)
@@ -229,12 +229,12 @@ star_dem_all_private<-star_dem_all_private%>%
 
 
 
-## What did we observe?
-
+## [What did we observe?]{style="color:navy;"}
+::: aside
 <p style="font-size: 0.7em;">
-Grade 5 students with the same disability status, Test 1 achievement percentile, income status, and gender are predicted to have an ***SGP 10 percentiles higher*** in SY2024-2025 than in SY2023-2024.
+Grade 5 students with the same Test 1 achievement percentile, disability status, and income status are predicted to have an ***SGP 10 percentiles higher*** in SY2024-2025 than in SY2023-2024.
 </p>
-
+:::
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 star_dem_math<- star_dem_all_private%>%
@@ -300,13 +300,33 @@ Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
    geom_hline(yintercept = 50, color = "grey")+
   annotate("text", x = 3.85, y = 48, label = "50th Percentile")+
   facet_wrap(~Year)
+
+Hist_Growth_Sum_G5Math_Plot2<-HistGradeGrowthSum%>%
+  filter(Subject == "Math")%>%
+  filter(`Screening Window` == "Fall-Winter")%>%
+  filter(`Grade` == "5")%>%
+  ggplot(aes(x=`Year`,fill = ifelse(Year == "2024-2025", "A", "B"), y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", show.legend=FALSE) +
+    scale_fill_manual(values = c(A= "skyblue", B = "skyblue"))+
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median SGP`, label = `Median SGP`,
+                   vjust = -.25), position = position_dodge(width = 1))+
+  theme_classic()+
+    #scale_fill_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "School Year",
+      title = "G5 Math Student Growth Percentile by School Year",
+      caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 1., y = 48, label = "50th Percentile")
 ```
 
 ```{r, echo = FALSE}
-
-#| eval: false
-#| fig-cap: "Rising Tide Math Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Math Screening"
-#| 
+#| eval: true
 #| fig-alt: >
 #|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
 #|    (SGP) in math on the y-axis, faceted by school year (ordered, factor).
@@ -315,13 +335,31 @@ Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
 Hist_Growth_Sum_G5Math_Plot
 
 ```
+## [What did we observe (option 2)?]{style="color:navy;"}
+::: aside
+<p style="font-size: 0.7em;">
+Grade 5 students with the same Test 1 achievement percentile, disability status, and income status are predicted to have an ***SGP 10 percentiles higher*** in SY2024-2025 than in SY2023-2024.
+</p>
+:::
+```{r, echo = FALSE}
+#| eval: true
+#| 
+#| fig-alt: >
+#|    A bar blot with School year (ordered, factor) on the x-axis and the median 5th grade student growth percentile 
+#|    (SGP) in math on the y-axis.
+#|    Plot illustrates the relationship between the two variables.
+#|    
+Hist_Growth_Sum_G5Math_Plot2
+
+```
 
 
-## What about our students on IEPs?
-
+## [What about our students on IEPs?]{style="color:navy;"}
+::: aside
 <p style="font-size: 0.7em;">
 Grade 5 students on IEPs have a considerably lower median ***SGP*** than their non-disabled peers; however the difference between the median SGP of students on IEPs and their non-disabled peers was ***reduced*** by more than ***200%*** in SY2024-2025.
 </p>
+:::
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -364,7 +402,7 @@ IEP_Growth_G5Math_Plot
 
 ```
 
-## Future Questions
+## [Future Questions]{style="color:navy;"}
 
 -   Examxine growth/acheivement as measure by MCAS Spring 2025 Preliminary results
 
@@ -410,7 +448,7 @@ Gen_Growth_G5Math_Plot
 
 ```
 
-## Limitations? Do you do this or is that more for research?
+## [Limitations? Do you do this or is that more for research?]{style="color:navy;"}
 
-## Appendix
+## [Appendix]{style="color:navy;"}
 
