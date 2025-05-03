@@ -272,6 +272,13 @@ Math_Gen_IEP_Achieve_Sum<-star_dem_math%>%
 
 #Math_Gen_IEP_Achieve_Sum
 
+text_pos_data<-data.frame(
+  x = c(3.85, 3.85),
+  y = c(48, 48),
+  cyl =c(4,6),
+  label = c("50th Percentile", "")
+)
+
 ```
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -297,8 +304,10 @@ Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
        x= "Grade Level",
       title = "Math Student Growth Percentile by Grade Level",
       caption = "Source: Renaissance Star Math Screening")+
-   geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x = 3.85, y = 48, label = "50th Percentile")+
+  geom_hline(yintercept = 50, color = "grey")+
+  #geom_text(aes(x=x, y=y, label = label), data = text_pos_data, inherit.aes=FALSE)+
+  #facet_wrap(~cyl)+
+  #annotate("text", x = 3.85, y = 48, label = "50th Percentile")+
   facet_wrap(~Year)
 
 Hist_Growth_Sum_G5Math_Plot2<-HistGradeGrowthSum%>%
