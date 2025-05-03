@@ -11,6 +11,29 @@ format:
     footer: "DACSS 604 Spring 2025"
 ---
 
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#| label: setup
+#| warning: false
+#| message: false
+# load the needed libraries
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(readxl)
+library(hrbrthemes)
+library(viridis)
+library(ggpubr)
+library(purrr)
+library(plotly)
+library(dplyr)
+library(RColorBrewer)
+library(stargazer)
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+#source('readin_lib.R')
+#source('student_perf_lib.R')
+
+```
+
 # [My Audience]{style="color:navy;"}
 
 ## Stakeholders at Rising Tide Charter Public School
@@ -57,7 +80,7 @@ format:
 
 -   ***What***: Star Literacy and Star Math
 
--   ***When***: Three screenings (Fall, Winter, Spring) beginning in SY2023-2024
+-   ***When***: Three screenings beginning in SY2023-2024
 
 # [What Metrics Do they Provide?]{style="color:navy;"}
 
@@ -82,11 +105,64 @@ format:
 
 # [Why?]{style="color:navy;"}
 
-## [We weren't meeting G5 Math Students needs]{style="color:navy;"}
+## [Our G5 Math students were struggling...]{style="color:navy;"}
 
-- In the Spring of 2022, 2023, and 2024, Rising Tide Grade 5 math students' average growth percentiles on the MCAS were ***considerably*** below the state average of 50; ***75%*** of students were ***below*** the ***25th*** percentile for growth in 2023.[^2]
 
-[^2]: [Source: Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830000&orgtypecode=5&&fycode=2022)
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+#summary(DFNonIEP)
+DF_Hist <- read_csv(url('https://github.com/TheresaSzczepanski/DACSSIS2024/raw/main/data/NextGenMCASAchieveGrowthSum.csv'))%>%
+ 
+  mutate(Grade = as.numeric(Grade))%>%
+  mutate(Grade =as.factor(Grade))%>%
+  filter(Subject == "Math")%>%
+  filter(Grade != "9")%>%
+  filter(Grade != "10")%>%
+  filter(Year == "2023")
+
+
+
+```
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+Math_MCAS_Growth_Sum_Plot<- DF_Hist%>%ggplot(aes(x=`Grade`,fill = ifelse(Grade == "5", "A", "B"), y = `Median_SGP`)) +
+    geom_bar(position="dodge", stat = "identity", show.legend=FALSE) +
+    scale_fill_manual(values = c(A= "skyblue", B = "grey"))+
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median_SGP`, label = `Median_SGP`,
+                   vjust = -.25), position = position_dodge(width = 1))+
+  theme_classic()+
+    #scale_fill_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "Grade Level",
+      title = "Math Student Growth Percentile by Grade Level",
+      caption = "Source: Spring 2023 MCAS Assessment")+
+  geom_hline(yintercept = 50, color = "grey")
+
+```
+
+```{r, echo = FALSE}
+#| eval: true
+#| fig-alt: >
+#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median MCAS math student growth percentile 
+#|    (SGP) in math on the y-axis..
+#|    Plot illustrates the relationship between the two variables.
+#|    
+Math_MCAS_Growth_Sum_Plot
+
+```
+
+
+
+## [And they struggled ***considerably more*** than their peers in the state]{style="color:navy;"}
+
+
+- In the Spring of 2023, ***75%*** of G5 math students scored ***below*** the ***25th*** percentile for growth.^[Source: [Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830305&orgtypecode=6&&fycode=2023)]
+
+
 
 ## [What changed in SY2024-2025?]{style="color:navy;"}
 
@@ -130,34 +206,21 @@ format:
 
 -   Provide template for the use of time in a 55 minute block
 
+
 -   Set clear expectations on frequency of assessment and use of team-written assessments
 
--   Provide bank of ***high quality, supplemental resources*** for numeracy
 
--   Provide district-level, standards-aligned assessments one month after each unit for analysis
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-#| label: setup
-#| warning: false
-#| message: false
-# load the needed libraries
-library(tidyverse)
-library(ggplot2)
-library(lubridate)
-library(readxl)
-library(hrbrthemes)
-library(viridis)
-library(ggpubr)
-library(purrr)
-library(plotly)
-library(dplyr)
-library(RColorBrewer)
-library(stargazer)
-knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
-#source('readin_lib.R')
-#source('student_perf_lib.R')
+## [Accountability]{style="color:navy;"}
 
-```
+- Provide district-level, standards-aligned assessments one month after each unit for analysis^[Source: [Rising Tide 2023 Item Report](https://profiles.doe.mass.edu/mcas/mcasitems2.aspx?grade=05&subjectcode=MTH&linkid=6&orgcode=04830305&fycode=2023&orgtypecode=6&) and [MCAS Digital Item Library](https://mcas.digitalitemlibrary.com/home?subject=Math&grades=Grade%205&view=ALL)]
+
+
+
+
+
+
+![](G5_benchmark_result.png){.absolute top="250" right="50" width="1200" height="200"}
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 # Read in Data Sets
@@ -385,7 +448,7 @@ Hist_Growth_Sum_G5Math_Plot2
 ::: aside
 <p style="font-size: 0.7em;">
 
-Grade 5 students on IEPs have a considerably lower median ***SGP*** than their non-disabled peers; however the difference between the median SGP of students on IEPs and their non-disabled peers was ***reduced*** by more than ***200%*** in SY2024-2025.
+In SY2024-2025 the difference between the median SGP of students on IEPs and their non-disabled peers was 10 percentiles, less than ***half*** the difference in SY2023-2024 of 24 percentiles.
 
 </p>
 :::
@@ -430,52 +493,27 @@ IEP_Growth_G5Math_Plot
 
 ```
 
-## [Future Questions]{style="color:navy;"}
+## [Lifting All G5 Students]{style="color:navy;"}
 
--   Examxine growth/acheivement as measure by MCAS Spring 2025 Preliminary results
+- Providing students with ***daily, grade appropriate*** assignments coupled with frequent ***standards-aligned assessments*** supported ***all learners*** 
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-Gen_Growth_G5Math_Plot<- Math_Gen_Sum%>%
-  filter(Grade == "5")%>%
-  ggplot(aes(x=`Gender`,fill = `School_Year`, y = `Median SGP`)) +
-      geom_bar(position="dodge", stat = "identity") +
-      geom_text(aes( y = `Median SGP`, x = `Gender`, label = `Median SGP`), position = position_dodge(width=.9),
-                   vjust = 1)+
-  theme_classic()+
-      theme(axis.title.x=element_blank(),
-            #axis.text.x=element_blank(),
-           # axis.text.x=element_text(angle =45, hjust = 1),
-            axis.ticks.x=element_blank())+
-      scale_fill_brewer(palette = "Paired")+
-      
- # facet_wrap(~`Screening Window`)+
-      labs(
-        y = "Median SGP",
-         x= "Gender",
-        title = "Improved Growth For All Grade 5 Learners",
-        caption = "Source: Renaissance Star Screening")+
-   geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
-  
-  
-```
+    - G5 math students across ***all demographic groups*** grew considerably more in SY2024-2025
 
-```{r, echo = FALSE}
+    - G5 math students on IEPs grew less than their non-disabled peers, but the gap has narrowed considerably.
 
-#| eval: false
-#| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
-#| 
-#| fig-alt: >
-#|    A clustered, bar blot with Gender (ordered, factor) on the x-axis and the 
-#|    median G5 student growthpercentile (SGP) in math on the y-axis.
-#|    Bars are colored by the school year (ordered, factor)
-#|    Plot illustrates the relationship between the three variables.
-#| 
+## [Next Steps]{style="color:navy;"}
 
-Gen_Growth_G5Math_Plot
+- examine Grade 5 math growth and achievement as measured by MCAS Spring 2025 results
 
-```
+- use the MCAS Spring 2025 Item reports to identify potential curricular alignment issues in tested subjects
 
-## [Limitations? Do you do this or is that more for research?]{style="color:navy;"}
+- provide the same school-level supports to other grade levels and subjects to address student opportunity gaps.^[[Opportunity Myth](https://opportunitymyth.tntp.org/the-weight-of-wasted-time)]
+
+
+
+
+
 
 ## [Appendix]{style="color:navy;"}
+
+- [Full report on SY2024-2025](https://drive.google.com/file/d/1pC62_8EF398GTGNHQ_kaoES_Uhmqv2ys/view?usp=sharing) with statistical tests
