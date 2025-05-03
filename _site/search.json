@@ -291,7 +291,7 @@
     "href": "DACSS604SlideShow.html#my-audience",
     "title": "A Rising Tide Lifts all Boats?",
     "section": "My Audience",
-    "text": "My Audience\n\nWho: Stakeholders at Rising Tide Charter Public School\n\nHead of School, Principal, Assistant Principals, Department Chairs, and Board of Trustees\n\n\n\n\nWhat is the purpose?\n\nInform decisions on allocation of resources and evaluation of teaching staff and academic program"
+    "text": "My Audience\n\nWho: Stakeholders at Rising Tide Charter Public School\n\nHead of School, Principal, Assistant Principals, Department Chairs, and Board of Trustees\n\n\n\n\n\nWhat is the purpose?\n\nInform decisions on allocation of resources and evaluation of teaching staff and academic program"
   },
   {
     "objectID": "DACSS604SlideShow.html#my-audience-cont.",
@@ -445,7 +445,7 @@
     "href": "DACSS604SlideShow.html#student-growth-percentile-sgp",
     "title": "A Rising Tide Lifts all Boats?",
     "section": "Student Growth Percentile: SGP",
-    "text": "Student Growth Percentile: SGP\n\nMeasure of a student’s improvement given their achievement on their first test.\nMinimum value of 1 and maximum value of 99\nA student with an SGP of 54 improved more than 54% of students in their grade level who had similar achievement on their first screening test."
+    "text": "Student Growth Percentile: SGP\n\nMeasure of a student’s improvement compared to national peers with the same achievement rank on their first test.\nMinimum value of 1 and maximum value of 99\nA student with an SGP of 54 improved more than 54% of students in their grade level who had the same achievement on their first screening test."
   },
   {
     "objectID": "DACSS604SlideShow.html#what-changes-did-we-make-in-sy2024-2025",
@@ -488,5 +488,26 @@
     "title": "A Rising Tide Lifts all Boats?",
     "section": "Instruction",
     "text": "Instruction\n\nProvide template for the use of time in a 55 minute block\nSet clear expectations on frequency of assessment and use of team-written assessments\nProvide bank of high quality, supplemental resources for numeracy\nProvide district-level, standards-aligned assessments one month after each unit for analysis"
+  },
+  {
+    "objectID": "DACSS604SlideShow.html#stakeholders-at-rising-tide-charter-public-school",
+    "href": "DACSS604SlideShow.html#stakeholders-at-rising-tide-charter-public-school",
+    "title": "A Rising Tide Lifts all Boats?",
+    "section": "Stakeholders at Rising Tide Charter Public School",
+    "text": "Stakeholders at Rising Tide Charter Public School\n\nHead of School, Principal, Assistant Principals, Department Chairs, and Board of Trustees"
+  },
+  {
+    "objectID": "DACSS604SlideShow.html#technical-skill",
+    "href": "DACSS604SlideShow.html#technical-skill",
+    "title": "A Rising Tide Lifts all Boats?",
+    "section": "Technical Skill",
+    "text": "Technical Skill\n\nsome may have some statistical training but most do not\nassume general, college-educated audience level of understanding\ncan assume familiarity with the concept of assessment and accountability testing in the K-12 public school sector"
+  },
+  {
+    "objectID": "DACSS604SlideShow.html#test-achievement-percentile-rank-pr",
+    "href": "DACSS604SlideShow.html#test-achievement-percentile-rank-pr",
+    "title": "A Rising Tide Lifts all Boats?",
+    "section": "Test Achievement Percentile Rank: PR",
+    "text": "Test Achievement Percentile Rank: PR\n\nMinimum value of 1 and maximum value of 99\nA student with a PR of 54 scored higher than 54% of students in their grade level.\nA student is classified as At/Above Benchmark for their grade level if their achievement percentile is at least 40."
   }
 ]

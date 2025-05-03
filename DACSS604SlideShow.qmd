@@ -11,23 +11,23 @@ format:
     footer: "DACSS 604 Spring 2025"
 ---
 
-## [My Audience]{style="color:navy;"}
+# [My Audience]{style="color:navy;"}
 
--   ***Who***: Stakeholders at Rising Tide Charter Public School
+## Stakeholders at Rising Tide Charter Public School
 
-    -   Head of School, Principal, Assistant Principals, Department Chairs, and Board of Trustees
+-   Head of School, Principal, Assistant Principals, Department Chairs, and Board of Trustees
 
-![](heron.jpg)
+![](dollar_sign.jpg){.absolute top="370" left="30" width="200" height="200"}
 
--   ***What*** is the purpose?
-    -   Inform decisions on allocation of resources and evaluation of teaching staff and academic program
+![](heron.jpg){.absolute top="370" right="430" width="200" height="200"}
 
-## [My Audience (cont.)]{style="color:navy;"}
+![](clock.png){.absolute top="320" right="10" width="290" height="290"}
 
--   ***Technical Skill***
-    -   some may have some statistical training but most do not
-    -   assume general, college-educated audience level of understanding
-    -   can assume familiarity with the concept of assessment and accountability testing in the K-12 public school sector
+## [Technical Skill]{style="color:navy;"}
+
+-   some may have some statistical training but most do not
+-   assume general, college-educated audience level of understanding
+-   can assume familiarity with the concept of assessment and accountability testing in the K-12 public school sector
 
 ## [What are the [Star Screening Tests](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)?]{style="color:navy;"}
 
@@ -45,13 +45,9 @@ format:
 
 -   ***When***: Three screenings (Fall, Winter, Spring) beginning in SY2023-2024
 
-## [What Metrics Do they Provide?]{style="color:navy;"}
+# [What Metrics Do they Provide?]{style="color:navy;"}
 
--   Test ***Achievement*** Percentile
-
--   Student ***Growth*** Percentile
-
-## [Test Achievement Percentile: ***PR***]{style="color:navy;"}
+## [Test Achievement Percentile Rank: ***PR***]{style="color:navy;"}
 
 -   Minimum value of 1 and maximum value of 99
 
@@ -61,11 +57,11 @@ format:
 
 ## [Student Growth Percentile: ***SGP***]{style="color:navy;"}
 
--   Measure of a student's ***improvement*** given their ***achievement*** on their first test.
+-   Measure of a student's ***improvement*** compared to national peers with the same ***achievement rank*** on their first test.
 
 -   Minimum value of 1 and maximum value of 99
 
--   A student with an ***SGP*** of 54 ***improved more*** than ***54%*** of students in their grade level who ***had similar achievement*** on their first screening test.
+-   A student with an ***SGP*** of 54 ***improved more*** than ***54%*** of students in their grade level who ***had the same achievement*** on their first screening test.
 
 ## [What question will we examine?]{style="color:navy;"}
 
