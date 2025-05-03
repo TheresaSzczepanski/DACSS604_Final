@@ -204,12 +204,21 @@ Math_MCAS_Growth_Sum_Plot
 
 ## [Instruction]{style="color:navy;"}
 
--   Provide template for the use of time in a 55 minute block
+:::: {.columns}
+
+::: {.column width="40%"}
+- Set clear expectations on:
+    - Use of ***high quality*** instructional materials
+    - frequency and type of assessment
+:::
+
+::: {.column width="60%"}
+:::
+
+::::
 
 
--   Set clear expectations on frequency of assessment and use of team-written assessments
-
-
+![](G5_scope_sequence.png){.absolute top="90" right="50" width="450" height="500"}
 
 ## [Accountability]{style="color:navy;"}
 
