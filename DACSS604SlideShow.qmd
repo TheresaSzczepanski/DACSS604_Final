@@ -208,7 +208,7 @@ Math_MCAS_Growth_Sum_Plot
 
 ::: {.column width="40%"}
 - Set clear expectations on:
-    - exclusive of ***high quality*** instructional materials
+    - exclusive use of ***high quality*** instructional materials
     - frequency and type of assessment
 :::
 
