@@ -834,14 +834,29 @@ Growth_Hist
 
 #summary(MathHistGrowth)
 
-G5MathHistGrowth
-G5MathHistGrowth
-fit_G5Math_growth = lm(`SGP (Expectation=50)` ~ School_Year + `Test 1 PR`, data = G5MathHistGrowth)
-#summary(fit_G5Math_growth)
-AIC(fit_G5Math_growth)
-BIC(fit_G5Math_growth)
+G5MathHistGrowth<-G5MathHistGrowth%>%
+  mutate(School_Year_Factor = case_when(
+        School_Year == "2023-2024" ~ "2023-2024",
+        School_Year == "2024-2025" ~ "2024-2025"))%>%
+  mutate(School_Year_Factor = as.factor(School_Year_Factor))%>%
+  mutate(School_Year_Bool = case_when(
+    `School_Year` == "2023-2024" ~ 0,
+    `School_Year` == "2024-2025" ~ 1
+  ))
 
-fit_G5Math_growth_dem = lm(`SGP (Expectation=50)` ~ School_Year + `IEP_Status` + `Low_Income_Status` +  `IEP_Status`* `School_Year` + `Test 1 PR`, data = G5MathHistGrowth)
+fit_G5Math_growth_bool = lm(`SGP (Expectation=50)` ~ School_Year_Bool + `Test 1 PR`, data = G5MathHistGrowth)
+summary(fit_G5Math_growth_bool)
+#AIC(fit_G5Math_growth)
+#BIC(fit_G5Math_growth)
+fit_G5Math_growth_ord = lm(`SGP (Expectation=50)` ~ School_Year + `Test 1 PR`, data = G5MathHistGrowth)
+summary(fit_G5Math_growth_ord)
+
+fit_G5Math_growth_fac = lm(`SGP (Expectation=50)` ~ School_Year_Factor + `Test 1 PR`, data = G5MathHistGrowth)
+summary(fit_G5Math_growth_fac)
+#AIC(fit_G5Math_growth)
+#BIC(fit_G5Math_growth)
+
+fit_G5Math_growth_dem = lm(`SGP (Expectation=50)` ~ School_Year_Bool + `IEP_Status` + `Low_Income_Status` + `504_Status` + `Test 1 PR`, data = G5MathHistGrowth)
 summary(fit_G5Math_growth_dem)
 AIC(fit_G5Math_growth_dem)
 BIC(fit_G5Math_growth_dem)
@@ -851,19 +866,7 @@ BIC(fit_G5Math_growth_dem)
 fit_Math_growth = lm(`SGP (Expectation=50)` ~ Grade + School_Year + `Test 1 PR` + Grade*School_Year, data = MathHistGrowth)
 #summary(fit_Math_growth)
 
-#summary(MathHistGrowth)
 
-MathHistGrowth%>%
-  summarize(`Mean SGP` = mean(`SGP (Expectation=50)`),
-            `SD SGP` = sd(`SGP (Expectation=50)`))
-
-
-MathHistGrowth%>%
-  group_by(Grade)%>%
-  summarize(`Mean SGP` = mean(`SGP (Expectation=50)`),
-            `SD SGP` = sd(`SGP (Expectation=50)`))
-
-#summary(fit_G5Math_growth)
 
 ```
 

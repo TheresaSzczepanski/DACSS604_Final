@@ -9,6 +9,7 @@ format:
     logo: heron.jpg
     institute: "Rising Tide Charter Public School"
     footer: "DACSS 604 Spring 2025"
+    embed-resources: true
 ---
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -54,25 +55,22 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
 
 ## [What are the [Star Screening Tests](https://renaissance.widen.net/view/pdf/y7ouwvffec/R53639.pdf?t.download=true&u=zceria)?]{style="color:navy;"}
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="60%"}
-
 -   computerized, adaptive tests
 
 -   found to be ***reliable*** and ***valid predictors*** of students’ academic ***growth*** in ***literacy*** and ***mathematics*** with “convincing evidence”[^1]
 :::
 
 ::: {.column width="40%"}
-
+:::
 :::
 
-::::
+[^1]: Source: [National Center for Intensive Interventions](https://charts.intensiveintervention.org/ascreening)
+
 ![](math.png){.absolute top="120" right="50" width="200" height="200"}
 
 ![](literacy.jpeg){.absolute bottom="140" right="50" width="200" height="200"}
-
-[^1]: Source: [National Center for Intensive Interventions](https://charts.intensiveintervention.org/ascreening)
 
 ## [How were they administered?]{style="color:navy;"}
 
@@ -80,12 +78,11 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
 
 -   ***What***: Star Literacy and Star Math
 
--   ***When***: Three screenings beginning in SY2023-2024
+-   ***When***: Tri-annual screenings beginning in SY2023-2024
 
 # [What Metrics Do they Provide?]{style="color:navy;"}
 
 ## [Test Achievement Percentile Rank: ***PR***]{style="color:navy;"}
-
 
 -   A student with a ***PR*** of 54 scored ***higher*** than ***54%*** of students in their grade level.
 
@@ -95,9 +92,17 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
 
 -   Measure of a student's ***improvement*** compared to national peers with the same ***achievement percentile rank*** on their first test.
 
+![](olympic_swim.png){.absolute bottom="100" right="25" width="700" height="300"}
 
+![](novice_swimmer.jpeg){.absolute bottom="150" left="-100" width="400" height="200"}
+
+::: notes
+-   Gretchen Walsh set a new world record of 22.83 seconds in December 2024; swimming 1.5 seconds faster than her Paris Olympic race
+
+-   My 8 year old, novice swimmer shave 19 seconds off of his 50 freestyle in December 2024; this growth is expected
 
 -   A student with an ***SGP*** of 54 ***improved more*** than ***54%*** of students in their grade level who ***had the same achievement*** on their first screening test.
+:::
 
 ## [What question will we examine?]{style="color:navy;"}
 
@@ -106,7 +111,6 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
 # [Why?]{style="color:navy;"}
 
 ## [Our G5 Math students were struggling...]{style="color:navy;"}
-
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -123,6 +127,7 @@ DF_Hist <- read_csv(url('https://github.com/TheresaSzczepanski/DACSSIS2024/raw/m
 
 
 ```
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 Math_MCAS_Growth_Sum_Plot<- DF_Hist%>%ggplot(aes(x=`Grade`,fill = ifelse(Grade == "5", "A", "B"), y = `Median_SGP`)) +
     geom_bar(position="dodge", stat = "identity", show.legend=FALSE) +
@@ -155,38 +160,28 @@ Math_MCAS_Growth_Sum_Plot
 
 ```
 
-
-
 ## [And they struggled ***considerably more*** than their peers in the state]{style="color:navy;"}
 
+-   In the Spring of 2023, ***75%*** of G5 math students scored ***below*** the ***25th*** percentile for growth.[^2]
 
-- In the Spring of 2023, ***75%*** of G5 math students scored ***below*** the ***25th*** percentile for growth.^[Source: [Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830305&orgtypecode=6&&fycode=2023)]
-
-
+[^2]: Source: [Rising Tide 2023 Accountability Report](https://profiles.doe.mass.edu/mcas/achievement_level.aspx?linkid=32&orgcode=04830305&orgtypecode=6&&fycode=2023)
 
 ## [What changed in SY2024-2025?]{style="color:navy;"}
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="40%"}
 :::
 
 ::: {.column width="60%"}
-- Increase instructional hours dedicated to math in Grade 5
+-   Increase instructional hours dedicated to math in Grade 5
 
-- Train teachers on the use of the G5 Math curricular materials
+-   Train teachers on the use of the G5 Math curricular materials
 :::
-
-::::
+:::
 
 ![](schedule.png){.absolute top="170" left="30" width="250" height="250"}
 
-   
 ![](instruction.jpeg){.absolute top="370" right="150" width="400" height="300"}
-
-
-
-    
 
 ## [Schedule]{style="color:navy;"}
 
@@ -196,40 +191,32 @@ Math_MCAS_Growth_Sum_Plot
 
 -   Move 4 units from the G5 Math course to the G5 STE[**M**]{style="color:blue;"} course
 
-![](G5_lineplot.png){.absolute top="370" right="50" width="250" height="200"}
-![](G5_coordplane.png){.absolute top="350" right="400" width="300" height="300"}
-![](G5_volume.jpg){.absolute top="350" left="40" width="250" height="300"}
+![](G5_lineplot.png){.absolute top="370" right="50" width="250" height="200"} ![](G5_coordplane.png){.absolute top="350" right="400" width="300" height="300"} ![](G5_volume.jpg){.absolute top="350" left="40" width="250" height="300"}
 
 </p>
 
 ## [Instruction]{style="color:navy;"}
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="40%"}
-- Set clear expectations on:
-    - exclusive use of ***high quality*** instructional materials
-    - frequency and type of assessment
+-   Set clear expectations on:
+    -   exclusive use of ***high quality*** instructional materials
+    -   frequency and type of assessment
 :::
 
 ::: {.column width="60%"}
 :::
-
-::::
-
+:::
 
 ![](G5_scope_sequence.png){.absolute top="90" right="50" width="450" height="500"}
 
 ## [Accountability]{style="color:navy;"}
 
-- Provide district-level, standards-aligned assessments one month after each unit for analysis^[Source: [Rising Tide 2023 Item Report](https://profiles.doe.mass.edu/mcas/mcasitems2.aspx?grade=05&subjectcode=MTH&linkid=6&orgcode=04830305&fycode=2023&orgtypecode=6&) and [MCAS Digital Item Library](https://mcas.digitalitemlibrary.com/home?subject=Math&grades=Grade%205&view=ALL)]
+-   Provide district-level, standards-aligned assessments one month after each unit for analysis[^3]
 
+[^3]: Source: [Rising Tide 2023 Item Report](https://profiles.doe.mass.edu/mcas/mcasitems2.aspx?grade=05&subjectcode=MTH&linkid=6&orgcode=04830305&fycode=2023&orgtypecode=6&) and [MCAS Digital Item Library](https://mcas.digitalitemlibrary.com/home?subject=Math&grades=Grade%205&view=ALL)
 
-
-
-
-
-![](G5_benchmark_result.png){.absolute top="250" right="50" width="1200" height="200"}
+![](G5_benchmark_result.png){.absolute top="250" right="50" width="1200" height="250"}
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 # Read in Data Sets
@@ -311,12 +298,8 @@ star_dem_all_private<-star_dem_all_private%>%
 
 ## [What did we observe?]{style="color:navy;"}
 
-::: aside
-<p style="font-size: 0.7em;">
-
+::: {.notes}
 Grade 5 students with the same Test 1 achievement percentile, disability status, and income status are predicted to have an ***SGP 10 percentiles higher*** in SY2024-2025 than in SY2023-2024.
-
-</p>
 :::
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -367,7 +350,7 @@ text_pos_data<-data.frame(
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
-
+#HistGradeGrowthSum
 Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
   filter(Subject == "Math")%>%
   filter(`Screening Window` == "Fall-Winter")%>%
@@ -432,12 +415,12 @@ Hist_Growth_Sum_G5Math_Plot
 
 ## [What did we observe (option 2)?]{style="color:navy;"}
 
-::: aside
-<p style="font-size: 0.7em;">
+::: {.notes}
+
 
 Grade 5 students with the same Test 1 achievement percentile, disability status, and income status are predicted to have an ***SGP 10 percentiles higher*** in SY2024-2025 than in SY2023-2024.
 
-</p>
+
 :::
 
 ```{r, echo = FALSE}
@@ -454,12 +437,10 @@ Hist_Growth_Sum_G5Math_Plot2
 
 ## [What about our students on IEPs?]{style="color:navy;"}
 
-::: aside
-<p style="font-size: 0.7em;">
+::: {.notes}
 
 In SY2024-2025 the difference between the median SGP of students on IEPs and their non-disabled peers was 10 percentiles, less than ***half*** the difference in SY2023-2024 of 24 percentiles.
 
-</p>
 :::
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -504,25 +485,24 @@ IEP_Growth_G5Math_Plot
 
 ## [Lifting All G5 Students]{style="color:navy;"}
 
-- Providing students with ***daily, grade appropriate*** assignments coupled with frequent ***standards-aligned assessments*** supported ***all learners*** 
+-   Providing students with ***daily, grade appropriate*** assignments coupled with frequent ***standards-aligned assessments*** supported ***all learners***
 
-    - G5 math students across ***all demographic groups*** grew considerably more in SY2024-2025
+    -   G5 math students across ***all demographic groups*** grew considerably more in SY2024-2025
 
-    - G5 math students on IEPs grew less than their non-disabled peers, but the gap has narrowed considerably.
+    -   G5 math students on IEPs grew less than their non-disabled peers, but the gap has narrowed considerably.
 
 ## [Next Steps]{style="color:navy;"}
 
-- examine Grade 5 math growth and achievement as measured by MCAS Spring 2025 results
+-   examine Grade 5 math growth and achievement as measured by MCAS Spring 2025 results
 
-- use the MCAS Spring 2025 Item reports to identify potential curricular alignment issues in tested subjects
+-   use the MCAS Spring 2025 Item reports to identify potential curricular alignment issues in tested subjects
 
-- provide the same school-level supports to other grade levels and subjects to address student opportunity gaps.^[[Opportunity Myth](https://opportunitymyth.tntp.org/the-weight-of-wasted-time)]
+-   provide the same school-level supports to other grade levels and subjects to address student opportunity gaps.[^4]
 
-
-
-
-
+[^4]: [Opportunity Myth](https://opportunitymyth.tntp.org/the-weight-of-wasted-time)
 
 ## [Appendix]{style="color:navy;"}
 
-- [Full report on SY2024-2025](https://drive.google.com/file/d/1pC62_8EF398GTGNHQ_kaoES_Uhmqv2ys/view?usp=sharing) with statistical tests
+-   [Full report on SY2024-2025](https://drive.google.com/file/d/1pC62_8EF398GTGNHQ_kaoES_Uhmqv2ys/view?usp=sharing) with statistical tests
+
+-   ***Further Questions?***: [mailto:tszczepanski\@risingtide.org](mailto:tszczepanski@risingtide.org){.uri}
