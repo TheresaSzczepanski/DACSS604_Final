@@ -80,6 +80,7 @@ star_dem_all_private<-read_csv("data_604/student_star_dem_all_private.csv")%>%
                                               "10"= "10",
                                               .ordered = TRUE))%>%
   mutate(School_Year = as.factor(School_Year))%>%
+    mutate(School_Year_Fac = School_Year)%>%
    mutate(School_Year = recode_factor(School_Year,
                               "2023-2024" = "2023-2024",
                               "2024-2025" = "2024-2025",
@@ -123,6 +124,7 @@ HistGradeGrowthSum<-read_csv("data_604/StarBenchmarkSummary_SGP_Sum.csv")%>%
   mutate(Year = as.factor(Year))%>%
   mutate(`Screening Window` = as.factor(`Screening Window`))%>%
   mutate(`Subject` = as.factor(`Subject`))%>%
+  mutate(`Grade_Fac` = as.factor(Grade))%>%
   mutate(`Grade` = as.factor(Grade))%>%
   mutate(`Grade` = recode_factor(`Grade`,
                                               "Grade 5" = "Grade 5",
@@ -159,6 +161,8 @@ star_dem_all_private<-star_dem_all_private%>%
                      `Test 1 PR` < 40 ~ "Below Benchmark"))%>%
   mutate(Benchmark_Status = as.factor(Benchmark_Status))
 
+  
+
 
 
 ```
@@ -170,40 +174,30 @@ star_dem_all_private<-star_dem_all_private%>%
 ```{r}
 star_dem_math<- star_dem_all_private%>%
   filter(`Assignment Type` == "Star Math")
-fit_Math_achieve = lm(`Test 1 PR` ~ School_Year + `IEP_Status`, data = star_dem_math)
+
+star_dem_math
+fit_Math_achieve = lm(`Test 1 PR` ~ School_Year_Fac + `IEP_Status` + `504_Status` + `Low_Income_Status`, data = star_dem_math)
 
 summary(fit_Math_achieve)
-
+AIC(fit_Math_achieve)
+BIC(fit_Math_achieve)
 #star_dem_math
 ```
 
-#### Growth: Math
 
-```{r}
-
-fit_Math_growth = lm(`SGP (Expectation=50)` ~ `Test 1 PR` + Gender + `IEP_Status` + Grade, data = star_dem_math)
-
-summary(fit_Math_growth)
-```
 
 #### Acheivement: ELA
 
 ```{r}
 star_dem_ELA<- star_dem_all_private%>%
   filter(`Assignment Type` == "Star Reading")
-fit_ELA_achieve = lm(`Test 1 PR` ~ School_Year + `IEP_Status`, data = star_dem_ELA)
+fit_ELA_achieve = lm(`Test 1 PR` ~ School_Year_Fac + `IEP_Status`, data = star_dem_ELA)
 
 summary(fit_ELA_achieve)
+AIC(fit_ELA_achieve)
+BIC(fit_ELA_achieve)
 ```
-
-#### Growth: ELA
-
-```{r}
-
-fit_ELA_growth = lm(`SGP (Expectation=50)` ~ `IEP_Status` + School_Year + Grade, data = star_dem_ELA)
-
-summary(fit_ELA_growth)
-```
+### Visual: RQ1
 
 ```{r}
 Bench_Sum_Plot<-HistSchoolBenchSum%>%
@@ -225,7 +219,7 @@ Bench_Sum_Plot<-HistSchoolBenchSum%>%
       title = "Rising Tide Benchmark Achievement by School Year",
       caption = "Source: Renaissance Star Literacy and Math Screening")+
   geom_hline(yintercept = 80, color = "grey")+
-  annotate("text", x = .75, y = 85, label = "80% Goal") +
+  #annotate("text", x = .75, y = 85, label = "80% Goal")# +
   facet_wrap(~Subject)
 ```
 
@@ -315,7 +309,7 @@ Hist_Growth_Sum_ELA_Plot<-HistGradeGrowthSum%>%
 ```
 
 ```{r}
-#| eval: false
+#| eval: true
 #| fig-cap: "Rising Tide Literacy Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Literacy Screening"
 #| 
 #| fig-alt: >
@@ -414,6 +408,8 @@ Hist_Growth_Sum_Math_Plot
 Is there a relationship between Rising Tide’s Grade 5 Mathematics
 curriculum initiatives and Grade 5 student growth in mathematics?
 
+## Summary Data Frames
+
 ```{r}
 
 Math_IEP_Sum<-star_dem_math%>%
@@ -423,365 +419,8 @@ Math_IEP_Sum<-star_dem_math%>%
   group_by(Grade, `School_Year`, IEP)%>%
   summarize(`Median SGP` = median(`SGP (Expectation=50)`))
 
-Math_IEP_Sum
-
-Math_Gen_Sum<-star_dem_math%>%
-  filter(`Assignment Type` == "Star Math")%>%
-  group_by(Grade, `School_Year`, Gender)%>%
-  summarize(`Median SGP` = median(`SGP (Expectation=50)`))
-
-Math_Gen_Sum
-
-star_dem_math
-Math_Gen_IEP_Sum<-star_dem_math%>%
- filter(`Grade` == "5")%>%
-  group_by(`School_Year`, Gender, IEP_Status)%>%
-  summarize(`Median SGP` = median(`SGP (Expectation=50)`))
-
-Math_Gen_IEP_Sum
-
-Math_Gen_IEP_Achieve_Sum<-star_dem_math%>%
- filter(`Grade` == "5")%>%
-  group_by(`School_Year`, Gender, IEP_Status)%>%
-  summarize(`Median Test 1 PR` = median(`Test 1 PR`))
-
-Math_Gen_IEP_Achieve_Sum
-
 ```
-
-### Math Historical Growth
-
-```{r}
-
-
-Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
-  filter(Subject == "Math")%>%
-  filter(`Screening Window` == "Fall-Winter")%>%
-  ggplot(aes(x=`Grade`,fill = ifelse(Grade == "5", "A", "B"), y = `Median SGP`)) +
-    geom_bar(position="dodge", stat = "identity", show.legend=FALSE) +
-    scale_fill_manual(values = c(A= "skyblue", B = "grey"))+
-    #facet_wrap(~Grade)+
-    geom_text(aes( y = `Median SGP`, label = `Median SGP`,
-                   vjust = -.25), position = position_dodge(width = 1))+
-  #theme_classic()+
-    #scale_fill_brewer(palette = "Blues")+
-    theme(axis.title.x=element_blank(),
-          #axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())+
-    labs(
-      y = "Median SGP",
-       x= "Grade Level",
-      title = "Math Student Growth Percentile by Grade Level",
-      caption = "Source: Renaissance Star Math Screening")+
-   geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x = 5.5, y = 48, label = "50th Percentile")+
-  facet_wrap(~Year)
-```
-```{r}
-#| eval: false
-#| fig-cap: "Rising Tide Math Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Math Screening"
-#| 
-#| fig-alt: >
-#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
-#|    (SGP) in math on the y-axis, faceted by school year (ordered, factor).
-#|    Plot illustrates the relationship between the three variables.
-#|    
-Hist_Growth_Sum_G5Math_Plot
-
-```
-
-```{r}
-Hist_Growth_G5Math_Plot<-HistGradeGrowthSum%>%
-  filter(Subject == "Math")%>%
-  filter(Grade == "5")%>%
-  filter(`Screening Window` == "Fall-Winter")%>%
-  ggplot(aes(x=`Year`,fill = "skyblue", y = `Median SGP`)) +
-    geom_bar(position="dodge", stat = "identity", fill = "skyblue") +
-    #facet_wrap(~Grade)+
-    geom_text(aes( y = `Median SGP`, label = `Median SGP`, 
-                   vjust = -.25), position = position_dodge(width = 1))+
-  theme_classic()+
-    scale_fill_brewer(palette = "Paired")+
-    theme(axis.title.x=element_blank(),
-          #axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())+
-    labs(
-      y = "Median SGP",
-       x= "School Year",
-      title = "Improvement in Grade 5 Student Growth Percentile",
-      caption = "Source: Renaissance Star Math Screening")+
-   geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x = 1., y = 52, label = "Goal 50th Percentile")#+
-  #theme_classic()
-  #facet_wrap(~Year)
-
-
-```
-
-```{r}
-#| eval: false
-#| fig-cap: "Rising Tide Grade 5 Math Growth by school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
-#| 
-#| fig-alt: >
-#|    A bar blot with school year (ordered, factor) on the x-axis and the median G5 student growth  
-#|    percentile (SGP) in math on the y-axis.
-#|    Plot illustrates the relationship between the two variables.
-#|    
-Hist_Growth_G5Math_Plot
-
-```
-
-
-## IEP
-
-```{r}
- IEP_Growth_G5Math_Plot<- Math_IEP_Sum%>%
-  filter(Grade == "5")%>%
-  ggplot(aes(x=`IEP`,fill = `School_Year`, y = `Median SGP`)) +
-      geom_bar(position="dodge", stat = "identity") +
-      geom_text(aes( y = `Median SGP`, x = `IEP`, label = `Median SGP`), position = position_dodge(width=.9),
-                   vjust = 1)+
-  theme_classic()+
-      theme(#axis.title.x=element_blank(),
-            #axis.text.x=element_blank(),
-           # axis.text.x=element_text(angle =45, hjust = 1),
-            axis.ticks.x=element_blank())+
-      scale_fill_brewer(palette = "Paired")+
-      
- # facet_wrap(~`Screening Window`)+
-      labs(
-        y = "Median SGP",
-         x= "IEP Status",
-        title = "Improved Growth For All Grade 5 Learners",
-        caption = "Source: Renaissance Star Math Screening")+
-   geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
-```
-
-```{r}
-#| eval: false
-#| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
-#| 
-#| fig-alt: >
-#|    A clustered, bar blot with IEP status (ordered, factor) on the x-axis and the 
-#|    median G5 student growthpercentile (SGP) in math on the y-axis.
-#|    Bars are colored by the school year (ordered, factor)
-#|    Plot illustrates the relationship between the three variables.
-#| 
-
-IEP_Growth_G5Math_Plot
-```
-
-```{r}
-Gen_Growth_G5Math_Plot<- Math_Gen_Sum%>%
-  filter(Grade == "5")%>%
-  ggplot(aes(x=`Gender`,fill = `School_Year`, y = `Median SGP`)) +
-      geom_bar(position="dodge", stat = "identity") +
-      geom_text(aes( y = `Median SGP`, x = `Gender`, label = `Median SGP`), position = position_dodge(width=.9),
-                   vjust = 1)+
-  theme_classic()+
-      theme(axis.title.x=element_blank(),
-            #axis.text.x=element_blank(),
-           # axis.text.x=element_text(angle =45, hjust = 1),
-            axis.ticks.x=element_blank())+
-      scale_fill_brewer(palette = "Paired")+
-      
- # facet_wrap(~`Screening Window`)+
-      labs(
-        y = "Median SGP",
-         x= "Gender",
-        title = "Improved Growth For All Grade 5 Learners",
-        caption = "Source: Renaissance Star Screening")+
-   geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
-  
-  
-```
-
-
-```{r}
-#| eval: false
-#| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
-#| 
-#| fig-alt: >
-#|    A clustered, bar blot with Gender (ordered, factor) on the x-axis and the 
-#|    median G5 student growthpercentile (SGP) in math on the y-axis.
-#|    Bars are colored by the school year (ordered, factor)
-#|    Plot illustrates the relationship between the three variables.
-#| 
-
-Gen_Growth_G5Math_Plot
-```
-
-
-# RQ 3: ELA State Standards Mastery
-
-Is there a relationship between the text type of a literacy standard
-(informational vs. literature) and Rising Tide High School students’
-mastery of the standard?
-
-## School Informational Text by Domain
-
-```{r}
-
-ELA_Standards
-
-ELA_Text_Summary<-ELA_Standards%>%
-  filter(`Reporting Category` == "Reading")%>%
-   group_by(`Text Type`, `Screening Window`)%>%
-  summarize(`Mean % Secure` = round(mean(`% Secure`)),
-            `Median % Secure` = round(median(`% Secure`)))
-
-ELA_Text_Summary
-
-ELA_Text_Summary%>%
-  filter(`Screening Window` != "Spring")%>%
-  ggplot(aes(x=`Text Type`,fill = `Text Type`, y = `Mean % Secure`)) +
-      geom_bar(position="dodge", stat = "identity") +
-      geom_text(aes( y = `Mean % Secure`, x = `Text Type`, label = `Mean % Secure`), position = position_dodge(width=.9),
-                   vjust = 1)+
-      theme(axis.title.x=element_blank(),
-            #axis.text.x=element_blank(),
-            axis.text.x=element_text(angle =45, hjust = 1),
-            axis.ticks.x=element_blank())+
-      scale_fill_brewer(palette = "Paired")+
-      
-  facet_wrap(~`Screening Window`)+
-      labs(
-        y = "Mean % Secure",
-         x= "Domainl",
-        title = "School State Standard Mastery by Text Type ELA",
-        caption = "2024-2025 Star Reading Screening")
-
-
-ELA_Text_Domain_Summary<-ELA_Standards%>%
-  filter(`Reporting Category` == "Reading")%>%
-   group_by(`Text Type`, `Domain`, `Screening Window`)%>%
-  summarize(`Mean % Secure` = round(mean(`% Secure`)),
-            `Median % Secure` = round(median(`% Secure`)))
-
-ELA_Text_Domain_Summary
-
-ELA_Text_Div_Summary<-ELA_Standards%>%
-  filter(`Reporting Category` == "Reading")%>%
-   group_by(`Text Type`, `Division`, `Screening Window`)%>%
-  summarize(`Mean % Secure` = round(mean(`% Secure`)),
-            `Median % Secure` = round(median(`% Secure`)))
-
-ELA_Text_Div_Summary
-
-ELA_Text_Div_Summary%>%
-  filter(`Screening Window` != "Spring")%>%
-  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Mean % Secure`)) +
-      geom_bar(position="dodge", stat = "identity") +
-      geom_text(aes( y = `Mean % Secure`, x = `Text Type`, label = `Mean % Secure`), position = position_dodge(width=.9),
-                   vjust = 1)+
-      theme(axis.title.x=element_blank(),
-            #axis.text.x=element_blank(),
-            axis.text.x=element_text(angle =45, hjust = 1),
-            axis.ticks.x=element_blank())+
-      scale_fill_brewer(palette = "Paired")+
-      
-  facet_wrap(~`Division`)+
-      labs(
-        y = "Mean % Secure",
-         x= "Domainl",
-        title = "School State Standard Mastery by Text Type ELA",
-        caption = "2024-2025 Star Reading Screening")
-
-ELA_Text_Domain_Summary%>%
-  filter(`Screening Window` != "Spring")%>%
-  ggplot(aes(x=`Domain`,fill = `Text Type`, y = `Mean % Secure`)) +
-      geom_bar(position="dodge", stat = "identity") +
-      geom_text(aes( y = `Mean % Secure`, x = `Domain`, label = `Mean % Secure`), position = position_dodge(width=.9),
-                   vjust = 1)+
-      theme(axis.title.x=element_blank(),
-            #axis.text.x=element_blank(),
-            axis.text.x=element_text(angle =45, hjust = 1),
-            axis.ticks.x=element_blank())+
-      scale_fill_brewer(palette = "Paired")+
-      
-  facet_wrap(~`Screening Window`)+
-      labs(
-        y = "Mean % Secure",
-         x= "Domainl",
-        title = "School State Standard Mastery by Text Type ELA",
-        caption = "2024-2025 Star Reading Screening")
-
-```
-
-## HS Informational Text Comparison
-
-```{r}
-ELA_Standards
-ELA_TextType_Sum_HS<-ELA_Standards%>%
-  filter(`Division` == "HS")%>%
-  filter (`Screening Window` != "Spring")%>%
-  filter(`Reporting Category` == "Reading")%>%
-  group_by(`Screening Window`, Grade, `Text Type`)%>%
-  summarize(`Median % Secure` = round(median(`% Secure`)))
-
-
- ELA_TextType_Sum_HS%>%
-  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Median % Secure`)) +
-  geom_bar(position="dodge", stat = "identity") +
-  #scale_x_reverse()+
-    geom_text(aes( y = `Median % Secure`, label = `Median % Secure`,
-                     vjust = -.25), position = position_dodge(width = 1)) +
-
-          #theme_classic() +
-  theme(axis.title.x=element_blank(),
-         # axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())+
-    scale_fill_brewer(palette = "Paired")+
-    labs(
-      y = "Median % Secure",
-       x= "Text Type",
-      title = "HS Reading Standards Mastery by Text Type",
-      caption = paste("Fall-Winter Screening", "2024-2025"))+
-   facet_wrap(~Grade)
-
-
-
-
-```
-
-## MS Informational Text Data Frames
-
-```{r}
-ELA_TextType_Sum_MS<-ELA_Standards%>%
-  filter(`Division` == "MS")%>%
-  filter (`Screening Window` != "Spring")%>%
-  filter(`Reporting Category` == "Reading")%>%
-  group_by(`Screening Window`, Grade, `Text Type`)%>%
-  summarize(`Median % Secure` = round(median(`% Secure`)))
-
-
- ELA_TextType_Sum_MS%>%
-  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Median % Secure`)) +
-  geom_bar(position="dodge", stat = "identity") +
-  #scale_x_reverse()+
-    geom_text(aes( y = `Median % Secure`, label = `Median % Secure`,
-                     vjust = -.25), position = position_dodge(width = 1)) +
-
-          #theme_classic() +
-  theme(axis.title.x=element_blank(),
-         # axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())+
-    scale_fill_brewer(palette = "Paired")+
-    labs(
-      y = "Median % Secure",
-       x= "Text Type",
-      title = "MS Reading Standards Mastery by Text Type",
-      caption = paste("Fall-Winter Screening", "2024-2025"))+
-   facet_wrap(~Grade)
-
-
-```
-
-# Statistical Tests
-
-## G5 Growth Distribution
+## Visual: Growth Distribution
 
 ```{r}
 MathHistGrowth<- star_dem_math
@@ -827,8 +466,7 @@ Growth_Hist
            
 
 ```
-
-## Growth Summary
+## Statistical Tests
 
 ```{r}
 
@@ -844,34 +482,17 @@ G5MathHistGrowth<-G5MathHistGrowth%>%
     `School_Year` == "2024-2025" ~ 1
   ))
 
-fit_G5Math_growth_bool = lm(`SGP (Expectation=50)` ~ School_Year_Bool + `Test 1 PR`, data = G5MathHistGrowth)
-summary(fit_G5Math_growth_bool)
-#AIC(fit_G5Math_growth)
-#BIC(fit_G5Math_growth)
-fit_G5Math_growth_ord = lm(`SGP (Expectation=50)` ~ School_Year + `Test 1 PR`, data = G5MathHistGrowth)
-summary(fit_G5Math_growth_ord)
 
-fit_G5Math_growth_fac = lm(`SGP (Expectation=50)` ~ School_Year_Factor + `Test 1 PR`, data = G5MathHistGrowth)
-summary(fit_G5Math_growth_fac)
-#AIC(fit_G5Math_growth)
-#BIC(fit_G5Math_growth)
 
-fit_G5Math_growth_dem = lm(`SGP (Expectation=50)` ~ School_Year_Bool + `IEP_Status` + `Low_Income_Status` + `504_Status` + `Test 1 PR`, data = G5MathHistGrowth)
+fit_G5Math_growth_dem = lm(`SGP (Expectation=50)` ~ School_Year_Factor + `IEP_Status` + `Low_Income_Status` + `504_Status` + `Test 1 PR`, data = G5MathHistGrowth)
 summary(fit_G5Math_growth_dem)
 AIC(fit_G5Math_growth_dem)
 BIC(fit_G5Math_growth_dem)
 
 
-
-fit_Math_growth = lm(`SGP (Expectation=50)` ~ Grade + School_Year + `Test 1 PR` + Grade*School_Year, data = MathHistGrowth)
-#summary(fit_Math_growth)
-
-
-
 ```
-
 ```{r}
-stargazer(fit_G5Math_growth, type = "text") 
+stargazer(fit_G5Math_growth_dem, type = "text") 
 
 
 ```
@@ -879,57 +500,155 @@ stargazer(fit_G5Math_growth, type = "text")
 ### Diagnosing Model Fit
 
 ```{r}
-plot(fit_G5Math_growth, which = 1:6)
+plot(fit_G5Math_growth_dem, which = 1:6)
 cooks= 4/179
 cooks #.0223
 
 ```
 
-### Remove Outliers
+## Visual G5 Math Growth
 
 ```{r}
-G5MathHistGrowth
+
+Hist_Growth_Sum_G5Math_Plot<-HistGradeGrowthSum%>%
+  filter(Subject == "Math")%>%
+  filter(`Screening Window` == "Fall-Winter")%>%
+  ggplot(aes(x=`Grade`,fill = ifelse(Grade == "5", "A", "B"), y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", show.legend=FALSE) +
+    scale_fill_manual(values = c(A= "skyblue", B = "grey"))+
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median SGP`, label = `Median SGP`,
+                   vjust = -.25), position = position_dodge(width = 1))+
+  #theme_classic()+
+    #scale_fill_brewer(palette = "Blues")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "Grade Level",
+      title = "Math Student Growth Percentile by Grade Level",
+      caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  #annotate("text", x = 5.5, y = 48, label = "50th Percentile")+
+  facet_wrap(~Year)
+```
+
+```{r}
+#| eval: true
+#| fig-cap: "Rising Tide Math Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A bar blot with Grade level (ordered, factor) on the x-axis and the median student growth percentile 
+#|    (SGP) in math on the y-axis, faceted by school year (ordered, factor).
+#|    Plot illustrates the relationship between the three variables.
+#|    
+Hist_Growth_Sum_G5Math_Plot
 
 ```
 
-### Scaled Math Model
-
 ```{r}
-G5MathHistGrowth_Scaled<-G5MathHistGrowth%>%
-  mutate(across(where(is.numeric), scale))
+Hist_Growth_G5Math_Plot<-HistGradeGrowthSum%>%
+  filter(Subject == "Math")%>%
+  filter(Grade == "5")%>%
+  filter(`Screening Window` == "Fall-Winter")%>%
+  ggplot(aes(x=`Year`,fill = "skyblue", y = `Median SGP`)) +
+    geom_bar(position="dodge", stat = "identity", fill = "skyblue") +
+    #facet_wrap(~Grade)+
+    geom_text(aes( y = `Median SGP`, label = `Median SGP`, 
+                   vjust = -.25), position = position_dodge(width = 1))+
+  theme_classic()+
+    scale_fill_brewer(palette = "Paired")+
+    theme(axis.title.x=element_blank(),
+          #axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    labs(
+      y = "Median SGP",
+       x= "School Year",
+      title = "Improvement in Grade 5 Student Growth Percentile",
+      caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x = 1., y = 52, label = "Goal 50th Percentile")#+
+  #theme_classic()
+  #facet_wrap(~Year)
 
-G5MathHistGrowth_Scaled
 
 ```
 
 ```{r}
-fit_G5Math_growth_scaled = lm(`SGP (Expectation=50)` ~ School_Year + `Test 1 PR`, data = G5MathHistGrowth_Scaled)
-summary(fit_G5Math_growth_scaled)
-AIC(fit_G5Math_growth_scaled)
-BIC(fit_G5Math_growth_scaled)
+#| eval: true
+#| fig-cap: "Rising Tide Grade 5 Math Growth by school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A bar blot with school year (ordered, factor) on the x-axis and the median G5 student growth  
+#|    percentile (SGP) in math on the y-axis.
+#|    Plot illustrates the relationship between the two variables.
+#|    
+Hist_Growth_G5Math_Plot
 
 ```
 
-```{r}
-stargazer(fit_G5Math_growth_scaled, type = "text") 
 
+## Visual G5 IEP Growth
+
+```{r}
+ IEP_Growth_G5Math_Plot<- Math_IEP_Sum%>%
+  filter(Grade == "5")%>%
+  ggplot(aes(x=`IEP`,fill = `School_Year`, y = `Median SGP`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Median SGP`, x = `IEP`, label = `Median SGP`), position = position_dodge(width=.9),
+                   vjust = 1)+
+  theme_classic()+
+      theme(#axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+           # axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+ # facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Median SGP",
+         x= "IEP Status",
+        title = "Improved Growth For All Grade 5 Learners",
+        caption = "Source: Renaissance Star Math Screening")+
+   geom_hline(yintercept = 50, color = "grey")+
+  annotate("text", x =.70, y = 52, label = "50th Percentile")#+
 ```
 
-##ELA Standards
+```{r}
+#| eval: true
+#| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and school year 2024-2025 and 2023-2024, Renaissance Star Math Screening"
+#| 
+#| fig-alt: >
+#|    A clustered, bar blot with IEP status (ordered, factor) on the x-axis and the 
+#|    median G5 student growthpercentile (SGP) in math on the y-axis.
+#|    Bars are colored by the school year (ordered, factor)
+#|    Plot illustrates the relationship between the three variables.
+#| 
+
+IEP_Growth_G5Math_Plot
+```
+
+
+
+
+# RQ 3: ELA State Standards Mastery
+
+Is there a relationship between the text type of a literacy standard
+(informational vs. literature) and Rising Tide High School students’
+mastery of the standard?
+
+
+##Visual: Distribution ELA Standards Mastery
 
 ```{r}
-ELA_Standards
 
 HS_ELA_Standards<-ELA_Standards%>%
   filter(Grade == 9|Grade == 10)%>%
   filter(`Text Type` == "Informational Text" | `Text Type` == "Literature")
 HS_ELA_Standards
 
-fit_ELA_text = lm(`% Secure` ~ ( `Text Type`), data = HS_ELA_Standards)
-summary(fit_ELA_text)
 
-fit_ELA_text_domain = lm(`% Secure` ~ ( `Text Type` + `Screening Window` + `Domain`), data = HS_ELA_Standards)
-summary(fit_ELA_text_domain)
 
 HS_ELA_Text_Facet <- HS_ELA_Standards %>%
   ggplot( aes(x=`% Secure`, fill=`Text Type`)) +
@@ -949,23 +668,214 @@ HS_ELA_Text_Facet
 
 ```
 
-# Scaling?
+## Statistical Tests
+
+
+```{r}
+fit_ELA_text = lm(`% Secure` ~ ( `Text Type` + `Screening Window` + `Domain`), data = ELA_Standards)
+summary(fit_ELA_text)
+
+fit_HS_ELA_text_domain = lm(`% Secure` ~ ( `Text Type` + `Screening Window` + `Domain`), data = HS_ELA_Standards)
+summary(fit_HS_ELA_text_domain)
+AIC(fit_HS_ELA_text_domain)
+BIC(fit_HS_ELA_text_domain)
+
+```
 
 ```{r}
 
-stargazer(fit_ELA_text_domain, type = "text")
-# 
-# variable_labels <- c(
-#   "% Secure", # For the dependent variable
-#   "Text Type: Informational",        # For the reference category
-#   "Text Type: Literature",         # For the first other category
-#   "Screening Window: Fall",         # For the second other category
-#   "Screening Window: Winter",
-#   "Domain: Craft and Structure",
-#   "Domain: Integration of Knolwedge and Ideas",
-#   "Domain: Key Ideas and Details",
-#   "Domain: Range of Reading and Level of Text Complexity"
-# )
-# stargazer(fit_ELA_text_domain, covariate.labels = variable_labels, type = "text")
+stargazer(fit_ELA_text, type = "text")
+stargazer(fit_HS_ELA_text_domain, type = "text")
 
 ```
+
+
+## Visual Mastery by Text Type
+
+### SchoolWide
+
+```{r}
+
+#ELA_Standards
+
+ELA_Text_Summary<-ELA_Standards%>%
+  filter(`Reporting Category` == "Reading")%>%
+   group_by(`Text Type`, `Screening Window`)%>%
+  summarize(`Mean % Secure` = round(mean(`% Secure`)),
+            `Median % Secure` = round(median(`% Secure`)))
+
+#ELA_Text_Summary
+
+ELA_Text_Summary%>%
+  filter(`Screening Window` != "Spring")%>%
+  ggplot(aes(x=`Text Type`,fill = `Text Type`, y = `Mean % Secure`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Mean % Secure`, x = `Text Type`, label = `Mean % Secure`), position = position_dodge(width=.9),
+                   vjust = 1)+
+      theme(axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+            axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+  facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Mean % Secure",
+         x= "Domainl",
+        title = "School State Standard Mastery by Text Type ELA",
+        caption = "2024-2025 Star Reading Screening")
+
+
+ELA_Text_Domain_Summary<-ELA_Standards%>%
+  filter(`Reporting Category` == "Reading")%>%
+   group_by(`Text Type`, `Domain`, `Screening Window`)%>%
+  summarize(`Mean % Secure` = round(mean(`% Secure`)),
+            `Median % Secure` = round(median(`% Secure`)))
+
+#ELA_Text_Domain_Summary
+
+ELA_Text_Div_Summary<-ELA_Standards%>%
+  filter(`Reporting Category` == "Reading")%>%
+   group_by(`Text Type`, `Division`, `Screening Window`)%>%
+  summarize(`Mean % Secure` = round(mean(`% Secure`)),
+            `Median % Secure` = round(median(`% Secure`)))
+
+#ELA_Text_Div_Summary
+```
+### MS vs. HS
+```{r}
+ELA_Text_Div_Summary%>%
+  filter(`Screening Window` != "Spring")%>%
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Mean % Secure`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Mean % Secure`, x = `Text Type`, label = `Mean % Secure`), position = position_dodge(width=.9),
+                   vjust = 1)+
+      theme(axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+            axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+  facet_wrap(~`Division`)+
+      labs(
+        y = "Mean % Secure",
+         x= "Domainl",
+        title = "School State Standard Mastery by Text Type ELA",
+        caption = "2024-2025 Star Reading Screening")
+
+```
+
+
+### By Domain Cluster
+```{r}
+
+ELA_Text_Domain_Summary%>%
+  filter(`Screening Window` != "Spring")%>%
+  ggplot(aes(x=`Domain`,fill = `Text Type`, y = `Mean % Secure`)) +
+      geom_bar(position="dodge", stat = "identity") +
+      geom_text(aes( y = `Mean % Secure`, x = `Domain`, label = `Mean % Secure`), position = position_dodge(width=.9),
+                   vjust = 1)+
+      theme(axis.title.x=element_blank(),
+            #axis.text.x=element_blank(),
+            axis.text.x=element_text(angle =45, hjust = 1),
+            axis.ticks.x=element_blank())+
+      scale_fill_brewer(palette = "Paired")+
+      
+  facet_wrap(~`Screening Window`)+
+      labs(
+        y = "Mean % Secure",
+         x= "Domainl",
+        title = "School State Standard Mastery by Text Type ELA",
+        caption = "2024-2025 Star Reading Screening")
+
+```
+
+## Visual: HS Informational Text vs. Literature Comparison
+
+```{r}
+ELA_Standards
+ELA_TextType_Sum_HS<-ELA_Standards%>%
+  filter(`Division` == "HS")%>%
+  filter (`Screening Window` != "Spring")%>%
+  filter(`Reporting Category` == "Reading")%>%
+  group_by(`Screening Window`, Grade, `Text Type`)%>%
+  summarize(`Median % Secure` = round(median(`% Secure`)))
+
+
+ ELA_TextType_Sum_HS%>%
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Median % Secure`)) +
+  geom_bar(position="dodge", stat = "identity") +
+  #scale_x_reverse()+
+    geom_text(aes( y = `Median % Secure`, label = `Median % Secure`,
+                     vjust = -.25), position = position_dodge(width = 1)) +
+
+          #theme_classic() +
+  theme(axis.title.x=element_blank(),
+         # axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    scale_fill_brewer(palette = "Paired")+
+    labs(
+      y = "Median % Secure",
+       x= "Text Type",
+      title = "HS Reading Standards Mastery by Text Type",
+      caption = paste("Fall-Winter Screening", "2024-2025"))+
+   facet_wrap(~Grade)
+
+
+
+
+```
+
+## Visual: MS Informational Text vs. Literature Mastery: Fall-Winter
+
+```{r}
+ELA_TextType_Sum_MS<-ELA_Standards%>%
+  filter(`Division` == "MS")%>%
+  filter (`Screening Window` != "Spring")%>%
+  filter(`Reporting Category` == "Reading")%>%
+  group_by(`Screening Window`, Grade, `Text Type`)%>%
+  summarize(`Median % Secure` = round(median(`% Secure`)))
+
+
+ ELA_TextType_Sum_MS%>%
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Median % Secure`)) +
+  geom_bar(position="dodge", stat = "identity") +
+  #scale_x_reverse()+
+    geom_text(aes( y = `Median % Secure`, label = `Median % Secure`,
+                     vjust = -.25), position = position_dodge(width = 1)) +
+
+          #theme_classic() +
+  theme(axis.title.x=element_blank(),
+         # axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+
+    scale_fill_brewer(palette = "Paired")+
+    labs(
+      y = "Median % Secure",
+       x= "Text Type",
+      title = "MS Reading Standards Mastery by Text Type",
+      caption = paste("Fall-Winter Screening", "2024-2025"))+
+   facet_wrap(~Grade)
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

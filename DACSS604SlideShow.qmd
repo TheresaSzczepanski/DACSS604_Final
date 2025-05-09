@@ -96,7 +96,7 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
 
 ![](novice_swimmer.jpeg){.absolute bottom="150" left="-100" width="400" height="200"}
 
-::: notes
+::: {.notes}
 -   Gretchen Walsh set a new world record of 22.83 seconds in December 2024; swimming 1.5 seconds faster than her Paris Olympic race
 
 -   My 8 year old, novice swimmer shave 19 seconds off of his 50 freestyle in December 2024; this growth is expected
@@ -123,8 +123,6 @@ DF_Hist <- read_csv(url('https://github.com/TheresaSzczepanski/DACSSIS2024/raw/m
   filter(Grade != "9")%>%
   filter(Grade != "10")%>%
   filter(Year == "2023")
-
-
 
 ```
 
@@ -187,7 +185,6 @@ Math_MCAS_Growth_Sum_Plot
 
 <p style="font-size: 0.8em;">
 
--   Provide a year-long course calendar mapping of lessons to weekly school schedule
 
 -   Move 4 units from the G5 Math course to the G5 STE[**M**]{style="color:blue;"} course
 
@@ -413,34 +410,12 @@ Hist_Growth_Sum_G5Math_Plot
 
 ```
 
-## [What did we observe (option 2)?]{style="color:navy;"}
 
-::: {.notes}
-
-
-Grade 5 students with the same Test 1 achievement percentile, disability status, and income status are predicted to have an ***SGP 10 percentiles higher*** in SY2024-2025 than in SY2023-2024.
-
-
-:::
-
-```{r, echo = FALSE}
-#| eval: true
-#| 
-#| fig-alt: >
-#|    A bar blot with School year (ordered, factor) on the x-axis and the median 5th grade student growth percentile 
-#|    (SGP) in math on the y-axis.
-#|    Plot illustrates the relationship between the two variables.
-#|    
-Hist_Growth_Sum_G5Math_Plot2
-
-```
 
 ## [What about our students on IEPs?]{style="color:navy;"}
 
 ::: {.notes}
-
 In SY2024-2025 the difference between the median SGP of students on IEPs and their non-disabled peers was 10 percentiles, less than ***half*** the difference in SY2023-2024 of 24 percentiles.
-
 :::
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -465,12 +440,12 @@ In SY2024-2025 the difference between the median SGP of students on IEPs and the
         title = "G5 Student Growth Percentile by Year and IEP Status",
         caption = "Source: Renaissance Star Math Screening")+
    geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x =.70, y = 52, label = "Goal 50th Percentile")#+
+  annotate("text", x =.70, y = 52, label = "50th Percentile")#+
 ```
 
 ```{r, echo = FALSE}
 
-#| eval: false
+#| eval: true
 #| fig-cap: "Rising Tide Grade 5 Math Growth by disability status (IEP) and School Year, Renaissance Star MathScreening"
 #| 
 #| fig-alt: >
@@ -485,17 +460,17 @@ IEP_Growth_G5Math_Plot
 
 ## [Lifting All G5 Students]{style="color:navy;"}
 
--   Providing students with ***daily, grade appropriate*** assignments coupled with frequent ***standards-aligned assessments*** supported ***all learners***
+- Children will ***never learn*** that which they ***do not see*** or practice
+
+- High quality materials, clear scheduling, and frequent assessment supports all learners
 
     -   G5 math students across ***all demographic groups*** grew considerably more in SY2024-2025
 
-    -   G5 math students on IEPs grew less than their non-disabled peers, but the gap has narrowed considerably.
+    -   G5 math students on IEPs grew less than their non-disabled peers, but the gap has ***narrowed considerably***.
 
 ## [Next Steps]{style="color:navy;"}
 
 -   examine Grade 5 math growth and achievement as measured by MCAS Spring 2025 results
-
--   use the MCAS Spring 2025 Item reports to identify potential curricular alignment issues in tested subjects
 
 -   provide the same school-level supports to other grade levels and subjects to address student opportunity gaps.[^4]
 
@@ -503,6 +478,6 @@ IEP_Growth_G5Math_Plot
 
 ## [Appendix]{style="color:navy;"}
 
--   [Full report on SY2024-2025](https://drive.google.com/file/d/1pC62_8EF398GTGNHQ_kaoES_Uhmqv2ys/view?usp=sharing) with statistical tests
+-   [Full report on SY2024-2025](https://drive.google.com/file/d/1GAT_iGd5LI8ajz8b74mAFdOHuRGu1B2t/view?usp=sharing) with statistical tests
 
 -   ***Further Questions?***: [mailto:tszczepanski\@risingtide.org](mailto:tszczepanski@risingtide.org){.uri}
