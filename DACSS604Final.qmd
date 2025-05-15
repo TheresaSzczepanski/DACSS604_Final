@@ -141,16 +141,12 @@ HistGradeGrowthSum
 
 ```
 
-
-
-
-
 # RQ1:
 
 Are Rising Tide students making progress toward our achievement
 accountability goal: “80% of Rising Students will test as at or above
 Benchmark in Reading on the Renaissance Star Reading and Star
-Mathematics screening assessments.?
+Mathematics screening assessments?
 
 ## Historical Benchmark_Status
 
@@ -169,7 +165,25 @@ star_dem_all_private<-star_dem_all_private%>%
 
 ### Statistical Test
 
-#### Acheivement: Math
+-   **H1_null_Reading**: There is no difference in the percentage of
+    Rising Tide students classified as at or above benchmark in Reading
+    in SY 2023-2024 and SY 2024-2025.
+
+-   **H1_alt_Reading**: The percentage of Rising Tide students
+    classified as at or above benchmark in Reading in SY 2023-2024 is
+    less than the percentage of students classified as at or above
+    benchmark in Reading in SY 2024-2025.
+
+-   **H1_null_Math**: There is no difference in the percentage of Rising
+    Tide students classified as at or above benchmark in Math in SY
+    2023-2024 and SY 2024-2025.
+
+-   **H1_alt_Math**: The percentage of Rising Tide students classified
+    as at or above benchmark in Math in SY 2023-2024 is less than the
+    percentage of students classified as at or above benchmark in Math
+    in SY 2024-2025.
+
+#### Achievement: Math
 
 ```{r}
 star_dem_math<- star_dem_all_private%>%
@@ -182,12 +196,12 @@ summary(fit_Math_achieve)
 AIC(fit_Math_achieve)
 BIC(fit_Math_achieve)
 #star_dem_math
+
+star_dem_math
 ```
 
 
-
-#### Acheivement: ELA
-
+#### Achievement: ELA
 ```{r}
 star_dem_ELA<- star_dem_all_private%>%
   filter(`Assignment Type` == "Star Reading")
@@ -197,6 +211,9 @@ summary(fit_ELA_achieve)
 AIC(fit_ELA_achieve)
 BIC(fit_ELA_achieve)
 ```
+
+
+
 ### Visual: RQ1
 
 ```{r}
@@ -235,8 +252,6 @@ Bench_Sum_Plot<-HistSchoolBenchSum%>%
 Bench_Sum_Plot
 
 ```
-
-
 
 # Subject Level Fall Winter Growth Comparison
 
@@ -280,6 +295,7 @@ Growth_Sum_ELA_Plot<-ggplot(Growth_Sum_ELA, aes(x=`Grade`, y = `median_SGP`,fill
 Growth_Sum_ELA_Plot
 
 ```
+
 ### ELA Historical Growth
 
 ```{r}
@@ -303,7 +319,7 @@ Hist_Growth_Sum_ELA_Plot<-HistGradeGrowthSum%>%
       title = "Literacy Student Growth Percentile by Grade Level",
       caption = "Source: Renaissance Star Literacy Screening")+
    geom_hline(yintercept = 50, color = "grey")+
-  annotate("text", x = 1.55, y = 52, label = "50th Percentile")+
+  #annotate("text", x = 1.55, y = 52, label = "50th Percentile")+
   facet_wrap(~Year)
 
 ```
@@ -390,7 +406,7 @@ Hist_Growth_Sum_Math_Plot<-HistGradeGrowthSum%>%
 ```
 
 ```{r}
-#| eval: false
+#| eval: true
 #| fig-cap: "Rising Tide Math Growth by Grade Level, school year 2024-2025 and 2023-2024, Renaissance    Star Math Screening"
 #| 
 #| fig-alt: >
@@ -402,11 +418,17 @@ Hist_Growth_Sum_Math_Plot
 
 ```
 
-
 # RQ2 Grade 5 Math
 
 Is there a relationship between Rising Tide’s Grade 5 Mathematics
 curriculum initiatives and Grade 5 student growth in mathematics?
+
+**H2_null:** There is no difference in the  student growth percentile
+(SGP) for Grade 5 students in SY 2023-2024 and SY 2024-2025
+
+**H2_alt:** The student growth percentile (SGP) for Grade 5 students in
+SY 2023-2024 is less than the student growth percentile (SGP) for Grade
+5 students in SY 2024-2025.
 
 ## Summary Data Frames
 
@@ -420,6 +442,7 @@ Math_IEP_Sum<-star_dem_math%>%
   summarize(`Median SGP` = median(`SGP (Expectation=50)`))
 
 ```
+
 ## Visual: Growth Distribution
 
 ```{r}
@@ -462,10 +485,11 @@ Growth_Hist<-MathHistGrowth%>%
     #scale_color_viridis(discrete=TRUE) +
   theme_classic()
 
-Growth_Hist
+#Growth_Hist
            
 
 ```
+
 ## Statistical Tests
 
 ```{r}
@@ -491,6 +515,7 @@ BIC(fit_G5Math_growth_dem)
 
 
 ```
+
 ```{r}
 stargazer(fit_G5Math_growth_dem, type = "text") 
 
@@ -588,7 +613,6 @@ Hist_Growth_G5Math_Plot
 
 ```
 
-
 ## Visual G5 IEP Growth
 
 ```{r}
@@ -629,17 +653,21 @@ Hist_Growth_G5Math_Plot
 IEP_Growth_G5Math_Plot
 ```
 
-
-
-
 # RQ 3: ELA State Standards Mastery
 
 Is there a relationship between the text type of a literacy standard
 (informational vs. literature) and Rising Tide High School students’
 mastery of the standard?
 
+**H3_null:** There is no difference between Rising Tide High School
+students’ mean mastery score for literature reading standards and their
+mean mastery score for informational text reading standards.
 
-##Visual: Distribution ELA Standards Mastery
+**H3_alt:** Rising Tide High School students’ mean mastery score for
+literature reading standards is higher than their mean mastery score for
+informational text reading standards.
+
+## Visual: Distribution ELA Standards Mastery
 
 ```{r}
 
@@ -670,7 +698,6 @@ HS_ELA_Text_Facet
 
 ## Statistical Tests
 
-
 ```{r}
 fit_ELA_text = lm(`% Secure` ~ ( `Text Type` + `Screening Window` + `Domain`), data = ELA_Standards)
 summary(fit_ELA_text)
@@ -689,10 +716,9 @@ stargazer(fit_HS_ELA_text_domain, type = "text")
 
 ```
 
-
 ## Visual Mastery by Text Type
 
-### SchoolWide
+### Schoolwide
 
 ```{r}
 
@@ -723,7 +749,7 @@ ELA_Text_Summary%>%
         y = "Mean % Secure",
          x= "Domainl",
         title = "School State Standard Mastery by Text Type ELA",
-        caption = "2024-2025 Star Reading Screening")
+        caption = "Source: 2024-2025 Renaissance Star Reading Screening")
 
 
 ELA_Text_Domain_Summary<-ELA_Standards%>%
@@ -742,7 +768,9 @@ ELA_Text_Div_Summary<-ELA_Standards%>%
 
 #ELA_Text_Div_Summary
 ```
+
 ### MS vs. HS
+
 ```{r}
 ELA_Text_Div_Summary%>%
   filter(`Screening Window` != "Spring")%>%
@@ -761,19 +789,19 @@ ELA_Text_Div_Summary%>%
         y = "Mean % Secure",
          x= "Domainl",
         title = "School State Standard Mastery by Text Type ELA",
-        caption = "2024-2025 Star Reading Screening")
+        caption = "Source: 2024-2025 Renaissance Star Reading Screening")
 
 ```
 
-
 ### By Domain Cluster
+
 ```{r}
 
 ELA_Text_Domain_Summary%>%
   filter(`Screening Window` != "Spring")%>%
-  ggplot(aes(x=`Domain`,fill = `Text Type`, y = `Mean % Secure`)) +
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Mean % Secure`)) +
       geom_bar(position="dodge", stat = "identity") +
-      geom_text(aes( y = `Mean % Secure`, x = `Domain`, label = `Mean % Secure`), position = position_dodge(width=.9),
+      geom_text(aes( y = `Mean % Secure`, x = `Text Type`, label = `Mean % Secure`), position = position_dodge(width=.9),
                    vjust = 1)+
       theme(axis.title.x=element_blank(),
             #axis.text.x=element_blank(),
@@ -781,12 +809,12 @@ ELA_Text_Domain_Summary%>%
             axis.ticks.x=element_blank())+
       scale_fill_brewer(palette = "Paired")+
       
-  facet_wrap(~`Screening Window`)+
+  facet_wrap(~`Domain`)+
       labs(
         y = "Mean % Secure",
-         x= "Domainl",
+         x= "Domain",
         title = "School State Standard Mastery by Text Type ELA",
-        caption = "2024-2025 Star Reading Screening")
+        caption = "Source: 2024-2025 Renaissance Star Reading Screening")
 
 ```
 
@@ -799,14 +827,14 @@ ELA_TextType_Sum_HS<-ELA_Standards%>%
   filter (`Screening Window` != "Spring")%>%
   filter(`Reporting Category` == "Reading")%>%
   group_by(`Screening Window`, Grade, `Text Type`)%>%
-  summarize(`Median % Secure` = round(median(`% Secure`)))
+  summarize(`Mean % Secure` = round(mean(`% Secure`)))
 
 
  ELA_TextType_Sum_HS%>%
-  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Median % Secure`)) +
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Mean % Secure`)) +
   geom_bar(position="dodge", stat = "identity") +
   #scale_x_reverse()+
-    geom_text(aes( y = `Median % Secure`, label = `Median % Secure`,
+    geom_text(aes( y = `Mean % Secure`, label = `Mean % Secure`,
                      vjust = -.25), position = position_dodge(width = 1)) +
 
           #theme_classic() +
@@ -815,10 +843,10 @@ ELA_TextType_Sum_HS<-ELA_Standards%>%
           axis.ticks.x=element_blank())+
     scale_fill_brewer(palette = "Paired")+
     labs(
-      y = "Median % Secure",
+      y = "Mean % Secure",
        x= "Text Type",
       title = "HS Reading Standards Mastery by Text Type",
-      caption = paste("Fall-Winter Screening", "2024-2025"))+
+      caption = "Source: 2024-2025 Renaissance Star Reading Screening")+
    facet_wrap(~Grade)
 
 
@@ -834,14 +862,14 @@ ELA_TextType_Sum_MS<-ELA_Standards%>%
   filter (`Screening Window` != "Spring")%>%
   filter(`Reporting Category` == "Reading")%>%
   group_by(`Screening Window`, Grade, `Text Type`)%>%
-  summarize(`Median % Secure` = round(median(`% Secure`)))
+  summarize(`Mean % Secure` = round(mean(`% Secure`)))
 
 
  ELA_TextType_Sum_MS%>%
-  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Median % Secure`)) +
+  ggplot(aes(x=`Text Type`,fill = `Screening Window`, y = `Mean % Secure`)) +
   geom_bar(position="dodge", stat = "identity") +
   #scale_x_reverse()+
-    geom_text(aes( y = `Median % Secure`, label = `Median % Secure`,
+    geom_text(aes( y = `Mean % Secure`, label = `Mean % Secure`,
                      vjust = -.25), position = position_dodge(width = 1)) +
 
           #theme_classic() +
@@ -850,32 +878,12 @@ ELA_TextType_Sum_MS<-ELA_Standards%>%
           axis.ticks.x=element_blank())+
     scale_fill_brewer(palette = "Paired")+
     labs(
-      y = "Median % Secure",
+      y = "Mean % Secure",
        x= "Text Type",
       title = "MS Reading Standards Mastery by Text Type",
-      caption = paste("Fall-Winter Screening", "2024-2025"))+
+      caption = "Source: 2024-2025 Renaissance Star Reading Screening")+
    facet_wrap(~Grade)
 
+ #ELA_Standards
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
